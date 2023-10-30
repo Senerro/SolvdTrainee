@@ -5,7 +5,7 @@ import CattleType.RawCattle;
 public class Chiken extends RawCattle {
     @Override
     public void Eat() {
-        
+
     }
 
     @Override
