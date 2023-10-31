@@ -3,9 +3,21 @@ package ReqularClasses;
 import CattleType.RawCattle;
 
 public class Chicken extends RawCattle {
+    private Boolean SEX;
+    public Boolean GetSex()
+    {
+        return SEX;
+    }
+
+
     public Chicken()
     {
         setName("Chicken");
+    }
+    public Chicken(boolean sex)
+    {
+        setName("Chicken");
+        this.SEX = sex;
     }
     @Override
     public void Eat()

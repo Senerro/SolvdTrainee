@@ -3,6 +3,13 @@ package ReqularClasses;
 import CattleType.RawCattle;
 
 public class Pig extends RawCattle {
+    private float mass;
+    public float GetMass()
+    {return this.mass;}
+    public void SetMass(float mass)
+    {
+        this.mass = mass;
+    }
     public Pig() {setName("Pig");}
     @Override
     public void Eat()

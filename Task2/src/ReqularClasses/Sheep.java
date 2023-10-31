@@ -22,7 +22,7 @@ public class Sheep extends RawCattle {
     public void GetSomeRaw() {
         System.out.println("Generic wool");
         System.out.println("Generic sheep milk");
-        
+
         if (isDead)
         {   System.out.println("Generic myself meat");
         }

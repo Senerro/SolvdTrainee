@@ -3,6 +3,15 @@ package ReqularClasses;
 import AbstractEntities.Food;
 
 public class Cabbage extends Food {
+    private int leavesCount;
+
+    public int getLeavesCount() {
+        return leavesCount;
+    }
+    public void setLeavesCount(int leavesCount)
+    {
+     this.leavesCount = leavesCount;
+    }
     public Cabbage()
     {
         setName("Cabbage");

@@ -4,6 +4,16 @@ import CattleType.RawCattle;
 
 public class Cow extends RawCattle {
     public Cow() {setName("Cow");}
+    private int color;
+
+    public int getColor() {
+        return color;
+    }
+    public void SetColor(int color)
+    {
+        this.color = color;
+    }
+
     @Override
     public void Eat()
     {

@@ -3,6 +3,14 @@ package ReqularClasses;
 import CattleType.WorkCastle;
 
 public class Bull extends WorkCastle {
+    private float tonnage;
+
+    public float GetTonnage() {
+        return tonnage;
+    }
+    public void SetTonage(float tonage)
+    {this.tonnage = tonnage;}
+
     public Bull()
     {
         setName("Bull");

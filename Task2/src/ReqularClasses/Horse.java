@@ -3,6 +3,28 @@ package ReqularClasses;
 import CattleType.WorkCastle;
 
 public class Horse extends WorkCastle {
+
+    private float maxEndurance;
+    private float currentEndurance;
+
+    public float getCurrentEndurance() {
+        return currentEndurance;
+    }
+
+    public float getMaxEndurance() {
+        return maxEndurance;
+    }
+    public void SetMaxEndurance(float maxEndurance)
+    {
+        this.maxEndurance = maxEndurance;
+    }
+    public void ChangeCurrentEndurance(float endurance)
+    {
+        this.currentEndurance += endurance;
+        if(currentEndurance > maxEndurance)
+            currentEndurance = maxEndurance;
+    }
+
     public Horse() {setName("Horse");}
     @Override
     public void Eat()
@@ -13,7 +35,6 @@ public class Horse extends WorkCastle {
     @Override
     public void Drink() {
         System.out.println("I need water");
-
     }
     @Override
     public void GrowUp() {
