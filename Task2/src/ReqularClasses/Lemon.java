@@ -1,8 +1,8 @@
 package ReqularClasses;
 
-import FoodTypes.Fruit;
+import FoodTypes.FruitSpawn;
 
-public class Lemon extends Fruit
+public class Lemon extends FruitSpawn
 {
 
     @Override

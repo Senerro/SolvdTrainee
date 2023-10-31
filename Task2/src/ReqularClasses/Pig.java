@@ -17,4 +17,9 @@ public class Pig extends RawCattle {
     public void GrowUp() {
 
     }
+
+    @Override
+    public void GetSomeRaw() {
+
+    }
 }

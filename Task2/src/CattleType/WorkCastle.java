@@ -4,5 +4,5 @@ import AbstractEntities.Cattle;
 
 public abstract class WorkCastle extends Cattle
 {
-    abstract void DoSomeWork();
+    public abstract void DoSomeWork();
 }

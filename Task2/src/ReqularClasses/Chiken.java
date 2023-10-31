@@ -17,4 +17,9 @@ public class Chiken extends RawCattle {
     public void GrowUp() {
 
     }
+
+    @Override
+    public void GetSomeRaw() {
+
+    }
 }

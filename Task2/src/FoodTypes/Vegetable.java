@@ -4,8 +4,18 @@ import AbstractEntities.Food;
 
 public abstract class Vegetable extends Food
 {
-    public abstract void GetBenefit();
-//    {
-//        System.out.println("I give myself because I am a vegetable");
-//    }
+    private int ripeningTime;
+    public int GetRipeningTime()
+    {
+        return ripeningTime;
+    }
+    public void SetRipeningTime(int ripeningTime)
+    {
+        this.ripeningTime = ripeningTime;
+    }
+
+    public void GetBenefit()
+    {
+        System.out.println("I give myself because I am a vegetable");
+    }
 }

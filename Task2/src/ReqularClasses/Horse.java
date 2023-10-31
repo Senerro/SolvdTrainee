@@ -17,4 +17,9 @@ public class Horse extends WorkCastle {
     public void GrowUp() {
 
     }
+
+    @Override
+    public void DoSomeWork() {
+
+    }
 }
