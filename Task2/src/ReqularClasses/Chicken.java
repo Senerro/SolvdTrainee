@@ -2,7 +2,11 @@ package ReqularClasses;
 
 import CattleType.RawCattle;
 
-public class Chiken extends RawCattle {
+public class Chicken extends RawCattle {
+    public Chicken()
+    {
+        setName("Chicken");
+    }
     @Override
     public void Eat() {
 

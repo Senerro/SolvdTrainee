@@ -4,7 +4,7 @@ import FoodTypes.FruitSpawn;
 
 public class Lemon extends FruitSpawn
 {
-
+    public Lemon() {setName("Lemon");}
     @Override
     public void Eat() {
 

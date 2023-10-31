@@ -3,6 +3,10 @@ package ReqularClasses;
 import CattleType.WorkCastle;
 
 public class Bull extends WorkCastle {
+    public Bull()
+    {
+        setName("Bull");
+    }
     @Override
     public void Eat() {
 
