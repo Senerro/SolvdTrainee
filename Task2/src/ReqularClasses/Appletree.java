@@ -7,7 +7,7 @@ public class Appletree extends Food {
     public Appletree()
     {
         this.helthStatus = false;
-        this.setName("Apple three");
+        this.setName("Apple tree");
     }
     public Boolean GetHealthStatus()
     {
@@ -25,11 +25,10 @@ public class Appletree extends Food {
         System.out.println("I need a watering");
 
     }
-
     @Override
     public void GrowUp() {
         System.out.println("I will grow up till I grow up ");
-        System.out.println("My aplle will grow up till they is not rotten");
+        System.out.println("My apple will grow up till they is not started to be rotten");
 
     }
 }

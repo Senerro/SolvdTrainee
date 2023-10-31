@@ -8,17 +8,16 @@ public class Cabbage extends Food {
         setName("Cabbage");
     }
     @Override
-    public void Eat() {
-
+    public void Eat()
+    {
+        System.out.println("I need wood ash, ground chalk and ammonium nitrate");
     }
-
     @Override
     public void Drink() {
-
+        System.out.println("I need extra watering");
     }
-
     @Override
     public void GrowUp() {
-
+        System.out.println("I will grow up till I'm not yield ");
     }
 }
