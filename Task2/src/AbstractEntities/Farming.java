@@ -4,11 +4,11 @@ public abstract class Farming
 {
     private String name;
 
-    public String getName()
+    public String GetName()
     {
         return name;
     }
-    public void setName(String name)
+    public void SetName(String name)
     {
         if (!name.isEmpty())
             this.name = name;

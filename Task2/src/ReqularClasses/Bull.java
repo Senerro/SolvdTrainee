@@ -13,7 +13,7 @@ public class Bull extends WorkCastle {
 
     public Bull()
     {
-        setName("Bull");
+        SetName("Bull");
     }
     @Override
     public void Eat()

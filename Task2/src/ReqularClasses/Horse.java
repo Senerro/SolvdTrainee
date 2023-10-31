@@ -25,7 +25,8 @@ public class Horse extends WorkCastle {
             currentEndurance = maxEndurance;
     }
 
-    public Horse() {setName("Horse");}
+    public Horse() {
+        SetName("Horse");}
     @Override
     public void Eat()
     {

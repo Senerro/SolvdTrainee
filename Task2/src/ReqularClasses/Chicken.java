@@ -12,12 +12,16 @@ public class Chicken extends RawCattle {
 
     public Chicken()
     {
-        setName("Chicken");
+        SetName("Chicken");
     }
     public Chicken(boolean sex)
     {
-        setName("Chicken");
+        SetName("Chicken");
         this.SEX = sex;
+    }
+    public void SetChickenSex (boolean sex)
+    {
+        this.SEX=sex;
     }
     @Override
     public void Eat()

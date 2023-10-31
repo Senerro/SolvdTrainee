@@ -14,7 +14,8 @@ public class LemonTree extends FruitSpawn
         this.acidLevel = acidLevel;
     }
 
-    public LemonTree() {setName("Lemon tree");}
+    public LemonTree() {
+        SetName("Lemon tree");}
     @Override
     public void Eat()
     {

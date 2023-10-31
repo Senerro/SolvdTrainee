@@ -3,7 +3,8 @@ package ReqularClasses;
 import CattleType.RawCattle;
 
 public class Cow extends RawCattle {
-    public Cow() {setName("Cow");}
+    public Cow() {
+        SetName("Cow");}
     private int color;
 
     public int getColor() {

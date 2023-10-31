@@ -10,7 +10,8 @@ public class Pig extends RawCattle {
     {
         this.mass = mass;
     }
-    public Pig() {setName("Pig");}
+    public Pig() {
+        SetName("Pig");}
     @Override
     public void Eat()
     {

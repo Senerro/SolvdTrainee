@@ -1,13 +1,13 @@
 package ReqularClasses;
 
-import AbstractEntities.Food;
+import FoodTypes.FruitSpawn;
 
-public class Appletree extends Food {
+public class Appletree extends FruitSpawn {
     private Boolean helthStatus;
     public Appletree()
     {
         this.helthStatus = false;
-        this.setName("Apple tree");
+        this.SetName("Apple tree");
     }
     public Boolean GetHealthStatus()
     {

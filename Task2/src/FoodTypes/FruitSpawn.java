@@ -9,7 +9,7 @@ public abstract class FruitSpawn extends Food
     public int GetCropYield() {
         return cropYield;
     }
-    public void setCropYield(int cropYield)
+    public void SetCropYield(int cropYield)
     {
         this.cropYield = cropYield;
     }

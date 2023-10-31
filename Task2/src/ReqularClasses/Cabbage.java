@@ -1,8 +1,8 @@
 package ReqularClasses;
 
-import AbstractEntities.Food;
+import FoodTypes.Vegetable;
 
-public class Cabbage extends Food {
+public class Cabbage extends Vegetable {
     private int leavesCount;
 
     public int getLeavesCount() {
@@ -14,7 +14,7 @@ public class Cabbage extends Food {
     }
     public Cabbage()
     {
-        setName("Cabbage");
+        SetName("Cabbage");
     }
     @Override
     public void Eat()
