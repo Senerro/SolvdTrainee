@@ -1,6 +1,4 @@
-package ReqularClasses;
-
-import FoodTypes.FruitSpawn;
+package FoodTypes.ReqularFruitsSpawn;
 
 public class Appletree extends FruitSpawn {
     private Boolean helthStatus;

@@ -2,7 +2,7 @@ package Farm;
 
 import CattleType.RawCattle;
 import CattleType.WorkCastle;
-import FoodTypes.FruitSpawn;
+import FoodTypes.ReqularFruitsSpawn.FruitSpawn;
 import FoodTypes.Vegetable;
 
 import java.io.Serializable;

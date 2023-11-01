@@ -1,6 +1,8 @@
 package AbstractEntities;
 
-public abstract class Farming
+import java.io.Serializable;
+
+public abstract class Farming implements Serializable
 {
     private String name;
 

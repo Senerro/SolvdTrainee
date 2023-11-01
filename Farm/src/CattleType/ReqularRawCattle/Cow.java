@@ -1,8 +1,10 @@
-package ReqularClasses;
+package CattleType.ReqularRawCattle;
 
 import CattleType.RawCattle;
 
-public class Cow extends RawCattle {
+import java.io.Serializable;
+
+public class Cow extends RawCattle implements Serializable {
     public Cow() {
         SetName("Cow");}
     private int color;

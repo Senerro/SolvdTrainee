@@ -1,4 +1,4 @@
-package ReqularClasses;
+package CattleType.ReqularWorkCattle;
 
 import CattleType.WorkCastle;
 

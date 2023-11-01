@@ -1,4 +1,4 @@
-package ReqularClasses;
+package FoodTypes.ReqularVegetablesSpawn;
 
 import FoodTypes.Vegetable;
 

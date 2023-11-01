@@ -1,7 +1,17 @@
 package Farm;
 
+import CattleType.ReqularRawCattle.Chicken;
+import CattleType.ReqularRawCattle.Cow;
+import CattleType.ReqularRawCattle.Pig;
+import CattleType.ReqularRawCattle.Sheep;
+import CattleType.ReqularWorkCattle.Bull;
+import CattleType.ReqularWorkCattle.Horse;
+import CattleType.WorkCastle;
 import File.JsonFileConverter;
-import ReqularClasses.*;
+import FoodTypes.ReqularFruitsSpawn.Appletree;
+import FoodTypes.ReqularVegetablesSpawn.Cabbage;
+import FoodTypes.ReqularFruitsSpawn.LemonTree;
+import FoodTypes.ReqularVegetablesSpawn.Potato;
 
 import java.io.Serializable;
 
@@ -136,7 +146,7 @@ public class Farm implements Serializable {
         var farm = new Farm();
 
         var converter = new JsonFileConverter();
-        converter.ConvertObjectToFile(farm.farmingList.fruitArrayList.get(1));
+        //converter.ConvertObjectToFile(farm.farmingList.fruitArrayList.get(1));
         //var a = converter.ConvertFileToObject();
         converter.SaveObjectToFile(farm);
         farm = converter.LoadObjectFromFile();

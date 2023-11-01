@@ -1,8 +1,10 @@
-package ReqularClasses;
+package CattleType.ReqularRawCattle;
 
 import CattleType.RawCattle;
 
-public class Pig extends RawCattle {
+import java.io.Serializable;
+
+public class Pig extends RawCattle implements Serializable {
     private float mass;
     public float GetMass()
     {return this.mass;}

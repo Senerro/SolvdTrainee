@@ -1,6 +1,8 @@
 package AbstractEntities;
 
-public abstract class Food extends Farming
+import java.io.Serializable;
+
+public abstract class Food extends Farming implements Serializable
 {
     public double SeedingArea;
     protected String sort;

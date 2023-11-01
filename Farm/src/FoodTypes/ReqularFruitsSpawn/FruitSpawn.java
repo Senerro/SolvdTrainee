@@ -1,4 +1,4 @@
-package FoodTypes;
+package FoodTypes.ReqularFruitsSpawn;
 
 import AbstractEntities.Food;
 

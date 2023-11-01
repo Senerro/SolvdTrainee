@@ -1,6 +1,8 @@
 package AbstractEntities;
 
-public abstract class Cattle extends Farming
+import java.io.Serializable;
+
+public abstract class Cattle extends Farming implements Serializable
 {
     protected float workingHours;
     protected Boolean isDead;
