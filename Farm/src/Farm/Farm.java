@@ -140,6 +140,7 @@ public class Farm implements Serializable {
         //var a = converter.ConvertFileToObject();
         converter.SaveObjectToFile(farm);
         farm = converter.LoadObjectFromFile();
+
        System.out.println("All is working");
     }
 }
