@@ -2,7 +2,9 @@ package CattleType;
 
 import AbstractEntities.Cattle;
 
-public abstract class RawCattle extends Cattle
+import java.io.Serializable;
+
+public abstract class RawCattle extends Cattle implements Serializable
 {
     public abstract void GetSomeRaw();
 }

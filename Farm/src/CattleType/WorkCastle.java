@@ -2,7 +2,9 @@ package CattleType;
 
 import AbstractEntities.Cattle;
 
-public abstract class WorkCastle extends Cattle
+import java.io.Serializable;
+
+public abstract class WorkCastle extends Cattle implements Serializable
 {
     private boolean isWorking;
     public boolean GetWorkStatus()

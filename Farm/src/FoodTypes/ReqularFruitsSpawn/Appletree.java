@@ -1,6 +1,8 @@
 package FoodTypes.ReqularFruitsSpawn;
 
-public class Appletree extends FruitSpawn {
+import java.io.Serializable;
+
+public class Appletree extends FruitSpawn implements Serializable {
     private Boolean helthStatus;
     public Appletree()
     {

@@ -1,6 +1,8 @@
 package FoodTypes.ReqularFruitsSpawn;
 
-public class LemonTree extends FruitSpawn
+import java.io.Serializable;
+
+public class LemonTree extends FruitSpawn implements Serializable
 {
     private int acidLevel;
 

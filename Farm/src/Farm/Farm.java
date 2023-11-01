@@ -109,7 +109,6 @@ public class Farm implements Serializable {
             acquisition.SetAcidLevel(4);//very acid
             farmingList.AddFruit(acquisition);
         }
-
     }
     public void PigPurchase (int count, int age)
     {

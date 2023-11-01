@@ -2,7 +2,9 @@ package CattleType.ReqularWorkCattle;
 
 import CattleType.WorkCastle;
 
-public class Bull extends WorkCastle {
+import java.io.Serializable;
+
+public class Bull extends WorkCastle implements Serializable {
     private float tonnage;
 
     public float GetTonnage() {

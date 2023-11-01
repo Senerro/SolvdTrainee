@@ -2,7 +2,9 @@ package FoodTypes.ReqularFruitsSpawn;
 
 import AbstractEntities.Food;
 
-public abstract class FruitSpawn extends Food
+import java.io.Serializable;
+
+public abstract class FruitSpawn extends Food implements Serializable
 {
     private int cropYield;
 

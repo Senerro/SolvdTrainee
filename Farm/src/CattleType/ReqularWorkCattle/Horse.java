@@ -2,7 +2,9 @@ package CattleType.ReqularWorkCattle;
 
 import CattleType.WorkCastle;
 
-public class Horse extends WorkCastle {
+import java.io.Serializable;
+
+public class Horse extends WorkCastle implements Serializable {
 
     private float maxEndurance;
     private float currentEndurance;

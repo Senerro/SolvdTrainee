@@ -2,7 +2,9 @@ package FoodTypes.ReqularVegetablesSpawn;
 
 import FoodTypes.Vegetable;
 
-public class Potato extends Vegetable {
+import java.io.Serializable;
+
+public class Potato extends Vegetable implements Serializable {
     private int size;
 
     public int getSize() {

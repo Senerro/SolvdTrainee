@@ -2,7 +2,9 @@ package FoodTypes.ReqularVegetablesSpawn;
 
 import FoodTypes.Vegetable;
 
-public class Cabbage extends Vegetable {
+import java.io.Serializable;
+
+public class Cabbage extends Vegetable implements Serializable {
     private int leavesCount;
 
     public int getLeavesCount() {

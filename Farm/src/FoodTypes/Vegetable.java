@@ -2,7 +2,9 @@ package FoodTypes;
 
 import AbstractEntities.Food;
 
-public abstract class Vegetable extends Food
+import java.io.Serializable;
+
+public abstract class Vegetable extends Food implements Serializable
 {
     private int ripeningTime;
     public int GetRipeningTime()
