@@ -3,7 +3,7 @@ package ReqularClasses;
 import CattleType.RawCattle;
 
 public class Chicken extends RawCattle {
-    private Boolean SEX;
+    private boolean SEX;
     public Boolean GetSex()
     {
         return SEX;

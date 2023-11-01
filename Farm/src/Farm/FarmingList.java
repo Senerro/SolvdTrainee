@@ -5,30 +5,32 @@ import CattleType.WorkCastle;
 import FoodTypes.FruitSpawn;
 import FoodTypes.Vegetable;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class FarmingList
+public class FarmingList implements Serializable
 {
     ArrayList<FruitSpawn> fruitArrayList = new ArrayList<FruitSpawn>();
     ArrayList<Vegetable> vegetablesList = new ArrayList<Vegetable>();
     ArrayList<RawCattle> rawCattleList = new ArrayList<RawCattle>();
     ArrayList<WorkCastle> workCastlesList = new ArrayList<WorkCastle>();
-
-    public ArrayList<Vegetable> getVegetablesList() {
+    public ArrayList<Vegetable> GetVegetablesList() {
         return vegetablesList;
     }
-    public  ArrayList<FruitSpawn> getFruitArrayList()
+    public  ArrayList<FruitSpawn> GetFruitArrayList()
     {
         return fruitArrayList;
     }
 
-    public ArrayList<RawCattle> getRawCattleList() {
+    public ArrayList<RawCattle> GetRawCattleList() {
         return rawCattleList;
     }
 
-    public ArrayList<WorkCastle> getWorkCastlesList() {
+    public ArrayList<WorkCastle> GetWorkCastlesList() {
         return workCastlesList;
     }
+
+
 
     public void AddFruit(FruitSpawn fruit) {
         this.fruitArrayList.add(fruit);

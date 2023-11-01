@@ -1,8 +1,11 @@
 package Farm;
 
+import File.JsonFileConverter;
 import ReqularClasses.*;
 
-public class Farm {
+import java.io.Serializable;
+
+public class Farm implements Serializable {
     private static int purchase;
     public FarmingList farmingList = new FarmingList();
     public Farm()
@@ -130,7 +133,13 @@ public class Farm {
     }
     public static void main(String[] args)
     {
-        var obj = new Farm();
+        var farm = new Farm();
+
+        var converter = new JsonFileConverter();
+        converter.ConvertObjectToFile(farm.farmingList.fruitArrayList.get(1));
+        //var a = converter.ConvertFileToObject();
+        converter.SaveObjectToFile(farm);
+        farm = converter.LoadObjectFromFile();
        System.out.println("All is working");
     }
 }
