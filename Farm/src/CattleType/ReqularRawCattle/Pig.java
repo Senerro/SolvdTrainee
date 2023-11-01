@@ -13,7 +13,9 @@ public class Pig extends RawCattle implements Serializable {
         this.mass = mass;
     }
     public Pig() {
-        SetName("Pig");}
+        SetName("Pig");
+        ID = 3;
+    }
     @Override
     public void Eat()
     {

@@ -6,7 +6,9 @@ import java.io.Serializable;
 
 public class Cow extends RawCattle implements Serializable {
     public Cow() {
-        SetName("Cow");}
+        SetName("Cow");
+        ID = 2;
+    }
     private int color;
 
     public int getColor() {

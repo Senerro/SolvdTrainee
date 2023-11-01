@@ -5,6 +5,10 @@ import CattleType.RawCattle;
 import java.io.Serializable;
 
 public class Sheep extends RawCattle implements Serializable {
+    public Sheep()
+    {
+        ID = 4;
+    }
     public void Eat()
     {
         System.out.println("I need corn");

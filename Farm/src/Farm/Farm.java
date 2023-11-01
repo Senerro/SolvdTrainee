@@ -1,24 +1,40 @@
 package Farm;
-
 import CattleType.ReqularRawCattle.Chicken;
 import CattleType.ReqularRawCattle.Cow;
 import CattleType.ReqularRawCattle.Pig;
 import CattleType.ReqularRawCattle.Sheep;
 import CattleType.ReqularWorkCattle.Bull;
 import CattleType.ReqularWorkCattle.Horse;
-import CattleType.WorkCastle;
-import File.JsonFileConverter;
 import FoodTypes.ReqularFruitsSpawn.Appletree;
 import FoodTypes.ReqularVegetablesSpawn.Cabbage;
 import FoodTypes.ReqularFruitsSpawn.LemonTree;
 import FoodTypes.ReqularVegetablesSpawn.Potato;
-
 import java.io.Serializable;
 
 public class Farm implements Serializable {
     private static int purchase;
+    private int currentDay;
+    private float balance;
+
+    public float GetBalance() {
+        return balance;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
+    }
+
+    public int GetCurrentDay() {
+        return currentDay;
+    }
+    public void ChangeCurrentDay()
+    {
+        currentDay++;
+    }
+
+
     public FarmingList farmingList = new FarmingList();
-    public Farm()
+  /*  public Farm()
     {
         PlantAppleTree (1, "golden");
         BullPurchase(2, 15, 950);
@@ -29,10 +45,10 @@ public class Farm implements Serializable {
         PlantLemonTree(10);
         PlantPotato(5, "Aspia");
         SheepPurchase(5, 4);
-    }
+    }*/
     public void PlantAppleTree(int count, String sort)
     {
-
+        purchase++;
         for (int i = 0; i < count; i++)
         {
             var acquisition = new Appletree();
@@ -44,6 +60,7 @@ public class Farm implements Serializable {
     }
     public void BullPurchase (int count, int age, float tonnage)
     {
+        purchase++;
         for (int i = 0; i < count; i++)
         {
             var acquisition = new Bull();
@@ -55,6 +72,7 @@ public class Farm implements Serializable {
     }
     public void PlantCabbage (int count, String sort)
     {
+        purchase++;
         for (int i = 0; i < count; i++)
         {
             var acquisition = new Cabbage();
@@ -64,6 +82,7 @@ public class Farm implements Serializable {
     }
     public void ChickenPurchase (int count, int age, boolean sex)
     {
+        purchase++;
         for (int i = 0; i < count; i++)
         {
             var acquisition = new Chicken();
@@ -77,6 +96,7 @@ public class Farm implements Serializable {
     }
     public void CowPurchase (int count, int age)
     {
+        purchase++;
         for (int i = 0; i < count; i++)
         {
             var acquisition = new Cow();
@@ -89,6 +109,7 @@ public class Farm implements Serializable {
 
     public void HorsePurchase (int count, int age, int endurance)
     {
+        purchase++;
         for (int i = 0; i < count; i++)
         {
             var acquisition = new Horse();
@@ -100,7 +121,7 @@ public class Farm implements Serializable {
     }
     public void PlantLemonTree(int count)
     {
-
+        purchase++;
         for (int i = 0; i < count; i++)
         {
             var acquisition = new LemonTree();
@@ -112,6 +133,7 @@ public class Farm implements Serializable {
     }
     public void PigPurchase (int count, int age)
     {
+        purchase++;
         for (int i = 0; i < count; i++) {
             var acquisition = new Pig();
             acquisition.SetName("Pig number " + i + " from procurement " + purchase);
@@ -121,6 +143,7 @@ public class Farm implements Serializable {
     }
     public void PlantPotato (int count, String sort)
     {
+        purchase++;
         for (int i = 0; i < count; i++)
         {
             var acquisition = new Potato();
@@ -133,23 +156,12 @@ public class Farm implements Serializable {
     }
     public void SheepPurchase (int count, int age)
     {
+        purchase++;
         for (int i = 0; i < count; i++) {
             var acquisition = new Sheep();
             acquisition.SetName("Sheep number " + i + " from procurement " + purchase);
             acquisition.SetAge(age);
             farmingList.AddRawCattle(acquisition);
         }
-    }
-    public static void main(String[] args)
-    {
-        var farm = new Farm();
-
-        var converter = new JsonFileConverter();
-        //converter.ConvertObjectToFile(farm.farmingList.fruitArrayList.get(1));
-        //var a = converter.ConvertFileToObject();
-        converter.SaveObjectToFile(farm);
-        farm = converter.LoadObjectFromFile();
-
-       System.out.println("All is working");
     }
 }

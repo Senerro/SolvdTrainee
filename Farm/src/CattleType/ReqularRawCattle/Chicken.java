@@ -15,11 +15,14 @@ public class Chicken extends RawCattle implements Serializable {
     public Chicken()
     {
         SetName("Chicken");
+        ID = 1;
     }
     public Chicken(boolean sex)
     {
+        this();
         SetName("Chicken");
         this.SEX = sex;
+
     }
     public void SetChickenSex (boolean sex)
     {

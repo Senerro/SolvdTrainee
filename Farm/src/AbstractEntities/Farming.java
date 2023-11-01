@@ -5,6 +5,7 @@ import java.io.Serializable;
 public abstract class Farming implements Serializable
 {
     private String name;
+    public int ID;
 
     public String GetName()
     {
