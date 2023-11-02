@@ -1,12 +1,17 @@
 package FoodTypes.ReqularVegetablesSpawn;
 
-import FoodTypes.Vegetable;
+import FoodTypes.VegetableSpawn;
 
 import java.io.Serializable;
 
-public class Potato extends Vegetable implements Serializable {
+public class Potato extends VegetableSpawn implements Serializable {
     private int size;
+    public Potato()
+    {
+        this.SetName("Potato");
+        this.SetDefaultCost(17);
 
+    }
     public int getSize() {
         return size;
     }

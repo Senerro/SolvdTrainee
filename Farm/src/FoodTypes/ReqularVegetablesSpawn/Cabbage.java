@@ -1,10 +1,10 @@
 package FoodTypes.ReqularVegetablesSpawn;
 
-import FoodTypes.Vegetable;
+import FoodTypes.VegetableSpawn;
 
 import java.io.Serializable;
 
-public class Cabbage extends Vegetable implements Serializable {
+public class Cabbage extends VegetableSpawn implements Serializable {
     private int leavesCount;
 
     public int getLeavesCount() {
@@ -17,6 +17,8 @@ public class Cabbage extends Vegetable implements Serializable {
     public Cabbage()
     {
         SetName("Cabbage");
+        this.SetDefaultCost(2);
+
     }
     @Override
     public void Eat()

@@ -16,6 +16,7 @@ public class Bull extends WorkCastle implements Serializable {
     public Bull()
     {
         SetName("Bull");
+        this.SetDefaultCost(895);
     }
     @Override
     public void Eat()

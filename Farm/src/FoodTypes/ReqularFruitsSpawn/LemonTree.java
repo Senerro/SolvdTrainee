@@ -1,5 +1,7 @@
 package FoodTypes.ReqularFruitsSpawn;
 
+import FoodTypes.FruitSpawn;
+
 import java.io.Serializable;
 
 public class LemonTree extends FruitSpawn implements Serializable
@@ -14,8 +16,12 @@ public class LemonTree extends FruitSpawn implements Serializable
         this.acidLevel = acidLevel;
     }
 
-    public LemonTree() {
-        SetName("Lemon tree");}
+    public LemonTree()
+    {
+        SetName("Lemon tree");
+        this.SetDefaultCost(17);
+        this.SetCropYield(50);
+    }
     @Override
     public void Eat()
     {

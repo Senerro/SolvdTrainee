@@ -1,5 +1,7 @@
 package FoodTypes.ReqularFruitsSpawn;
 
+import FoodTypes.FruitSpawn;
+
 import java.io.Serializable;
 
 public class Appletree extends FruitSpawn implements Serializable {
@@ -8,6 +10,8 @@ public class Appletree extends FruitSpawn implements Serializable {
     {
         this.helthStatus = false;
         this.SetName("Apple tree");
+        this.SetDefaultCost(17);
+        this.SetCropYield(50);
     }
     public Boolean GetHealthStatus()
     {

@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 public abstract class WorkCastle extends Cattle implements Serializable
 {
-    private boolean isWorking;
+    private boolean isWorking = false;
     public boolean GetWorkStatus()
     {
         return isWorking;
