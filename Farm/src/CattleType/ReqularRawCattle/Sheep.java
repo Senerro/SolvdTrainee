@@ -12,12 +12,12 @@ public class Sheep extends RawCattle implements Serializable {
     public Sheep()
     {
         ID = 4;
-        this.SetCattleWeight(90.3f);
-        this.SetDefaultCost(4.5f * GetCattleWeight());
+        this.CattleWeight(90.3f);
+        this.DefaultCost(4.5f * CattleWeight());
         Watter water = new Watter();
-        this.SetAbstractResourse(water);
-        this.SetResourseVolumRequierment(80);
-        SetName("Sheep");
+        this.LiquidAbstractResourse(water);
+        this.SolidResourseVolumRequierment(80);
+        Name("Sheep");
     }
     public void Eat()
     {
@@ -36,16 +36,16 @@ public class Sheep extends RawCattle implements Serializable {
     }
 
     @Override
-    public void GetSomeRaw() {
+    public void SomeRaw() {
         Wool wool = new Wool();
-        this.AddRaw(wool);
+        this.Raw(wool);
         Milk milk = new Milk();
-        this.AddRaw(milk);
+        this.Raw(milk);
 
         if (isDead())
         {
             Meat meat = new Meat();
-            this.AddRaw(meat);
+            this.Raw(meat);
         }
     }
 }

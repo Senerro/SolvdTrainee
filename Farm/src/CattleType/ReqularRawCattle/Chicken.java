@@ -1,13 +1,11 @@
 package CattleType.ReqularRawCattle;
 
 import CattleType.RawCattle;
-import Raw.AbstractRaw;
 import Raw.Egg;
 import Raw.Meat;
 import Resourses.Corn;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public class Chicken extends RawCattle implements Serializable {
 
@@ -15,13 +13,13 @@ public class Chicken extends RawCattle implements Serializable {
 
     public Chicken()
     {
-        SetName("Chicken");
+        Name("Chicken");
         ID = 1;
-        this.SetCattleWeight(4);
-        this.SetDefaultCost(2.5f * GetCattleWeight());
+        this.CattleWeight(4);
+        this.DefaultCost(2.5f * CattleWeight());
         Corn corn = new Corn();
-        this.SetAbstractResourse(corn);
-        this.SetResourseVolumRequierment(50);
+        this.LiquidAbstractResourse(corn);
+        this.SolidResourseVolumRequierment(50);
     }
     @Override
     public void Eat()
@@ -41,16 +39,16 @@ public class Chicken extends RawCattle implements Serializable {
     }
 
     @Override
-    public void GetSomeRaw() {
+    public void SomeRaw() {
 
 
         Egg egg = new Egg();
-        this.AddRaw(egg);
+        this.Raw(egg);
 
         if (isDead())
         {
             Meat meat = new Meat();
-            this.AddRaw(meat);
+            this.Raw(meat);
         }
     }
 }

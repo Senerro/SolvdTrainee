@@ -9,22 +9,26 @@ import java.util.ArrayList;
 
 public abstract class Farming implements Serializable
 {
+    private int chunk;
     public ResoursesContainer container = new ResoursesContainer();
-    private AbstractResourse resourse;
+    private AbstractResourse solidFood = new AbstractResourse();
+    private AbstractResourse liquidFood = new AbstractResourse();
+
+
     private float resourseVolumRequierment;
-    public void SetAbstractResourse(AbstractResourse resourse)
+    public void LiquidAbstractResourse(AbstractResourse resourse)
     {
-        this.resourse = resourse;
+        this.liquidFood = resourse;
     }
-    public AbstractResourse GetAbstractResourse()
+    public AbstractResourse LiquidAbstractResourse()
     {
-        return this.resourse;
+        return this.liquidFood;
     }
-    public float GetResourseVolumRequierment()
+    public float SolidResourseVolumRequierment()
     {
         return this.resourseVolumRequierment;
     }
-    public void SetResourseVolumRequierment(float resourseVolumRequierment)
+    public void SolidResourseVolumRequierment(float resourseVolumRequierment)
     {
         this.resourseVolumRequierment = resourseVolumRequierment;
     }
@@ -33,40 +37,41 @@ public abstract class Farming implements Serializable
     protected String name;
     public int ID;
     private ArrayList<AbstractRaw> rawResult = new ArrayList<>();
-    public String GetName()
+    public String Name()
     {
         return name;
     }
-    public void SetName(String name)
+    public void Name(String name)
     {
         if (!name.isEmpty())
             this.name = name;
         else
             this.name = "unknown";
     }
-    public ArrayList<AbstractRaw> GetRawResult()
+    public ArrayList<AbstractRaw> RawResult()
     {
-        return this.GetRawResult();
+        return this.RawResult();
     }
-    public void AddRaw(AbstractRaw raw)
+    public void Raw(AbstractRaw raw)
     {
         this.rawResult.add(raw);
     }
 
-    public float GetCurrentCost() {
+    public float CurrentCost() {
         return currentCost;
     }
 
-    public void SetCurrentCost(float currentCost) {
+    public void CurrentCost(float currentCost) {
         this.currentCost = currentCost;
     }
-    public float GetDefaultCost() {
+    public float DefaultCost() {
         return defaultCost;
     }
 
-    public void SetDefaultCost(float defaultCost) {
+    public void DefaultCost(float defaultCost) {
         this.defaultCost = defaultCost;
     }
+
 
     public abstract void Eat() ;
     public abstract void Drink();

@@ -6,9 +6,9 @@ public class Apple extends AbstractRaw implements Serializable
 {
     public Apple()
     {
-        this.SetShelfLife(45);
-        this.SetDefaultCost(0.9f/6);
-        this.SetName("Apple");
+        this.ShelfLife(45);
+        this.DefaultCost(0.9f/6);
+        this.Name("Apple");
         ID = 1;
     }
 }

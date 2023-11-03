@@ -7,11 +7,12 @@ public abstract class Cattle extends Farming implements Serializable
     protected float workingHours;
     protected Boolean isDead;
     protected int age;
-    public int GetAge()
+
+    public int Age()
     {
         return age;
     }
-    public void SetAge(int age)
+    public void Age(int age)
     {
 
             if (age >= 0) {

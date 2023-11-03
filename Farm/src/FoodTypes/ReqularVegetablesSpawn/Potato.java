@@ -8,8 +8,8 @@ public class Potato extends VegetableSpawn implements Serializable {
     private int size;
     public Potato()
     {
-        this.SetName("Potato");
-        this.SetDefaultCost(17);
+        this.Name("Potato");
+        this.DefaultCost(17);
 
     }
     public int getSize() {

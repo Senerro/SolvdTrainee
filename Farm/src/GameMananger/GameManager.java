@@ -59,9 +59,9 @@ public class GameManager
             double a = Math.random()*5+2;
             int iterator = (int)Math.round(a);
             for (int i = 0; i < iterator; i++) {
-                cattle.SetCattleWeight((int) Math.random() * 8 + 2);
-                cattle.SetAge((int) Math.random() * 9 + 1);
-                cattle.SetCurrentCost(cattle.GetDefaultCost() * ((float) Math.random() * 30 + 80) / 100);
+                cattle.CattleWeight((int) Math.random() * 8 + 2);
+                cattle.Age((int) Math.random() * 9 + 1);
+                cattle.CurrentCost(cattle.DefaultCost() * ((float) Math.random() * 30 + 80) / 100);
                 save.farmingList.AddMarketRawCattleSellList(cattle);
             }
 
@@ -199,8 +199,8 @@ public class GameManager
 
         System.out.println("There is our resource tank. There we have ");
 
-        System.out.println("1: Corn volume " + farm.container.GetCornVolume() );
-        System.out.println("2: Water volume " + farm.container.GetWatterVolume() );
+        System.out.println("1: Corn volume " + farm.container.CornVolume() );
+        System.out.println("2: Water volume " + farm.container.WatterVolume() );
         this.FarmScene(farm);
     }
 
@@ -212,7 +212,7 @@ public class GameManager
         System.out.println("There is our raw container. There we have: ");
         for (int i = 0; i < farm.farmingList.GetRawFromFarmList().size(); i++)
         {
-            System.out.println(i + ": Name " + farm.farmingList.GetRawFromFarmList().get(i).GetName() + ", Collected  "+ (farm.GetCurrentDay()- farm.farmingList.GetRawFromFarmList().get(i).GetSpawnDay()));
+            System.out.println(i + ": Name " + farm.farmingList.GetRawFromFarmList().get(i).Name() + ", Collected  "+ (farm.CurrentDay()- farm.farmingList.GetRawFromFarmList().get(i).SpawnDay()));
         }
         System.out.println("[redirecting to main scene]");
         this.MainScene(farm);
@@ -299,7 +299,7 @@ public class GameManager
 
             for (int i = 0; i < tmp.size(); i++)
             {
-                    System.out.println(i+": name " +tmp.get(i).GetName() +", age"+ +tmp.get(i).GetAge() + ", mass is "+ tmp.get(i).GetCattleWeight());
+                    System.out.println(i+": name " +tmp.get(i).Name() +", age"+ +tmp.get(i).Age() + ", mass is "+ tmp.get(i).CattleWeight());
             }
         }
         while (!isCorrect);
@@ -404,12 +404,12 @@ public class GameManager
             }
         }while (!isCorrect);
 
-        resourse.SetVolume(input.nextInt());
+        resourse.Volume(input.nextInt());
 
-        if(farm.GetBalance()> resourse.GetVolume()* resourse.GetDefaultCost() )
+        if(farm.Balance()> resourse.Volume()* resourse.DefaultCost() )
         {
-            var price = resourse.GetVolume()* resourse.GetDefaultCost();
-            farm.container.ChangeResurseVolume(resourse, resourse.GetVolume());
+            var price = resourse.Volume()* resourse.DefaultCost();
+            farm.container.ChangeResurseVolume(resourse, resourse.Volume());
             farm.ChangeBalanse(-price);
             System.out.println("you lost " + price + " money");
 
@@ -434,7 +434,7 @@ public class GameManager
         for (var element:farm.farmingList.GetMarketRawCattleSellList())
         {
             i++;
-            System.out.println(i+ ": "+ "Name is "+ element.GetName() + ", Age is "+ element.GetAge() + ", weight is  " +element.GetCattleWeight() + " , cost "+element.GetCurrentCost() );
+            System.out.println(i+ ": "+ "Name is "+ element.Name() + ", Age is "+ element.Age() + ", weight is  " +element.CattleWeight() + " , cost "+element.CurrentCost() );
         }
         do
         {
@@ -462,7 +462,7 @@ public class GameManager
 
     }
     private boolean IsAbleToBuy(Farming farming, Farm farm) {
-        return farming.GetCurrentCost() <= farm.GetBalance();
+        return farming.CurrentCost() <= farm.Balance();
     }
     private void Start()
     {
@@ -487,8 +487,8 @@ public class GameManager
     }
     private void MainScene(Farm farm)
     {
-        System.out.println("Day: " + farm.GetCurrentDay());
-        System.out.println("Money: " + farm.GetBalance());
+        System.out.println("Day: " + farm.CurrentDay());
+        System.out.println("Money: " + farm.Balance());
         boolean isCorrect = true;
         System.out.println("What we shall to do?");
         System.out.println("1: Go to the market");

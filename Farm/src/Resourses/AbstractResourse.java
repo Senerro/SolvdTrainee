@@ -4,21 +4,22 @@ import java.io.Serializable;
 
 public class AbstractResourse implements Serializable
 {
-    private float volume = 0f;
-    private String name;
     public int ID;
+    private String name;
+    private float volume = 0f;
+    private int Chunk;
     private float defaultCost;
     private float currentCost;
 
 
-    public float GetDefaultCost() {
+    public float DefaultCost() {
         return defaultCost;
     }
-    public void SetDefaultCost(float defaultCost)
+    public void DefaultCost(float defaultCost)
     {
         this.defaultCost = defaultCost;
     }
-    public void SetCurrentCost(float currentCost)
+    public void CurrentCost(float currentCost)
     {
         this.currentCost = currentCost;
     }
@@ -30,10 +31,10 @@ public class AbstractResourse implements Serializable
     }
 
 
-    public float GetVolume() {
+    public float Volume() {
         return this.volume;
     }
-    public void SetVolume(float volume)
+    public void Volume(float volume)
     {
         this.volume = volume;
     }
@@ -42,10 +43,10 @@ public class AbstractResourse implements Serializable
         this.volume+= volume;
     }
 
-    public void SetName(String name) {
+    public void Name(String name) {
         this.name = name;
     }
-    public String GetName()
+    public String Name()
     {
         return this.name;
     }

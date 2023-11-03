@@ -9,8 +9,8 @@ public class Appletree extends FruitSpawn implements Serializable {
     public Appletree()
     {
         this.helthStatus = false;
-        this.SetName("Apple tree");
-        this.SetDefaultCost(17);
+        this.Name("Apple tree");
+        this.DefaultCost(17);
         this.SetCropYield(50);
     }
     public Boolean GetHealthStatus()

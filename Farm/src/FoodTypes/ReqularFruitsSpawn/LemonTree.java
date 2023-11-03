@@ -18,8 +18,8 @@ public class LemonTree extends FruitSpawn implements Serializable
 
     public LemonTree()
     {
-        SetName("Lemon tree");
-        this.SetDefaultCost(17);
+        Name("Lemon tree");
+        this.DefaultCost(17);
         this.SetCropYield(50);
     }
     @Override

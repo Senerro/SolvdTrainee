@@ -1,9 +1,6 @@
 package Resourses;
 
-import AbstractEntities.Cattle;
 import AbstractEntities.Farming;
-import CattleType.RawCattle;
-import Raw.AbstractRaw;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -21,20 +18,19 @@ public class ResoursesContainer implements Serializable
         this.size++;
         container.add(water);
         this.size++;
-
     }
 
     public int GetSize() {
         return this.size;
     }
 
-    public float GetCornVolume()
+    public float CornVolume()
     {
-        return this.corn.GetVolume();
+        return this.corn.Volume();
     }
-    public float GetWatterVolume()
+    public float WatterVolume()
     {
-        return this.water.GetVolume();
+        return this.water.Volume();
     }
     public void ChangeResurseVolume(AbstractResourse resourse, float volume)
     {
@@ -43,14 +39,14 @@ public class ResoursesContainer implements Serializable
 
     public boolean CheckWaterAvailability()
     {
-        return !(container.get(0).GetVolume() <= 0);
+        return !(container.get(0).Volume() <= 0);
     }
     public boolean CheckCornAvailability()
     {
-        return !(container.get(1).GetVolume() <= 0);
+        return !(container.get(1).Volume() <= 0);
     }
     public void ReduceResource(Farming farming)
     {
-          ChangeResurseVolume(farming.GetAbstractResourse(), -1*farming.GetResourseVolumRequierment());
+          ChangeResurseVolume(farming.LiquidAbstractResourse(), -1*farming.SolidResourseVolumRequierment());
     }
 }

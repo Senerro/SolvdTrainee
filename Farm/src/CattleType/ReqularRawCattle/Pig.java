@@ -1,7 +1,6 @@
 package CattleType.ReqularRawCattle;
 
 import CattleType.RawCattle;
-import Raw.Egg;
 import Raw.Meat;
 import Resourses.Corn;
 
@@ -17,13 +16,13 @@ public class Pig extends RawCattle implements Serializable {
     }
     public Pig()
     {
-        SetName("Pig");
+        Name("Pig");
         ID = 3;
-        this.SetCattleWeight(250);
-        this.SetDefaultCost(3 * GetCattleWeight());
+        this.CattleWeight(250);
+        this.DefaultCost(3 * CattleWeight());
         Corn corn = new Corn();
-        this.SetAbstractResourse(corn);
-        this.SetResourseVolumRequierment(150);
+        this.LiquidAbstractResourse(corn);
+        this.SolidResourseVolumRequierment(150);
     }
     @Override
     public void Eat()
@@ -42,12 +41,12 @@ public class Pig extends RawCattle implements Serializable {
     }
 
     @Override
-    public void GetSomeRaw() {
+    public void SomeRaw() {
 
         if (isDead())
         {
             Meat meat = new Meat();
-            this.AddRaw(meat);
+            this.Raw(meat);
         }
 
     }

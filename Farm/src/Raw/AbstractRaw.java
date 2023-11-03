@@ -1,44 +1,43 @@
 package Raw;
 
+import Resourses.AbstractResourse;
+
 import java.io.Serializable;
 
-public class AbstractRaw implements Serializable
+public class AbstractRaw extends AbstractResourse implements Serializable
 {
-    public int ID;
-    private String name;
+
+    private float volume = 0f;
     private int spawnDay;
-    private float defaultCost;
+
     private float shelfLife = 0f;
-    public float GetDefaultCost() {
-        return defaultCost;
-    }
-    public void SetDefaultCost(float defaultCost)
-    {
-        this.defaultCost = defaultCost;
-    }
-    public float GetShelfLife() {
+    public float ShelfLife() {
         return shelfLife;
     }
 
-    public void SetShelfLife(float shelfLife) {
+    public void ShelfLife(float shelfLife) {
         this.shelfLife = shelfLife;
     }
-    public int GetSpawnDay()
+    public int SpawnDay()
     {
         return this.spawnDay;
     }
-    public void SetSpawnDay(int spawnDay)
+    public void SpawnDay(int spawnDay)
     {
         this.spawnDay = spawnDay;
     }
-    public void Rot()
+    public boolean IsRot(int today)
+    {
+        if(SpawnDay() + ShelfLife() < today)
+        {
+            Rot(this);
+        }
+        return false;
+    }
+
+    private void Rot(AbstractRaw raw)
     {
 
     }
-    public String GetName() {
-        return this.name;
-    }
-    public void SetName(String name) {
-        this.name = name;
-    }
+
 }

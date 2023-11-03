@@ -16,8 +16,8 @@ public class Cabbage extends VegetableSpawn implements Serializable {
     }
     public Cabbage()
     {
-        SetName("Cabbage");
-        this.SetDefaultCost(2);
+        Name("Cabbage");
+        this.DefaultCost(2);
 
     }
     @Override

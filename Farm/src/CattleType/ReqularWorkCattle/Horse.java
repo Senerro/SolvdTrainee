@@ -28,8 +28,8 @@ public class Horse extends WorkCastle implements Serializable {
     }
 
     public Horse() {
-        SetName("Horse");
-        this.SetDefaultCost(1100);
+        Name("Horse");
+        this.DefaultCost(1100);
     }
     @Override
     public void Eat()
