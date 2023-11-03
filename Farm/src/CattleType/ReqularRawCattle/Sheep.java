@@ -17,6 +17,7 @@ public class Sheep extends RawCattle implements Serializable {
         Watter water = new Watter();
         this.SetAbstractResourse(water);
         this.SetResourseVolumRequierment(80);
+        SetName("Sheep");
     }
     public void Eat()
     {
