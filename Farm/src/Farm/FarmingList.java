@@ -21,6 +21,7 @@ public class FarmingList implements Serializable {
     ArrayList<AbstractRaw> rawFarmArrayList = new ArrayList<>();
     ArrayList<AbstractRaw> rawMarcketArrayList = new ArrayList<>();
     ArrayList<AbstractResourse> resoursesArrayList = new ArrayList<>();
+
     public void PurgeRawFarmList()
     {
         this.rawFarmArrayList.clear();

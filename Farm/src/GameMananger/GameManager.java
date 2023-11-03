@@ -12,6 +12,7 @@ import Resourses.AbstractResourse;
 import Resourses.Corn;
 import Resourses.Watter;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameManager
@@ -248,34 +249,36 @@ public class GameManager
             }
             while (!this.isCorrect);
 
-            System.out.println(chickenCount + "chicken, " + cowCount + " cow, "+ pigCount + " pigs and "+ sheepCount + "sheep");
-            do
-            {
-                System.out.println("Do you want to kill someone?");
-                System.out.println("============================");
-                System.out.println("1: Yes");
-                System.out.println("2: No, leave");
-                this.answer  = input.nextInt();
-                switch (this.answer ) {
-                    case 1:
-                        this.isCorrect = true;
-                        PreparationToKill(farm); break;
-                    case 2:
-                        this.isCorrect = true;
-                        FarmScene(farm);break;
-                    default:
-                        this.isCorrect = false;
-                        System.out.println("Uncorrected answer. Try once more");
-                }
-            }
-            while (!this.isCorrect);
+
         }
+        System.out.println(chickenCount + "chicken, " + cowCount + " cow, "+ pigCount + " pigs and "+ sheepCount + "sheep");
+        do
+        {
+            System.out.println("Do you want to kill someone?");
+            System.out.println("============================");
+            System.out.println("1: Yes");
+            System.out.println("2: No, leave");
+            this.answer  = input.nextInt();
+            switch (this.answer ) {
+                case 1:
+                    this.isCorrect = true;
+                    PreparationToKill(farm); break;
+                case 2:
+                    this.isCorrect = true;
+                    FarmScene(farm);break;
+                default:
+                    this.isCorrect = false;
+                    System.out.println("Uncorrected answer. Try once more");
+            }
+        }
+        while (!this.isCorrect);
         this.MainScene(farm);
     }
 
     private void PreparationToKill(Farm farm) {
         boolean isCorrect = true;
         int number = 0;
+        ArrayList<RawCattle> tmp = new ArrayList<RawCattle>();
         System.out.println("Who will be killed?");
         System.out.println("===================");
         do {
@@ -287,42 +290,38 @@ public class GameManager
 
             System.out.println("Here is your choosen animal");
 
+
             for (int i = 0; i < farm.farmingList.GetRawCattleList().size(); i++)
-            {
                 if(farm.farmingList.GetRawCattleList().get(i).ID == this.answer)
                 {
-                    number += 1;
-                    System.out.println(number+": name " +farm.farmingList.GetRawCattleList().get(i).GetName() +", age"+ +farm.farmingList.GetRawCattleList().get(i).GetAge() + ", mass is "+ farm.farmingList.GetRawCattleList().get(i).GetCattleWeight());
+                    tmp.add(farm.farmingList.GetRawCattleList().get(i));
                 }
+
+            for (int i = 0; i < tmp.size(); i++)
+            {
+                    System.out.println(i+": name " +tmp.get(i).GetName() +", age"+ +tmp.get(i).GetAge() + ", mass is "+ tmp.get(i).GetCattleWeight());
             }
         }
         while (!isCorrect);
 
         System.out.println("Choose number of animal");
 
-        for (int i = 0; i < farm.farmingList.GetRawCattleList().size(); i++)
-        {
-            if(farm.farmingList.GetRawCattleList().get(i).ID == this.answer)
-            {
-                number += 1;
-                System.out.println(number+": name " +farm.farmingList.GetRawCattleList().get(i).GetName() +", age"+ +farm.farmingList.GetRawCattleList().get(i).GetAge() + ", mass is "+ farm.farmingList.GetRawCattleList().get(i).GetCattleWeight());
-            }
-        }
-        int pointer =  input.nextInt()-1;
-        int currentPointer=0;
-        int globalPoiner = 0;
-        while (currentPointer!=pointer)
-        {
-            for (int i = 0; i < farm.farmingList.GetRawCattleList().size(); i++)
-            {
-                if (farm.farmingList.GetRawCattleList().get(i).ID == this.answer)
-                {
-                    currentPointer++;
-                }
-                globalPoiner++;
-            }
-        }
-        farm.farmingList.GetRawCattleList().get(globalPoiner).Death();
+
+//        int pointer =  input.nextInt()-1;
+//        int currentPointer=0;
+//        int globalPoiner = 0;
+//        while (currentPointer!=pointer)
+//        {
+//            for (int i = 0; i < farm.farmingList.GetRawCattleList().size(); i++)
+//            {
+//                if (farm.farmingList.GetRawCattleList().get(i).ID == this.answer)
+//                {
+//                    currentPointer++;
+//                }
+//                globalPoiner++;
+//            }
+//        }
+        tmp.get(0).Death(farm, tmp.get(0));
 
         FarmCattleScene(farm);
     }
@@ -448,8 +447,9 @@ public class GameManager
                 case 1:  this.isCorrect = true;
                     System.out.println("Enter number of your choosing");
                     this.answer = input.nextInt();
-                        if(IsAbleToBuy(farm.farmingList.GetMarketRawCattleSellList().get(this.answer), farm))
-                            farm.BuySomeFarming(farm.farmingList.GetMarketRawCattleSellList().get(this.answer), farm);
+                        if(IsAbleToBuy(farm.farmingList.GetMarketRawCattleSellList().get(this.answer-1), farm))
+                            farm.BuySomeFarming(farm.farmingList.GetMarketRawCattleSellList().get(this.answer-1), farm);
+
                         else {
                             System.out.println("You don't have enough money");
                         }

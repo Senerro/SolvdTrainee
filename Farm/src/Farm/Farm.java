@@ -99,6 +99,7 @@ public class Farm implements Serializable {
         if (IsAbleToBuy(production)) {
             farmingList.AddRawCattle(production);
             farm.ChangeBalanse(-production.GetCurrentCost());
+            farm.farmingList.GetMarketRawCattleSellList().remove(production);
             return true;
         }
         return false;
