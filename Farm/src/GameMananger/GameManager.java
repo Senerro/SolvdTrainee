@@ -124,7 +124,7 @@ public class GameManager
             switch (this.answer ) {
                 case 1:
                     this.isCorrect = true;
-                    FarmRawScene(farm);
+                    FarmResursesScene(farm);2
                     break;
                 case 2:
                     this.isCorrect = true;
@@ -132,7 +132,7 @@ public class GameManager
                     break;
                 case 3:
                     this.isCorrect = true;
-                    FarmResursesScene(farm);
+                    FarmRawScene(farm);
                     break;
                 case 4:
                     this.isCorrect = true;
@@ -374,7 +374,7 @@ public class GameManager
             System.out.println("you lost " + price + " money");
 
             System.out.println("[redirecting to the marcket scene]\n");
-            this.MarcketScene(farm);
+            this.MarcketBuyResursesScene(farm);
         }
         else
         {
