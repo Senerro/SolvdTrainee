@@ -1,6 +1,11 @@
 package GameMananger;
 
 import AbstractEntities.Farming;
+import CattleType.RawCattle;
+import CattleType.ReqularRawCattle.Chicken;
+import CattleType.ReqularRawCattle.Cow;
+import CattleType.ReqularRawCattle.Pig;
+import CattleType.ReqularRawCattle.Sheep;
 import Farm.Farm;
 import File.JsonFileConverter;
 import Resourses.AbstractResourse;
@@ -16,12 +21,45 @@ public class GameManager
     public boolean isCorrect = true;
     public GameManager()
         {
+
             MainMenu();
         }
+    public GameManager(Farm save)
+    {
+        MainMenu();
+    }
     public static class TradeGenerator
     {
-        public static void GenerateMarketRawTrades()
+        public static void GenerateMarketRawTrades(Farm farming)
         {
+            double random = Math.random()*6+2;
+            var iterator = (int)Math.round(random);
+            for(int i =  0; i < iterator; i++)
+            {
+                GenerateMarketRaw(farming);
+            }
+        }
+
+        public static void GenerateMarketRaw( Farm save)
+        {
+            double random = Math.random()*6+2;
+            int iterator = (int)Math.round(random);
+            RawCattle farming;
+            switch (iterator)
+            {
+                case 1:  farming = new Chicken(); GenerateRawValue(farming, save);break;
+                case 2:  farming = new Cow();GenerateRawValue(farming, save);break;
+                case 3:  farming = new Pig();GenerateRawValue(farming, save);break;
+                case 4:  farming = new Sheep();GenerateRawValue(farming, save);break;
+                default: GenerateMarketRaw(save);
+            }
+        }
+        public static void GenerateRawValue( RawCattle cattle, Farm save)
+        {
+            cattle.SetCattleWeight((int)Math.random()*8+2);
+            cattle.SetAge((int)Math.random()*9+1);
+            cattle.SetCurrentCost(cattle.GetDefaultCost()*((float) Math.random()*30+80)/100);
+            save.farmingList.AddRawCattle(cattle);
 
         }
     }
@@ -105,7 +143,7 @@ public class GameManager
     private Farm ChangeFarmState(Farm farm)
     {
         farm.ChangeCurrentDay();
-
+        TradeGenerator.GenerateMarketRawTrades(farm);
         farm.ChangeCurrentResurse(farm);
         return farm;
     }
@@ -124,7 +162,7 @@ public class GameManager
             switch (this.answer ) {
                 case 1:
                     this.isCorrect = true;
-                    FarmResursesScene(farm);2
+                    FarmResursesScene(farm);
                     break;
                 case 2:
                     this.isCorrect = true;
@@ -427,6 +465,8 @@ public class GameManager
     private void Start()
     {
         Farm save = new Farm();
+        TradeGenerator.GenerateMarketRaw(save);
+
         MainScene(save);
     }
     private void Start(Farm save)
@@ -478,6 +518,6 @@ public class GameManager
     public static void main(String[] args)
     {
         var game = new GameManager();
-        System.out.println("All is working");
+      //  game.MainMenu();
     }
 }
