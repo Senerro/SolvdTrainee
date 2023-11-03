@@ -94,10 +94,11 @@ public class Farm implements Serializable {
             farmingList.AddVegetableSpawn(acquisition);
         }
     }
-    public boolean BuySomeFarming(RawCattle production)
+    public boolean BuySomeFarming(RawCattle production, Farm farm)
     {
         if (IsAbleToBuy(production)) {
             farmingList.AddRawCattle(production);
+            farm.ChangeBalanse(-production.GetCurrentCost());
             return true;
         }
         return false;

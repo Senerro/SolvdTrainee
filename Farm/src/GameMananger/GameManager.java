@@ -435,7 +435,7 @@ public class GameManager
         for (var element:farm.farmingList.GetMarketRawCattleSellList())
         {
             i++;
-            System.out.println(i+ ": "+ "Name is "+ element.GetName() + ", Age is "+ element.GetAge() + ", weight is  " +element.GetCattleWeight() );
+            System.out.println(i+ ": "+ "Name is "+ element.GetName() + ", Age is "+ element.GetAge() + ", weight is  " +element.GetCattleWeight() + " , cost "+element.GetCurrentCost() );
         }
         do
         {
@@ -446,11 +446,10 @@ public class GameManager
             switch (this.answer)
             {
                 case 1:  this.isCorrect = true;
-
                     System.out.println("Enter number of your choosing");
                     this.answer = input.nextInt();
                         if(IsAbleToBuy(farm.farmingList.GetMarketRawCattleSellList().get(this.answer), farm))
-                            farm.BuySomeFarming(farm.farmingList.GetMarketRawCattleSellList().get(this.answer));
+                            farm.BuySomeFarming(farm.farmingList.GetMarketRawCattleSellList().get(this.answer), farm);
                         else {
                             System.out.println("You don't have enough money");
                         }
