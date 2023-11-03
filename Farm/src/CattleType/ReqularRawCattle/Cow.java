@@ -1,6 +1,9 @@
 package CattleType.ReqularRawCattle;
 
 import CattleType.RawCattle;
+import Raw.Egg;
+import Raw.Meat;
+import Raw.Milk;
 import Resourses.AbstractResourse;
 import Resourses.Corn;
 import Resourses.Watter;
@@ -45,7 +48,13 @@ public class Cow extends RawCattle implements Serializable {
 
     @Override
     public void GetSomeRaw() {
-        System.out.println("Generic milk");
-        if (isDead()) System.out.println("Generic myself meat");
+        Milk milk = new Milk();
+        this.AddRaw(milk);
+
+        if (isDead())
+        {
+            Meat meat = new Meat();
+            this.AddRaw(meat);
+        }
     }
 }

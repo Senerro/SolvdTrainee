@@ -1,11 +1,15 @@
 package AbstractEntities;
 
+import Raw.AbstractRaw;
 import Resourses.AbstractResourse;
+import Resourses.ResoursesContainer;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public abstract class Farming implements Serializable
 {
+    public ResoursesContainer container = new ResoursesContainer();
     private AbstractResourse resourse;
     private float resourseVolumRequierment;
     public void SetAbstractResourse(AbstractResourse resourse)
@@ -28,7 +32,7 @@ public abstract class Farming implements Serializable
     protected float currentCost;
     protected String name;
     public int ID;
-
+    private ArrayList<AbstractRaw> rawResult = new ArrayList<>();
     public String GetName()
     {
         return name;
@@ -40,8 +44,14 @@ public abstract class Farming implements Serializable
         else
             this.name = "unknown";
     }
-
-
+    public ArrayList<AbstractRaw> GetRawResult()
+    {
+        return this.GetRawResult();
+    }
+    public void AddRaw(AbstractRaw raw)
+    {
+        this.rawResult.add(raw);
+    }
 
     public float GetCurrentCost() {
         return currentCost;

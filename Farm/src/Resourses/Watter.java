@@ -1,6 +1,8 @@
 package Resourses;
 
-public class Watter extends AbstractResourse
+import java.io.Serializable;
+
+public class Watter extends AbstractResourse implements Serializable
 {
     public Watter()
     {

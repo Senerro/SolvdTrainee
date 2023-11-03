@@ -21,7 +21,7 @@ import java.io.Serializable;
 public class Farm implements Serializable {
 
     private static int purchase;
-    private int currentDay;
+    private int currentDay = 1;
     private float balance = 5000;
     public ResoursesContainer container = new ResoursesContainer();
 
@@ -29,8 +29,13 @@ public class Farm implements Serializable {
         return balance;
     }
 
+
     public void SetBalance(float balance) {
         this.balance = balance;
+    }
+    public void ChangeBalanse(float balance)
+    {
+        this.balance += balance;
     }
 
     public int GetCurrentDay() {
@@ -127,7 +132,6 @@ public class Farm implements Serializable {
 
             acquisition.SetAge(age);
             acquisition.SetAge(i);
-            acquisition.SetChickenSex(sex);
             farmingList.AddRawCattle(acquisition);
         }
     }
@@ -208,5 +212,14 @@ public class Farm implements Serializable {
             farm.container.ReduceResource(farm.farmingList.GetRawCattleList().get(i));
         }
 
+    }
+    public float GetAllRawCost()
+    {
+        float totalPrice = 0f;
+        for (int i = 0; i < this.farmingList.GetRawFromFarmList().size(); i++)
+        {
+           totalPrice +=  this.farmingList.GetRawFromFarmList().get(i).GetDefaultCost();
+        }
+        return totalPrice;
     }
 }

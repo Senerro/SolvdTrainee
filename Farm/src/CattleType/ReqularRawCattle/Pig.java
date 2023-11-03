@@ -1,6 +1,8 @@
 package CattleType.ReqularRawCattle;
 
 import CattleType.RawCattle;
+import Raw.Egg;
+import Raw.Meat;
 import Resourses.Corn;
 
 import java.io.Serializable;
@@ -41,9 +43,11 @@ public class Pig extends RawCattle implements Serializable {
 
     @Override
     public void GetSomeRaw() {
+
         if (isDead())
-        {   System.out.println("Generic myself meat");
-            System.out.println("Generic myself lard");
+        {
+            Meat meat = new Meat();
+            this.AddRaw(meat);
         }
 
     }

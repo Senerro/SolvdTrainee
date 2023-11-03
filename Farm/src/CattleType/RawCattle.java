@@ -23,6 +23,6 @@ public abstract class RawCattle extends Cattle implements Serializable
     }
     public void Death()
     {
-        int b = 6/0;
+        this.GetSomeRaw();
     }
 }

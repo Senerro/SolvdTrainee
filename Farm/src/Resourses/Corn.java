@@ -1,6 +1,8 @@
 package Resourses;
 
-public class Corn extends AbstractResourse{
+import java.io.Serializable;
+
+public class Corn extends AbstractResourse implements Serializable {
     public Corn()
     {
         this.SetDefaultCost(0.5f);

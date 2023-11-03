@@ -5,6 +5,7 @@ import CattleType.WorkCastle;
 import FoodTypes.FruitSpawn;
 import FoodTypes.VegetableSpawn;
 import Raw.AbstractRaw;
+import Resourses.AbstractResourse;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,6 +20,17 @@ public class FarmingList implements Serializable {
 
     ArrayList<AbstractRaw> rawFarmArrayList = new ArrayList<>();
     ArrayList<AbstractRaw> rawMarcketArrayList = new ArrayList<>();
+    ArrayList<AbstractResourse> resoursesArrayList = new ArrayList<>();
+    public void PurgeRawFarmList()
+    {
+        this.rawFarmArrayList.clear();
+    }
+
+    public ArrayList<AbstractResourse> GetResoursesArrayList()
+    {
+        return this.resoursesArrayList;
+    }
+
 
     public ArrayList<VegetableSpawn> GetVegetablesList() {
         return vegetablesList;
@@ -81,6 +93,7 @@ public class FarmingList implements Serializable {
     public ArrayList<AbstractRaw> GetRawFromFarmList() {
         return this.rawFarmArrayList;
     }
+
 
     public ArrayList<AbstractRaw> GetRawFromMarketList() {
         return this.rawFarmArrayList;

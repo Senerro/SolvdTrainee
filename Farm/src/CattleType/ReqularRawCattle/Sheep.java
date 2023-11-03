@@ -1,6 +1,9 @@
 package CattleType.ReqularRawCattle;
 
 import CattleType.RawCattle;
+import Raw.Meat;
+import Raw.Milk;
+import Raw.Wool;
 import Resourses.Watter;
 
 import java.io.Serializable;
@@ -18,6 +21,7 @@ public class Sheep extends RawCattle implements Serializable {
     public void Eat()
     {
         System.out.println("I need corn");
+
     }
 
     @Override
@@ -32,12 +36,15 @@ public class Sheep extends RawCattle implements Serializable {
 
     @Override
     public void GetSomeRaw() {
-        System.out.println("Generic wool");
-        System.out.println("Generic sheep milk");
+        Wool wool = new Wool();
+        this.AddRaw(wool);
+        Milk milk = new Milk();
+        this.AddRaw(milk);
 
         if (isDead())
-        {   System.out.println("Generic myself meat");
+        {
+            Meat meat = new Meat();
+            this.AddRaw(meat);
         }
-
     }
 }

@@ -3,6 +3,9 @@ package GameMananger;
 import AbstractEntities.Farming;
 import Farm.Farm;
 import File.JsonFileConverter;
+import Resourses.AbstractResourse;
+import Resourses.Corn;
+import Resourses.Watter;
 
 import java.util.Scanner;
 
@@ -15,7 +18,13 @@ public class GameManager
         {
             MainMenu();
         }
+    public static class TradeGenerator
+    {
+        public static void GenerateMarketRawTrades()
+        {
 
+        }
+    }
     private void MainMenu()
     {
 
@@ -138,19 +147,42 @@ public class GameManager
         while (!this.isCorrect);
     }
 
+    private void FarmResursesScene(Farm farm)
+    {
+
+        if(!farm.container.CheckCornAvailability())
+            System.out.println("We don't have corn");
+        if(!farm.container.CheckWaterAvailability())
+            System.out.println("We don't have any water");
+
+        System.out.println("There is our resource tank. There we have ");
+
+        System.out.println("1: Corn volume " + farm.container.GetCornVolume() );
+        System.out.println("2: Water volume " + farm.container.GetWatterVolume() );
+        this.FarmScene(farm);
+    }
+
     private void FarmRawScene(Farm farm)
     {
-        System.out.println("There is our resourse tank. There we have ");
+        if(farm.farmingList.GetRawFromFarmList().isEmpty())
+            System.out.println("We don't have any raw");
+
+        System.out.println("There is our raw container. There we have: ");
         for (int i = 0; i < farm.farmingList.GetRawFromFarmList().size(); i++)
         {
             System.out.println(i + ": Name " + farm.farmingList.GetRawFromFarmList().get(i).GetName() + ", Collected  "+ (farm.GetCurrentDay()- farm.farmingList.GetRawFromFarmList().get(i).GetSpawnDay()));
         }
+        System.out.println("[redirecting to main scene]");
+        this.MainScene(farm);
     }
 
     private void FarmCattleScene(Farm farm)
     {
+        if(farm.farmingList.GetRawCattleList().isEmpty())
+            System.out.println("We don't have any cattle");
+
         int chickenCount = 0; int cowCount = 0; int pigCount = 0; int sheepCount = 0;
-        System.out.println("Right now we have " + farm.farmingList.GetRawCattleList().size() + "amount of right castle");
+        System.out.println("Right now we have " + farm.farmingList.GetRawCattleList().size() + "amount of castles");
         for(int i = 0; i < farm.farmingList.GetRawCattleList().size(); i++)
         {
             do {
@@ -197,6 +229,7 @@ public class GameManager
             }
             while (!this.isCorrect);
         }
+        this.MainScene(farm);
     }
 
     private void PreparationToKill(Farm farm) {
@@ -276,8 +309,87 @@ public class GameManager
         while (!this.isCorrect);
     }
 
+    private void MarcketSellRawScene(Farm farm)
+    {
+        System.out.println("Here is raw selling place");
+        do {
+            System.out.println("Are you ready to sell all your raw");
+            System.out.println("1: Yes");
+            System.out.println("2: No, go back");
+            this.answer = input.nextInt();
+            switch (this.answer)
+            {
+                case 1:
+                    System.out.println("You gained " + farm.GetAllRawCost() + " money\n");
+                    farm.ChangeBalanse(farm.GetAllRawCost());
+                    farm.farmingList.PurgeRawFarmList();
+                    MarcketScene(farm);
+                    break;
+                case 2: this.MarcketScene(farm);
+            }
+        }
+        while (!this.isCorrect);
+
+    }
+
+    private void MarcketBuyResursesScene(Farm farm)
+    {
+        AbstractResourse resourse = new AbstractResourse();
+        System.out.println("Here is resource spot");
+        do {
+
+            System.out.println("What are you going to buy?");
+            System.out.println("1: Corn");
+            System.out.println("2: Water");
+            System.out.println("3: Nothing, go back");
+            this.answer = input.nextInt();
+            switch (this.answer)
+            {
+                case 1:
+                    this.isCorrect = true;
+                    resourse = new Corn();
+                    System.out.println("How much corn do you need?");
+
+                    break;
+                case 2:
+                    this.isCorrect = true;
+                    resourse = new Watter();
+                    System.out.println("How much water do you need?");
+                    break;
+                case 3:
+                    this.isCorrect = true;
+                    System.out.println("[Returning to the MarketScene]]");
+                    this.MarcketScene(farm);
+                default: this.isCorrect = false;
+            }
+        }while (!isCorrect);
+
+        resourse.SetVolume(input.nextInt());
+
+        if(farm.GetBalance()> resourse.GetVolume()* resourse.GetDefaultCost() )
+        {
+            var price = resourse.GetVolume()* resourse.GetDefaultCost();
+            farm.container.ChangeResurseVolume(resourse, resourse.GetVolume());
+            farm.ChangeBalanse(-price);
+            System.out.println("you lost " + price + " money");
+
+            System.out.println("[redirecting to the marcket scene]\n");
+            this.MarcketScene(farm);
+        }
+        else
+        {
+            System.out.println("You don't have enough money");
+            this.MarcketBuyResursesScene(farm);
+        }
+    }
+
     private void MarcketBuyAnimalScene(Farm farm) {
-        System.out.println("Here is our market place Look at these trades:");
+        if(farm.farmingList.GetMarketRawCattleSellList().isEmpty())
+        {
+            System.out.println("Unlucky day. Come later");
+            this.MarcketScene(farm);
+        }
+        System.out.println("Here is our market place. Look at these trades:");
         int i = 0;
         for (var element:farm.farmingList.GetMarketRawCattleSellList())
         {
@@ -297,7 +409,7 @@ public class GameManager
                     System.out.println("Enter number of your choosing");
                     this.answer = input.nextInt();
                         if(IsAbleToBuy(farm.farmingList.GetMarketRawCattleSellList().get(this.answer), farm))
-                    farm.BuySomeFarming(farm.farmingList.GetMarketRawCattleSellList().get(this.answer));
+                            farm.BuySomeFarming(farm.farmingList.GetMarketRawCattleSellList().get(this.answer));
                         else {
                             System.out.println("You don't have enough money");
                         }
@@ -362,6 +474,7 @@ public class GameManager
         }
         while (!isCorrect);
     }
+
     public static void main(String[] args)
     {
         var game = new GameManager();

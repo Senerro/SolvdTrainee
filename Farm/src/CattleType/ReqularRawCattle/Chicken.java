@@ -1,16 +1,16 @@
 package CattleType.ReqularRawCattle;
 
 import CattleType.RawCattle;
+import Raw.AbstractRaw;
+import Raw.Egg;
+import Raw.Meat;
 import Resourses.Corn;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Chicken extends RawCattle implements Serializable {
-    private boolean SEX;
-    public Boolean GetSex()
-    {
-        return SEX;
-    }
+
 
 
     public Chicken()
@@ -22,16 +22,12 @@ public class Chicken extends RawCattle implements Serializable {
         Corn corn = new Corn();
         this.SetAbstractResourse(corn);
         this.SetResourseVolumRequierment(50);
-        ;
-    }
-    public void SetChickenSex (boolean sex)
-    {
-        this.SEX=sex;
     }
     @Override
     public void Eat()
     {
         System.out.println("I need chicken feed");
+
     }
 
     @Override
@@ -46,9 +42,16 @@ public class Chicken extends RawCattle implements Serializable {
 
     @Override
     public void GetSomeRaw() {
-        System.out.println("Generic eggs");
-        System.out.println("Generic feathers");
-        if (isDead()) System.out.println("Generic myself meat");
+
+
+        Egg egg = new Egg();
+        this.AddRaw(egg);
+
+        if (isDead())
+        {
+            Meat meat = new Meat();
+            this.AddRaw(meat);
+        }
     }
 }
 
