@@ -21,7 +21,6 @@ public class GameManager
     public boolean isCorrect = true;
     public GameManager()
         {
-
             MainMenu();
         }
     public GameManager(Farm save)
@@ -30,7 +29,7 @@ public class GameManager
     }
     public static class TradeGenerator
     {
-        public static void GenerateMarketRawTrades(Farm farming)
+        public static void GenerateMarketRawCattleTrades(Farm farming)
         {
             double random = Math.random()*6+2;
             var iterator = (int)Math.round(random);
@@ -42,7 +41,7 @@ public class GameManager
 
         public static void GenerateMarketRaw( Farm save)
         {
-            double random = Math.random()*6+2;
+            double random = Math.random()*5;
             int iterator = (int)Math.round(random);
             RawCattle farming;
             switch (iterator)
@@ -56,10 +55,14 @@ public class GameManager
         }
         public static void GenerateRawValue( RawCattle cattle, Farm save)
         {
-            cattle.SetCattleWeight((int)Math.random()*8+2);
-            cattle.SetAge((int)Math.random()*9+1);
-            cattle.SetCurrentCost(cattle.GetDefaultCost()*((float) Math.random()*30+80)/100);
-            save.farmingList.AddRawCattle(cattle);
+            double a = Math.random()*5+2;
+            int iterator = (int)Math.round(a);
+            for (int i = 0; i < iterator; i++) {
+                cattle.SetCattleWeight((int) Math.random() * 8 + 2);
+                cattle.SetAge((int) Math.random() * 9 + 1);
+                cattle.SetCurrentCost(cattle.GetDefaultCost() * ((float) Math.random() * 30 + 80) / 100);
+                save.farmingList.AddMarketRawCattleSellList(cattle);
+            }
 
         }
     }
@@ -143,7 +146,7 @@ public class GameManager
     private Farm ChangeFarmState(Farm farm)
     {
         farm.ChangeCurrentDay();
-        TradeGenerator.GenerateMarketRawTrades(farm);
+        TradeGenerator.GenerateMarketRawCattleTrades(farm);
         farm.ChangeCurrentResurse(farm);
         return farm;
     }
@@ -422,7 +425,7 @@ public class GameManager
     }
 
     private void MarcketBuyAnimalScene(Farm farm) {
-        if(farm.farmingList.GetMarketRawCattleSellList().isEmpty())
+        if(farm.farmingList.GetMarketRawCattleSellList().size() == 0)
         {
             System.out.println("Unlucky day. Come later");
             this.MarcketScene(farm);
