@@ -1,23 +1,29 @@
 package CattleType.ReqularRawCattle;
 
 import CattleType.RawCattle;
-import Raw.Meat;
-import Raw.Milk;
-import Raw.Wool;
-import Resourses.Watter;
+import Raw.*;
+import Resourses.Corn;
+import Resourses.Water;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Sheep extends RawCattle implements Serializable {
     public Sheep()
     {
-        ID = 4;
-        this.CattleWeight(90.3f);
-        this.DefaultCost(4.5f * CattleWeight());
-        Watter water = new Watter();
-        this.LiquidAbstractResourse(water);
-        this.SolidResourseVolumRequierment(80);
         Name("Sheep");
+
+        Corn corn = new Corn();
+        Water water = new Water();
+
+        this.CattleWeight(850);
+        this.DefaultCost(2.5f);
+        this.DefaultCost(this.DefaultCost() * CattleWeight());
+        this.LiquidAbstractResource(water);
+        this.LiquidResourceVolumeRequirement(50);
+        this.SolidAbstractResource(corn);
+        this.SolidResourceVolumeRequirement(50);
+
     }
     public void Eat()
     {
@@ -36,16 +42,18 @@ public class Sheep extends RawCattle implements Serializable {
     }
 
     @Override
-    public void SomeRaw() {
-        Wool wool = new Wool();
-        this.Raw(wool);
+    public ArrayList<AbstractRaw> Harvest() {
+
+        ArrayList<AbstractRaw> rawArrayList = new ArrayList<>();
         Milk milk = new Milk();
-        this.Raw(milk);
+        rawArrayList.add(milk);
+        Wool wool = new Wool();
 
         if (isDead())
         {
             Meat meat = new Meat();
-            this.Raw(meat);
+            rawArrayList.add(meat);
         }
+        return rawArrayList;
     }
 }

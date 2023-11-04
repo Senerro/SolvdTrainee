@@ -8,21 +8,17 @@ import java.util.ArrayList;
 public class ResoursesContainer implements Serializable
 {
     Corn corn = new Corn();
-    Watter water = new Watter();
-    int size = 0;
+    Water water = new Water();
     ArrayList<AbstractResourse> container = new ArrayList<AbstractResourse>();
 
     public ResoursesContainer()
     {
         container.add(corn);
-        this.size++;
         container.add(water);
-        this.size++;
+
     }
 
-    public int GetSize() {
-        return this.size;
-    }
+
 
     public float CornVolume()
     {
@@ -32,10 +28,21 @@ public class ResoursesContainer implements Serializable
     {
         return this.water.Volume();
     }
-    public void ChangeResurseVolume(AbstractResourse resourse, float volume)
+    public void ChangeResurсeVolume(AbstractResourse resource, float volume)
     {
-          container.get(resourse.ID-1).ChangeVolume(volume);
+        boolean isSpotted = false;
+                do
+                {
+                    for (int i = 0; i < container.size(); i++)
+                        if(container.get(i).getClass() == (resource.getClass()))
+                        {
+                            container.get(i).ChangeVolume(volume);
+                            isSpotted = true;
+                        }
+                }
+                while (!isSpotted);
     }
+
 
     public boolean CheckWaterAvailability()
     {
@@ -47,6 +54,7 @@ public class ResoursesContainer implements Serializable
     }
     public void ReduceResource(Farming farming)
     {
-          ChangeResurseVolume(farming.LiquidAbstractResourse(), -1*farming.SolidResourseVolumRequierment());
+            ChangeResurсeVolume(farming.SolidAbstractResource(),-1*farming.SolidResourceVolumeRequirement());
+            ChangeResurсeVolume(farming.LiquidAbstractResource(), -1*farming.LiquidResourceVolumeRequirement());
     }
 }

@@ -1,22 +1,34 @@
 package CattleType.ReqularWorkCattle;
 
 import CattleType.WorkCastle;
+import Resourses.Corn;
+import Resourses.Water;
 
 import java.io.Serializable;
 
 public class Bull extends WorkCastle implements Serializable {
     private float tonnage;
 
-    public float GetTonnage() {
+    public float Tonnage() {
         return tonnage;
     }
-    public void SetTonage(float tonage)
+    public void Tonnage(float tonnage)
     {this.tonnage = tonnage;}
 
     public Bull()
     {
         Name("Bull");
-        this.DefaultCost(895);
+
+        Corn corn = new Corn();
+        Water water = new Water();
+
+
+        this.DefaultCost(2.5f);
+        this.DefaultCost(this.DefaultCost() * this.Tonnage());
+        this.LiquidAbstractResource(water);
+        this.LiquidResourceVolumeRequirement(50);
+        this.SolidAbstractResource(corn);
+        this.SolidResourceVolumeRequirement(50);
     }
     @Override
     public void Eat()

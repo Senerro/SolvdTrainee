@@ -21,8 +21,8 @@ import java.io.Serializable;
 public class Farm implements Serializable {
 
     private static int purchase;
-    private int currentDay = 1;
-    private float balance = 5000;
+    private static int currentDay = 1;
+    private float balance = 500000;
     public ResoursesContainer container = new ResoursesContainer();
 
     public float Balance() {
@@ -38,7 +38,7 @@ public class Farm implements Serializable {
         this.balance += balance;
     }
 
-    public int CurrentDay() {
+    public static int CurrentDay() {
         return currentDay;
     }
     public void ChangeCurrentDay()
@@ -56,9 +56,9 @@ public class Farm implements Serializable {
         {
             var acquisition = new Appletree();
             acquisition.Name("Apple tree number " + i + " from procurement " + purchase);
-            acquisition.SetCropYield(50);
+            acquisition.CropYield(50);
             acquisition.Sort(sort);
-            farmingList.AddFruitSpawn(acquisition);
+            farmingList.FruitSpawn(acquisition);
         }
     }
     public void BullPurchase (int count, int age, float tonnage)
@@ -68,9 +68,9 @@ public class Farm implements Serializable {
         {
             var acquisition = new Bull();
             acquisition.Name("Bull number " + i + " from procurement " + purchase);
-            acquisition.SetTonage(tonnage);
+            acquisition.Tonnage(tonnage);
             acquisition.Age(age);
-            farmingList.AddWorkCastles(acquisition);
+            farmingList.WorkCastles(acquisition);
         }
     }
     public void PlantCabbage (int count, String sort)
@@ -80,15 +80,15 @@ public class Farm implements Serializable {
         {
             var acquisition = new Cabbage();
             acquisition.Sort(sort);
-            farmingList.AddVegetableSpawn(acquisition);
+            farmingList.VegetableSpawn(acquisition);
         }
     }
     public boolean BuySomeFarming(RawCattle production, Farm farm)
     {
         if (IsAbleToBuy(production)) {
-            farmingList.AddRawCattle(production);
+            farmingList.RawCattle(production);
             farm.ChangeBalanse(-production.CurrentCost());
-            farm.farmingList.GetMarketRawCattleSellList().remove(production);
+            farm.farmingList.MarketRawCattleSellList().remove(production);
             return true;
         }
         return false;
@@ -96,17 +96,17 @@ public class Farm implements Serializable {
     public void BuySomeFarming(WorkCastle production)
     {
         if (IsAbleToBuy(production))
-            farmingList.AddWorkCastles(production);
+            farmingList.WorkCastles(production);
     }
     public void BuySomeFarming(FruitSpawn production)
     {
         if (IsAbleToBuy(production))
-            farmingList.AddFruitSpawn(production);
+            farmingList.FruitSpawn(production);
     }
     public void BuySomeFarming(VegetableSpawn production)
     {
         if (IsAbleToBuy(production))
-            farmingList.AddVegetableSpawn(production);
+            farmingList.VegetableSpawn(production);
     }
 
     private boolean IsAbleToBuy(Farming farming) {
@@ -122,7 +122,7 @@ public class Farm implements Serializable {
             acquisition.Name("Chicken number " + i + " from procurement " + purchase);
             acquisition.Age(age);
             acquisition.Age(i);
-            farmingList.AddRawCattle(acquisition);
+            farmingList.RawCattle(acquisition);
         }
     }
     public void CowPurchase (int count, int age)
@@ -134,7 +134,7 @@ public class Farm implements Serializable {
             acquisition.Name("Cow number " + i + " from procurement " + purchase);
             acquisition.Age(age);
             acquisition.SetColor(0);//black
-            farmingList.AddRawCattle(acquisition);
+            farmingList.RawCattle(acquisition);
         }
     }
 
@@ -147,7 +147,7 @@ public class Farm implements Serializable {
             acquisition.Name("horse number " + i + " from procurement " + purchase);
             acquisition.SetMaxEndurance(endurance);
             acquisition.Age(age);
-            farmingList.AddWorkCastles(acquisition);
+            farmingList.WorkCastles(acquisition);
         }
     }
     public void PlantLemonTree(int count)
@@ -157,9 +157,9 @@ public class Farm implements Serializable {
         {
             var acquisition = new LemonTree();
             acquisition.Name("Lemon tree number " + i + " from procurement " + purchase);
-            acquisition.SetCropYield(50);
+            acquisition.CropYield(50);
             acquisition.SetAcidLevel(4);//very acid
-            farmingList.AddFruitSpawn(acquisition);
+            farmingList.FruitSpawn(acquisition);
         }
     }
     public void PigPurchase (int count, int age)
@@ -169,7 +169,7 @@ public class Farm implements Serializable {
             var acquisition = new Pig();
             acquisition.Name("Pig number " + i + " from procurement " + purchase);
             acquisition.Age(age);
-            farmingList.AddRawCattle(acquisition);
+            farmingList.RawCattle(acquisition);
         }
     }
     public void PlantPotato (int count, String sort)
@@ -182,7 +182,7 @@ public class Farm implements Serializable {
             acquisition.Name("Potato number " + i + " from procurement" + purchase);
             acquisition.Sort(sort);
             acquisition.SetSize(2);// little
-            farmingList.AddVegetableSpawn(acquisition);
+            farmingList.VegetableSpawn(acquisition);
         }
     }
     public void SheepPurchase (int count, int age)
@@ -192,24 +192,36 @@ public class Farm implements Serializable {
             var acquisition = new Sheep();
             acquisition.Name("Sheep number " + i + " from procurement " + purchase);
             acquisition.Age(age);
-            farmingList.AddRawCattle(acquisition);
+            farmingList.RawCattle(acquisition);
         }
     }
 
-    public void ChangeCurrentResurse(Farm farm) {
-        for (int i = 0; i < farm.farmingList.GetRawCattleList().size(); i++)
-        {
-            farm.container.ReduceResource(farm.farmingList.GetRawCattleList().get(i));
-        }
+    public void ChangeCurrentRecurse() {
 
+    }
+
+    public void Containing()
+    {
+        for (int i = 0; i < this.farmingList.RawCattleList().size(); i++)
+        {
+            this.container.ReduceResource(this.farmingList.RawCattleList().get(i));
+        }
     }
     public float GetAllRawCost()
     {
         float totalPrice = 0f;
-        for (int i = 0; i < this.farmingList.GetRawFromFarmList().size(); i++)
+        for (int i = 0; i < this.farmingList.RawFarmList().size(); i++)
         {
-           totalPrice +=  this.farmingList.GetRawFromFarmList().get(i).DefaultCost();
+           totalPrice +=  this.farmingList.RawFarmList().get(i).DefaultCost();
         }
         return totalPrice;
+    }
+
+    public void Harvesting()
+    {
+        for (int i = 0; i < this.farmingList.RawCattleList().size(); i++)
+        {
+            this.farmingList.RawFarmList().addAll(this.farmingList.RawCattleList().get(i).Harvest());
+        }
     }
 }

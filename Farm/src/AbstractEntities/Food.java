@@ -10,7 +10,7 @@ public abstract class Food extends Farming implements Serializable
     public int hashCode()
     {
         System.out.println("[MyHasCode activated]");
-        return Objects.hash(ID, name, sort);
+        return Objects.hash( name, sort);
     }
     @Override
     public boolean equals(Object object)
@@ -20,7 +20,7 @@ public abstract class Food extends Farming implements Serializable
 
         if(this.sort == ((Food) object).sort && this.currentCost == ((Food) object).currentCost)
             if (this.defaultCost == ((Food) object).defaultCost && this.SeedingArea == ((Food) object).SeedingArea )
-                if (this.ID == ((Food) object).ID && this.name == ((Food) object).name)
+                if (this.name == ((Food) object).name)
                     return true;
 
         return false;

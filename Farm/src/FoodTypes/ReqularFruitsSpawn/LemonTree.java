@@ -20,7 +20,7 @@ public class LemonTree extends FruitSpawn implements Serializable
     {
         Name("Lemon tree");
         this.DefaultCost(17);
-        this.SetCropYield(50);
+        this.CropYield(50);
     }
     @Override
     public void Eat()

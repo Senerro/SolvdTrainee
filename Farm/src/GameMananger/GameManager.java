@@ -2,72 +2,26 @@ package GameMananger;
 
 import AbstractEntities.Farming;
 import CattleType.RawCattle;
-import CattleType.ReqularRawCattle.Chicken;
-import CattleType.ReqularRawCattle.Cow;
-import CattleType.ReqularRawCattle.Pig;
-import CattleType.ReqularRawCattle.Sheep;
 import Farm.Farm;
 import File.JsonFileConverter;
 import Resourses.AbstractResourse;
 import Resourses.Corn;
-import Resourses.Watter;
+import Resourses.Water;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameManager
 {
-    Scanner input = new Scanner(System.in);
+    final Scanner input = new Scanner(System.in);
     public int answer;
     public boolean isCorrect = true;
     public GameManager()
         {
             MainMenu();
         }
-    public GameManager(Farm save)
-    {
-        MainMenu();
-    }
-    public static class TradeGenerator
-    {
-        public static void GenerateMarketRawCattleTrades(Farm farming)
-        {
-            double random = Math.random()*6+2;
-            var iterator = (int)Math.round(random);
-            for(int i =  0; i < iterator; i++)
-            {
-                GenerateMarketRaw(farming);
-            }
-        }
 
-        public static void GenerateMarketRaw( Farm save)
-        {
-            double random = Math.random()*5;
-            int iterator = (int)Math.round(random);
-            RawCattle farming;
-            switch (iterator)
-            {
-                case 1:  farming = new Chicken(); GenerateRawValue(farming, save);break;
-                case 2:  farming = new Cow();GenerateRawValue(farming, save);break;
-                case 3:  farming = new Pig();GenerateRawValue(farming, save);break;
-                case 4:  farming = new Sheep();GenerateRawValue(farming, save);break;
-                default: GenerateMarketRaw(save);
-            }
-        }
-        public static void GenerateRawValue( RawCattle cattle, Farm save)
-        {
-            double a = Math.random()*5+2;
-            int iterator = (int)Math.round(a);
-            for (int i = 0; i < iterator; i++) {
-                cattle.CattleWeight((int) Math.random() * 8 + 2);
-                cattle.Age((int) Math.random() * 9 + 1);
-                cattle.CurrentCost(cattle.DefaultCost() * ((float) Math.random() * 30 + 80) / 100);
-                save.farmingList.AddMarketRawCattleSellList(cattle);
-            }
-
-        }
-    }
-    private void MainMenu()
+    private  void MainMenu()
     {
 
         System.out.println("Welcome to the FarmIO");
@@ -148,7 +102,8 @@ public class GameManager
     {
         farm.ChangeCurrentDay();
         TradeGenerator.GenerateMarketRawCattleTrades(farm);
-        farm.ChangeCurrentResurse(farm);
+        farm.Containing();
+        farm.Harvesting();
         return farm;
     }
     private void FarmScene(Farm farm)
@@ -206,52 +161,67 @@ public class GameManager
 
     private void FarmRawScene(Farm farm)
     {
-        if(farm.farmingList.GetRawFromFarmList().isEmpty())
+        if(farm.farmingList.RawFarmList().isEmpty())
             System.out.println("We don't have any raw");
 
         System.out.println("There is our raw container. There we have: ");
-        for (int i = 0; i < farm.farmingList.GetRawFromFarmList().size(); i++)
+        for (int i = 0; i < farm.farmingList.RawFarmList().size(); i++)
         {
-            System.out.println(i + ": Name " + farm.farmingList.GetRawFromFarmList().get(i).Name() + ", Collected  "+ (farm.CurrentDay()- farm.farmingList.GetRawFromFarmList().get(i).SpawnDay()));
+            System.out.println(farm.farmingList.RawFarmList().get(i).toString());
         }
-        System.out.println("[redirecting to main scene]");
-        this.MainScene(farm);
+        System.out.println("[redirecting to farm scene]");
+        this.FarmScene(farm);
     }
 
     private void FarmCattleScene(Farm farm)
     {
-        if(farm.farmingList.GetRawCattleList().isEmpty())
+        if(farm.farmingList.RawCattleList().isEmpty())
             System.out.println("We don't have any cattle");
 
-        int chickenCount = 0; int cowCount = 0; int pigCount = 0; int sheepCount = 0;
-        System.out.println("Right now we have " + farm.farmingList.GetRawCattleList().size() + "amount of castles");
-        for(int i = 0; i < farm.farmingList.GetRawCattleList().size(); i++)
-        {
-            do {
-                switch ((farm.farmingList.GetRawCattleList().get(i)).ID) {
-                    case 1:
-                        this.isCorrect = true;
-                        chickenCount++;
-                        break;
-                    case 2:
-                        this.isCorrect = true;
-                        cowCount++;
-                        break;
-                    case 3:
-                        this.isCorrect = true;
-                        pigCount++;
-                        break;
-                    case 4:
-                        this.isCorrect = true;
-                        sheepCount++;
-                        break;
-                }
-            }
-            while (!this.isCorrect);
+        ArrayList<RawCattle> cattleTypeList = new ArrayList<>();
+        ArrayList<RawCattle> tmpList = new ArrayList<>();
 
+        int chickenCount = 0; int cowCount = 0; int pigCount = 0; int sheepCount = 0;
+        System.out.println("Right now we have " + farm.farmingList.RawCattleList().size() + " castles");
+        System.out.println("groups: ");
+        cattleTypeList.add(farm.farmingList.RawCattleList().get(0));
+        for(int i = 0; i < farm.farmingList.RawCattleList().size(); i++)
+        {
+
+
+            boolean isUnique = false;
+
+            for ( int a = 0; a <cattleTypeList.size(); a++)
+            {
+
+              if((farm.farmingList.RawCattleList().get(i).equals(cattleTypeList.get(a))))
+                {
+                    var aa = farm.farmingList.RawCattleList().get(i).Name();
+                    var bb = cattleTypeList.get(a).Name();
+                    isUnique = false;
+                    break;
+                }
+              else
+              {
+                  var aaa = farm.farmingList.RawCattleList().get(i).Name();
+                  var bbb = cattleTypeList.get(a).Name();
+                  isUnique = true;
+              }
+            }
+            if (isUnique) {
+
+                cattleTypeList.add(farm.farmingList.RawCattleList().get(i));
+
+            }
 
         }
-        System.out.println(chickenCount + "chicken, " + cowCount + " cow, "+ pigCount + " pigs and "+ sheepCount + "sheep");
+        int iterator = 0;
+        for (var tmp:cattleTypeList)
+        {
+            iterator++;
+        System.out.print(iterator + ": " +tmp.Name() + "     ");
+        }
+        System.out.println(" ");
         do
         {
             System.out.println("Do you want to kill someone?");
@@ -262,7 +232,7 @@ public class GameManager
             switch (this.answer ) {
                 case 1:
                     this.isCorrect = true;
-                    PreparationToKill(farm); break;
+                    PreparationToKill(farm, cattleTypeList); break;
                 case 2:
                     this.isCorrect = true;
                     FarmScene(farm);break;
@@ -275,58 +245,41 @@ public class GameManager
         this.MainScene(farm);
     }
 
-    private void PreparationToKill(Farm farm) {
-        boolean isCorrect = true;
-        int number = 0;
+    private void PreparationToKill(Farm farm, ArrayList<RawCattle> typeList) {
+        boolean isCorrect = false;
         ArrayList<RawCattle> tmp = new ArrayList<RawCattle>();
         System.out.println("Who will be killed?");
         System.out.println("===================");
         do {
-            System.out.println("1: Chicken");
-            System.out.println("2: Cow");
-            System.out.println("3: Pig");
-            System.out.println("4: Sheep");
             this.answer = input.nextInt();
+            if(answer>typeList.size()) {
+                isCorrect = false;
+                System.out.println("Wrong input. Try once more");
+            } else if (answer<1) {
+                isCorrect = false;
+                System.out.println("Wrong input. Try once more");
 
-            System.out.println("Here is your choosen animal");
+            } else isCorrect = true;
 
-
-            for (int i = 0; i < farm.farmingList.GetRawCattleList().size(); i++)
-                if(farm.farmingList.GetRawCattleList().get(i).ID == this.answer)
-                {
-                    tmp.add(farm.farmingList.GetRawCattleList().get(i));
-                }
-
-            for (int i = 0; i < tmp.size(); i++)
-            {
-                    System.out.println(i+": name " +tmp.get(i).Name() +", age"+ +tmp.get(i).Age() + ", mass is "+ tmp.get(i).CattleWeight());
-            }
         }
+
         while (!isCorrect);
+        System.out.println("Here are your chosen animals");
+        for (int i = 0; i < farm.farmingList.RawCattleList().size(); i++)//add chosen animal in special list
+            if(farm.farmingList.RawCattleList().get(i).getClass() == typeList.get( this.answer-1).getClass())
+            {
+                tmp.add(farm.farmingList.RawCattleList().get(i));
+            }
 
-        System.out.println("Choose number of animal");
-
-
-//        int pointer =  input.nextInt()-1;
-//        int currentPointer=0;
-//        int globalPoiner = 0;
-//        while (currentPointer!=pointer)
-//        {
-//            for (int i = 0; i < farm.farmingList.GetRawCattleList().size(); i++)
-//            {
-//                if (farm.farmingList.GetRawCattleList().get(i).ID == this.answer)
-//                {
-//                    currentPointer++;
-//                }
-//                globalPoiner++;
-//            }
-//        }
+        for (RawCattle cattle : tmp) {
+            System.out.println(cattle.toStringInFarm());
+        }
         tmp.get(0).Death(farm, tmp.get(0));
 
         FarmCattleScene(farm);
     }
 
-    private void MarcketScene(Farm farm)
+    private void MarketScene(Farm farm)
     {
         System.out.println("Here is our market");
         System.out.println("What shall we do");
@@ -339,9 +292,9 @@ public class GameManager
         {
             switch (this.answer)
             {
-                case 1:  this.isCorrect = true; MarcketBuyAnimalScene(farm);
-                case 2:  this.isCorrect = true; MarcketBuyResursesScene(farm);
-                case 3:  this.isCorrect = true; MarcketSellRawScene(farm); break;
+                case 1:  this.isCorrect = true; MarketBuyAnimalScene(farm);
+                case 2:  this.isCorrect = true; MarketBuyResursesScene(farm);
+                case 3:  this.isCorrect = true; MarketSellRawScene(farm); break;
                 case 4:  this.isCorrect = true; MainScene(farm); break;
                 default: this.isCorrect = false; break;
             }
@@ -349,7 +302,7 @@ public class GameManager
         while (!this.isCorrect);
     }
 
-    private void MarcketSellRawScene(Farm farm)
+    private void MarketSellRawScene(Farm farm)
     {
         System.out.println("Here is raw selling place");
         do {
@@ -363,16 +316,15 @@ public class GameManager
                     System.out.println("You gained " + farm.GetAllRawCost() + " money\n");
                     farm.ChangeBalanse(farm.GetAllRawCost());
                     farm.farmingList.PurgeRawFarmList();
-                    MarcketScene(farm);
+                    MarketScene(farm);
                     break;
-                case 2: this.MarcketScene(farm);
+                case 2: this.MarketScene(farm);
             }
         }
         while (!this.isCorrect);
-
     }
 
-    private void MarcketBuyResursesScene(Farm farm)
+    private void MarketBuyResursesScene(Farm farm)
     {
         AbstractResourse resourse = new AbstractResourse();
         System.out.println("Here is resource spot");
@@ -393,13 +345,13 @@ public class GameManager
                     break;
                 case 2:
                     this.isCorrect = true;
-                    resourse = new Watter();
+                    resourse = new Water();
                     System.out.println("How much water do you need?");
                     break;
                 case 3:
                     this.isCorrect = true;
                     System.out.println("[Returning to the MarketScene]]");
-                    this.MarcketScene(farm);
+                    this.MarketScene(farm);
                 default: this.isCorrect = false;
             }
         }while (!isCorrect);
@@ -409,32 +361,32 @@ public class GameManager
         if(farm.Balance()> resourse.Volume()* resourse.DefaultCost() )
         {
             var price = resourse.Volume()* resourse.DefaultCost();
-            farm.container.ChangeResurseVolume(resourse, resourse.Volume());
+            farm.container.ChangeResurсeVolume(resourse, resourse.Volume());
             farm.ChangeBalanse(-price);
             System.out.println("you lost " + price + " money");
 
             System.out.println("[redirecting to the marcket scene]\n");
-            this.MarcketBuyResursesScene(farm);
+            this.MarketBuyResursesScene(farm);
         }
         else
         {
             System.out.println("You don't have enough money");
-            this.MarcketBuyResursesScene(farm);
+            this.MarketBuyResursesScene(farm);
         }
     }
 
-    private void MarcketBuyAnimalScene(Farm farm) {
-        if(farm.farmingList.GetMarketRawCattleSellList().size() == 0)
+    private void MarketBuyAnimalScene(Farm farm) {
+        if(farm.farmingList.MarketRawCattleSellList().size() == 0)
         {
             System.out.println("Unlucky day. Come later");
-            this.MarcketScene(farm);
+            this.MarketScene(farm);
         }
         System.out.println("Here is our market place. Look at these trades:");
         int i = 0;
-        for (var element:farm.farmingList.GetMarketRawCattleSellList())
+        for (var element:farm.farmingList.MarketRawCattleSellList())
         {
             i++;
-            System.out.println(i+ ": "+ "Name is "+ element.Name() + ", Age is "+ element.Age() + ", weight is  " +element.CattleWeight() + " , cost "+element.CurrentCost() );
+            System.out.println(element.toString());
         }
         do
         {
@@ -447,9 +399,8 @@ public class GameManager
                 case 1:  this.isCorrect = true;
                     System.out.println("Enter number of your choosing");
                     this.answer = input.nextInt();
-                        if(IsAbleToBuy(farm.farmingList.GetMarketRawCattleSellList().get(this.answer-1), farm))
-                            farm.BuySomeFarming(farm.farmingList.GetMarketRawCattleSellList().get(this.answer-1), farm);
-
+                        if(IsAbleToBuy(farm.farmingList.MarketRawCattleSellList().get(this.answer-1), farm))
+                            farm.BuySomeFarming(farm.farmingList.MarketRawCattleSellList().get(this.answer-1), farm);
                         else {
                             System.out.println("You don't have enough money");
                         }
@@ -458,8 +409,6 @@ public class GameManager
             }
         }
         while (!this.isCorrect);
-
-
     }
     private boolean IsAbleToBuy(Farming farming, Farm farm) {
         return farming.CurrentCost() <= farm.Balance();
@@ -467,8 +416,7 @@ public class GameManager
     private void Start()
     {
         Farm save = new Farm();
-        TradeGenerator.GenerateMarketRaw(save);
-
+        TradeGenerator.GenerateMarketRawCattle(save);
         MainScene(save);
     }
     private void Start(Farm save)
@@ -477,9 +425,9 @@ public class GameManager
     }
     private void Load()
     {
-        JsonFileConverter file = new JsonFileConverter();
-        var save =  file.LoadObjectFromFile();
-        Start(save);
+        JsonFileConverter save = new JsonFileConverter();
+        var farm = save.LoadObjectFromFile();
+        Start(farm);
     }
     private int Quit()
     {
@@ -487,9 +435,10 @@ public class GameManager
     }
     private void MainScene(Farm farm)
     {
+        boolean isCorrect = true;
         System.out.println("Day: " + farm.CurrentDay());
         System.out.println("Money: " + farm.Balance());
-        boolean isCorrect = true;
+
         System.out.println("What we shall to do?");
         System.out.println("1: Go to the market");
         System.out.println("2: Check our Farm");
@@ -501,7 +450,7 @@ public class GameManager
         {
             switch (this.answer ) {
                 case 1:
-                    MarcketScene(farm);break;
+                    MarketScene(farm);break;
                 case 2:
                     FarmScene(farm);break;
                 case 3:
@@ -520,6 +469,5 @@ public class GameManager
     public static void main(String[] args)
     {
         var game = new GameManager();
-      //  game.MainMenu();
     }
 }

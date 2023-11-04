@@ -1,21 +1,31 @@
 package CattleType.ReqularRawCattle;
 
 import CattleType.RawCattle;
+import Raw.AbstractRaw;
+import Raw.Egg;
 import Raw.Meat;
 import Raw.Milk;
-import Resourses.Watter;
+import Resourses.Corn;
+import Resourses.Water;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Cow extends RawCattle implements Serializable {
     public Cow() {
         Name("Cow");
-        ID = 2;
+
+
+        Corn corn = new Corn();
+        Water water = new Water();
+
         this.CattleWeight(850);
-        this.DefaultCost(2.5f * CattleWeight());
-        Watter water = new Watter();
-        this.LiquidAbstractResourse(water);
-        this.SolidResourseVolumRequierment(500);
+        this.DefaultCost(2.5f);
+        this.DefaultCost(this.DefaultCost() * CattleWeight());
+        this.LiquidAbstractResource(water);
+        this.LiquidResourceVolumeRequirement(50);
+        this.SolidAbstractResource(corn);
+        this.SolidResourceVolumeRequirement(50);
     }
     private int color;
 
@@ -44,14 +54,17 @@ public class Cow extends RawCattle implements Serializable {
     }
 
     @Override
-    public void SomeRaw() {
+    public ArrayList<AbstractRaw> Harvest() {
+
+        ArrayList<AbstractRaw> rawArrayList = new ArrayList<>();
         Milk milk = new Milk();
-        this.Raw(milk);
+        rawArrayList.add(milk);
 
         if (isDead())
         {
             Meat meat = new Meat();
-            this.Raw(meat);
+            rawArrayList.add(meat);
         }
+        return rawArrayList;
     }
 }

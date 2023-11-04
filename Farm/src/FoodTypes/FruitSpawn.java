@@ -9,10 +9,10 @@ public abstract class FruitSpawn extends Food implements Serializable
 {
     private int cropYield;
 
-    public int GetCropYield() {
+    public int CropYield() {
         return cropYield;
     }
-    public void SetCropYield(int cropYield)
+    public void CropYield(int cropYield)
     {
         this.cropYield = cropYield;
     }
@@ -25,7 +25,7 @@ public abstract class FruitSpawn extends Food implements Serializable
     public int hashCode()
     {
         System.out.println("[MyHasCode activated]");
-        return Objects.hash(ID, name);
+        return Objects.hash(name);
     }
     @Override
     public boolean equals(Object object)
@@ -34,13 +34,13 @@ public abstract class FruitSpawn extends Food implements Serializable
         if (object == null || getClass() != object.getClass()) return false;
 
         if(this.currentCost == ((FruitSpawn) object).currentCost && this.defaultCost == ((FruitSpawn) object).defaultCost)
-            if (this.ID == ((FruitSpawn) object).ID && this.name == ((FruitSpawn) object).name)
+            if (this.name == ((FruitSpawn) object).name)
                 return true;
 
         return false;
     }
     @Override
     public String toString() {
-        return "Cattle{" + "name='" + name  + '\'' + ", cropYield  is" + this.cropYield + '}';
+        return "Cattle{" + "name='" + Name()  + '\'' + ", cropYield  is" + CropYield() + '}';
     }
 }

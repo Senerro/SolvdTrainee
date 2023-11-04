@@ -3,15 +3,17 @@ package CattleType;
 import AbstractEntities.Cattle;
 import AbstractEntities.Farming;
 import Farm.Farm;
+import Raw.AbstractRaw;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class RawCattle extends Cattle implements Serializable
 {
     public boolean isDead = false;
     private float weight = 0.1f;
-    public abstract void SomeRaw();
+    public abstract List<AbstractRaw> Harvest();
 
     public void CattleWeight(float weight)
     {
@@ -27,15 +29,14 @@ public abstract class RawCattle extends Cattle implements Serializable
     }
     public void Death(Farm farm, Farming cattle)
     {
-        this.SomeRaw();
-        farm.farmingList.GetRawCattleList().remove(cattle);
-
+        this.Harvest();
+        farm.farmingList.RawCattleList().remove(cattle);
     }
     @Override
     public int hashCode()
     {
         System.out.println("[MyHasCode activated]");
-        return Objects.hash(ID, name, this.getClass());
+        return Objects.hash(name, this.getClass());
     }
     @Override
     public boolean equals(Object object)
@@ -44,13 +45,16 @@ public abstract class RawCattle extends Cattle implements Serializable
         if (object == null || getClass() != object.getClass()) return false;
 
         if(this.currentCost == ((RawCattle) object).currentCost && this.defaultCost == ((RawCattle) object).defaultCost)
-            if (this.ID == ((RawCattle) object).ID && this.name == ((RawCattle) object).name)
+            if (this.name == ((RawCattle) object).name)
                 return true;
 
         return false;
     }
     @Override
     public String toString() {
-        return "Cattle{" + "name='" + name + '\'' + ", age='" + age + '\'' + ", weight =" + this.weight + '}';
+        return "Cattle{" + "name='" + Name() + '\'' + ", age='" + Age() + '\'' + ", weight =" + CattleWeight() + '\'' + ", cost='" + CurrentCost() + '}';
+    }
+    public String toStringInFarm() {
+        return "Cattle{" + "name='" + Name() + '\'' + ", age='" + Age() + '\'' + ", weight =" + CattleWeight() + '\'' + '}';
     }
 }

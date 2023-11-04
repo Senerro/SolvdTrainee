@@ -10,7 +10,7 @@ import Resourses.AbstractResourse;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class FarmingList implements Serializable {
+public final class FarmingList implements Serializable {
     ArrayList<FruitSpawn> fruitArrayList = new ArrayList<FruitSpawn>();
     ArrayList<VegetableSpawn> vegetablesList = new ArrayList<VegetableSpawn>();
     ArrayList<RawCattle> rawCattleList = new ArrayList<RawCattle>();
@@ -27,76 +27,75 @@ public class FarmingList implements Serializable {
         this.rawFarmArrayList.clear();
     }
 
-    public ArrayList<AbstractResourse> GetResoursesArrayList()
+    public ArrayList<AbstractResourse> ResoursesArrayList()
     {
         return this.resoursesArrayList;
     }
 
 
-    public ArrayList<VegetableSpawn> GetVegetablesList() {
+    public ArrayList<VegetableSpawn> VegetablesList() {
         return vegetablesList;
     }
 
-    public ArrayList<FruitSpawn> GetFruitArrayList() {
+    public ArrayList<FruitSpawn> FruitArrayList() {
         return fruitArrayList;
     }
 
 
-    public ArrayList<RawCattle> GetRawCattleList() {
+    public ArrayList<RawCattle> RawCattleList() {
         return rawCattleList;
     }
 
-    public ArrayList<WorkCastle> GetWorkCastlesList() {
+    public ArrayList<WorkCastle> WorkCastlesList() {
         return workCastlesList;
     }
 
 
-    public void AddFruitSpawn(FruitSpawn fruit) {
+    public void FruitSpawn(FruitSpawn fruit) {
         this.fruitArrayList.add(fruit);
     }
 
-    public void AddRawCattle(RawCattle animal) {
+    public void RawCattle(RawCattle animal) {
         this.rawCattleList.add(animal);
     }
-
-    public void AddVegetableSpawn(VegetableSpawn vegetable) {
+    public void VegetableSpawn(VegetableSpawn vegetable) {
         this.vegetablesList.add(vegetable);
     }
 
-    public void AddWorkCastles(WorkCastle animal) {
+    public void WorkCastles(WorkCastle animal) {
         this.workCastlesList.add(animal);
     }
 
-    public ArrayList<RawCattle> GetMarketRawCattleSellList() {
+    public ArrayList<RawCattle> MarketRawCattleSellList() {
         return this.marketRawCattleSellList;
     }
 
-    public ArrayList<FruitSpawn> GetMarketFruitSpawnSellList() {
+    public ArrayList<FruitSpawn> MarketFruitSpawnSellList() {
         return this.marketFruitSpawnSellList;
     }
 
-    public void AddMarketRawCattleSellList(RawCattle cattle) {
+    public void MarketRawCattleSellList(RawCattle cattle) {
         this.marketRawCattleSellList.add(cattle);
     }
 
-    public void AddMarketFruitSpawnSellList(FruitSpawn fruitSpawwn) {
-        this.marketFruitSpawnSellList.add(fruitSpawwn);
+    public void MarketFruitSpawnSellList(FruitSpawn fruitSpawn) {
+        this.marketFruitSpawnSellList.add(fruitSpawn);
     }
 
-    public void AddRawInFarmList(AbstractRaw raw) {
+    public void RawFarmList(AbstractRaw raw) {
         this.rawFarmArrayList.add(raw);
     }
 
-    public void AddRawInMarketList(AbstractRaw raw) {
+    public void RawInMarketList(AbstractRaw raw) {
         this.rawMarcketArrayList.add(raw);
     }
 
-    public ArrayList<AbstractRaw> GetRawFromFarmList() {
+    public ArrayList<AbstractRaw> RawFarmList() {
         return this.rawFarmArrayList;
     }
 
 
-    public ArrayList<AbstractRaw> GetRawFromMarketList() {
+    public ArrayList<AbstractRaw> RawFromMarketList() {
         return this.rawFarmArrayList;
     }
 }

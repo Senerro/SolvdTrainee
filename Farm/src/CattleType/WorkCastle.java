@@ -21,7 +21,7 @@ public abstract class WorkCastle extends Cattle implements Serializable
     public int hashCode()
     {
         System.out.println("[MyHasCode activated]");
-        return Objects.hash(ID, name);
+        return Objects.hash(name);
     }
     @Override
     public boolean equals(Object object)
@@ -30,7 +30,7 @@ public abstract class WorkCastle extends Cattle implements Serializable
         if (object == null || getClass() != object.getClass()) return false;
 
         if(this.currentCost == ((WorkCastle) object).currentCost && this.defaultCost == ((WorkCastle) object).defaultCost)
-            if (this.ID == ((WorkCastle) object).ID && this.name == ((WorkCastle) object).name)
+            if (this.name == ((WorkCastle) object).name)
                 return true;
 
         return false;

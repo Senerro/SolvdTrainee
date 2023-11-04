@@ -4,9 +4,14 @@ import Resourses.AbstractResourse;
 
 import java.io.Serializable;
 
+import static Farm.Farm.CurrentDay;
+
 public class AbstractRaw extends AbstractResourse implements Serializable
 {
-
+    AbstractRaw()
+    {
+        spawnDay = CurrentDay();
+    }
     private float volume = 0f;
     private int spawnDay;
 
@@ -14,6 +19,7 @@ public class AbstractRaw extends AbstractResourse implements Serializable
     public float ShelfLife() {
         return shelfLife;
     }
+
 
     public void ShelfLife(float shelfLife) {
         this.shelfLife = shelfLife;
@@ -33,6 +39,9 @@ public class AbstractRaw extends AbstractResourse implements Serializable
             Rot(this);
         }
         return false;
+    }
+    public String toString() {
+        return "Cattle{" + "name='" + this.Name() + ", collected in day ='" + this.spawnDay + ", shelfLife is ='" + this.shelfLife+'}';
     }
 
     private void Rot(AbstractRaw raw)

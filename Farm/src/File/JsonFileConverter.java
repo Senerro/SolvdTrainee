@@ -9,7 +9,7 @@ import com.google.gson.Gson;
 
 public class JsonFileConverter
 {
-    private final  String PATH;
+    private final String PATH;
     public JsonFileConverter()
     {
         this.PATH = "C:\\Users\\Павел\\IdeaProjects\\gitRep\\SolvdTrainee\\Farm\\src\\File\\SaveFile";

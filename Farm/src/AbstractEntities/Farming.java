@@ -2,7 +2,6 @@ package AbstractEntities;
 
 import Raw.AbstractRaw;
 import Resourses.AbstractResourse;
-import Resourses.ResoursesContainer;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -10,32 +9,51 @@ import java.util.ArrayList;
 public abstract class Farming implements Serializable
 {
     private int chunk;
-    public ResoursesContainer container = new ResoursesContainer();
+
+    protected float defaultCost;
+    protected float currentCost;
+    protected String name;
+    private float solidResourseVolumRequierment;
+    private float liquidResourseVolumRequierment;
+
     private AbstractResourse solidFood = new AbstractResourse();
     private AbstractResourse liquidFood = new AbstractResourse();
 
 
-    private float resourseVolumRequierment;
-    public void LiquidAbstractResourse(AbstractResourse resourse)
+
+    public void LiquidAbstractResource(AbstractResourse resource)
     {
-        this.liquidFood = resourse;
+        this.liquidFood = resource;
     }
-    public AbstractResourse LiquidAbstractResourse()
+    public AbstractResourse LiquidAbstractResource()
     {
         return this.liquidFood;
     }
-    public float SolidResourseVolumRequierment()
+    public void SolidAbstractResource(AbstractResourse resourse)
     {
-        return this.resourseVolumRequierment;
+        this.solidFood = resourse;
     }
-    public void SolidResourseVolumRequierment(float resourseVolumRequierment)
+    public AbstractResourse SolidAbstractResource()
     {
-        this.resourseVolumRequierment = resourseVolumRequierment;
+        return this.solidFood;
     }
-    protected float defaultCost;
-    protected float currentCost;
-    protected String name;
-    public int ID;
+    public float SolidResourceVolumeRequirement()
+    {
+        return this.solidResourseVolumRequierment;
+    }
+    public void LiquidResourceVolumeRequirement(float resourseVolumRequierment)
+    {
+        this.liquidResourseVolumRequierment = resourseVolumRequierment;
+    }
+    public float LiquidResourceVolumeRequirement()
+    {
+        return this.solidResourseVolumRequierment;
+    }
+    public void SolidResourceVolumeRequirement(float resourseVolumRequierment)
+    {
+        this.solidResourseVolumRequierment = resourseVolumRequierment;
+    }
+
     private ArrayList<AbstractRaw> rawResult = new ArrayList<>();
     public String Name()
     {

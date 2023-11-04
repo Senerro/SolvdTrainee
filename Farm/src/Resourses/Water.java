@@ -2,9 +2,9 @@ package Resourses;
 
 import java.io.Serializable;
 
-public class Watter extends AbstractResourse implements Serializable
+public class Water extends AbstractResourse implements Serializable
 {
-    public Watter()
+    public Water()
     {
         this.DefaultCost(1);
         this.Name("Water");
