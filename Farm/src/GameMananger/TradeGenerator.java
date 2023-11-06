@@ -9,7 +9,7 @@ import Farm.Farm;
 
 public final class TradeGenerator {
 
-        public static void GenerateMarketRawCattleTrades(Farm farming)
+        public static void GenerateMarketRawCattleTrades(final Farm farming)
         {
             double random = Math.random()*6+2;
             var iterator = (int)Math.round(random);
@@ -19,7 +19,7 @@ public final class TradeGenerator {
             }
         }
 
-        public static void GenerateMarketRawCattle(Farm save)
+        public static void GenerateMarketRawCattle(final Farm save)
         {
             double random = Math.random()*5;
             int iterator = (int)Math.round(random);
@@ -36,7 +36,7 @@ public final class TradeGenerator {
                 default: GenerateMarketRawCattle(save);
             }
         }
-        public static void GenerateRawCattleProperties(RawCattle cattle, Farm save)
+        public static void GenerateRawCattleProperties(final RawCattle cattle, final Farm save)
         {
             save.farmingList.MarketRawCattleSellList().clear();
 

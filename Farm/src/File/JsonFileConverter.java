@@ -14,11 +14,11 @@ public class JsonFileConverter
     {
         this.PATH = "C:\\Users\\Павел\\IdeaProjects\\gitRep\\SolvdTrainee\\Farm\\src\\File\\SaveFile";
     }
-    public JsonFileConverter (String Path)
+    public JsonFileConverter (final String Path)
     {
         this.PATH = Path;
     }
-    public void ConvertObjectToFile(Farming object)
+    public void ConvertObjectToFile(final Farming object)
     {
         try (PrintWriter out = new PrintWriter(new FileWriter(PATH)))
         {
@@ -32,7 +32,7 @@ public class JsonFileConverter
             e.printStackTrace();
         }
     }
-    public void SaveObjectToFile(Farm object)
+    public void SaveObjectToFile(final Farm object)
     {
         String filename = PATH;
         try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename)))

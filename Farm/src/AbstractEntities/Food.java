@@ -13,7 +13,7 @@ public abstract class Food extends Farming implements Serializable
         return Objects.hash( name, sort);
     }
     @Override
-    public boolean equals(Object object)
+    public boolean equals(final Object object)
     {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
@@ -35,7 +35,7 @@ public abstract class Food extends Farming implements Serializable
     {
         Sort("unknown");
     }
-    public Food(String sort)
+    public Food(final String sort)
     {
         Sort(sort);
     }
@@ -44,7 +44,7 @@ public abstract class Food extends Farming implements Serializable
         return sort;
     }
 
-    public void Sort(String sort)
+    public void Sort(final String sort)
     {
         this.sort = sort;
         System.out.println("Product " + this.getClass() + " get a sort " + this.sort);

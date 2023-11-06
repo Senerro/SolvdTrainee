@@ -11,7 +11,7 @@ public abstract class VegetableSpawn extends Food implements Serializable
     {
         return ripeningTime;
     }
-    public void SetRipeningTime(int ripeningTime)
+    public void SetRipeningTime(final int ripeningTime)
     {
         this.ripeningTime = ripeningTime;
     }

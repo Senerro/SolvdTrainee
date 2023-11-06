@@ -21,7 +21,7 @@ public abstract class Farming implements Serializable
 
 
 
-    public void LiquidAbstractResource(AbstractResourse resource)
+    public void LiquidAbstractResource(final AbstractResourse resource)
     {
         this.liquidFood = resource;
     }
@@ -29,7 +29,7 @@ public abstract class Farming implements Serializable
     {
         return this.liquidFood;
     }
-    public void SolidAbstractResource(AbstractResourse resourse)
+    public void SolidAbstractResource(final AbstractResourse resourse)
     {
         this.solidFood = resourse;
     }
@@ -41,7 +41,7 @@ public abstract class Farming implements Serializable
     {
         return this.solidResourseVolumRequierment;
     }
-    public void LiquidResourceVolumeRequirement(float resourseVolumRequierment)
+    public void LiquidResourceVolumeRequirement(final float resourseVolumRequierment)
     {
         this.liquidResourseVolumRequierment = resourseVolumRequierment;
     }
@@ -49,17 +49,15 @@ public abstract class Farming implements Serializable
     {
         return this.solidResourseVolumRequierment;
     }
-    public void SolidResourceVolumeRequirement(float resourseVolumRequierment)
+    public void SolidResourceVolumeRequirement(final float resourseVolumRequierment)
     {
         this.solidResourseVolumRequierment = resourseVolumRequierment;
     }
-
-    private ArrayList<AbstractRaw> rawResult = new ArrayList<>();
     public String Name()
     {
         return name;
     }
-    public void Name(String name)
+    public void Name(final String name)
     {
         if (!name.isEmpty())
             this.name = name;
@@ -70,23 +68,19 @@ public abstract class Farming implements Serializable
     {
         return this.RawResult();
     }
-    public void Raw(AbstractRaw raw)
-    {
-        this.rawResult.add(raw);
-    }
 
     public float CurrentCost() {
         return currentCost;
     }
 
-    public void CurrentCost(float currentCost) {
+    public void CurrentCost(final float currentCost) {
         this.currentCost = currentCost;
     }
     public float DefaultCost() {
         return defaultCost;
     }
 
-    public void DefaultCost(float defaultCost) {
+    public void DefaultCost(final float defaultCost) {
         this.defaultCost = defaultCost;
     }
 

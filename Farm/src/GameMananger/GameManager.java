@@ -51,7 +51,7 @@ public class GameManager
         while (!this.isCorrect);
     }
 
-    private void PauseMenu(Farm save)
+    private void PauseMenu(final Farm save)
     {
         System.out.println("PAUSE?");
         System.out.println("===================");
@@ -87,18 +87,18 @@ public class GameManager
         while (!this.isCorrect);
     }
 
-    private void SaveGame(Farm save)
+    private void SaveGame(final Farm save)
     {
         JsonFileConverter converter = new JsonFileConverter();
         converter.SaveObjectToFile(save);
         PauseMenu(save);
     }
-    private void ScipDay(Farm farm)
+    private void ScipDay(final Farm farm)
     {
         MainScene(ChangeFarmState(farm));//calculate and call main scene dialog
     }
 
-    private Farm ChangeFarmState(Farm farm)
+    private Farm ChangeFarmState(final Farm farm)
     {
         farm.ChangeCurrentDay();
         TradeGenerator.GenerateMarketRawCattleTrades(farm);
@@ -106,7 +106,7 @@ public class GameManager
         farm.Harvesting();
         return farm;
     }
-    private void FarmScene(Farm farm)
+    private void FarmScene(final Farm farm)
     {
         boolean isCorrect = false;
         System.out.println("There is our Farm");
@@ -144,7 +144,7 @@ public class GameManager
         while (!this.isCorrect);
     }
 
-    private void FarmResursesScene(Farm farm)
+    private void FarmResursesScene(final Farm farm)
     {
 
         if(!farm.container.CheckCornAvailability())
@@ -159,7 +159,7 @@ public class GameManager
         this.FarmScene(farm);
     }
 
-    private void FarmRawScene(Farm farm)
+    private void FarmRawScene(final Farm farm)
     {
         if(farm.farmingList.RawFarmList().isEmpty())
             System.out.println("We don't have any raw");
@@ -173,7 +173,7 @@ public class GameManager
         this.FarmScene(farm);
     }
 
-    private void FarmCattleScene(Farm farm)
+    private void FarmCattleScene(final Farm farm)
     {
         if(farm.farmingList.RawCattleList().isEmpty())
             System.out.println("We don't have any cattle");
@@ -181,39 +181,25 @@ public class GameManager
         ArrayList<RawCattle> cattleTypeList = new ArrayList<>();
         ArrayList<RawCattle> tmpList = new ArrayList<>();
 
-        int chickenCount = 0; int cowCount = 0; int pigCount = 0; int sheepCount = 0;
         System.out.println("Right now we have " + farm.farmingList.RawCattleList().size() + " castles");
         System.out.println("groups: ");
         cattleTypeList.add(farm.farmingList.RawCattleList().get(0));
         for(int i = 0; i < farm.farmingList.RawCattleList().size(); i++)
         {
-
-
             boolean isUnique = false;
-
             for ( int a = 0; a <cattleTypeList.size(); a++)
             {
-
               if((farm.farmingList.RawCattleList().get(i).equals(cattleTypeList.get(a))))
                 {
-                    var aa = farm.farmingList.RawCattleList().get(i).Name();
-                    var bb = cattleTypeList.get(a).Name();
                     isUnique = false;
                     break;
                 }
               else
-              {
-                  var aaa = farm.farmingList.RawCattleList().get(i).Name();
-                  var bbb = cattleTypeList.get(a).Name();
                   isUnique = true;
-              }
             }
-            if (isUnique) {
 
+            if (isUnique)
                 cattleTypeList.add(farm.farmingList.RawCattleList().get(i));
-
-            }
-
         }
         int iterator = 0;
         for (var tmp:cattleTypeList)
@@ -245,7 +231,7 @@ public class GameManager
         this.MainScene(farm);
     }
 
-    private void PreparationToKill(Farm farm, ArrayList<RawCattle> typeList) {
+    private void PreparationToKill(final Farm farm, final ArrayList<RawCattle> typeList) {
         boolean isCorrect = false;
         ArrayList<RawCattle> tmp = new ArrayList<RawCattle>();
         System.out.println("Who will be killed?");
@@ -279,7 +265,7 @@ public class GameManager
         FarmCattleScene(farm);
     }
 
-    private void MarketScene(Farm farm)
+    private void MarketScene(final Farm farm)
     {
         System.out.println("Here is our market");
         System.out.println("What shall we do");
@@ -302,7 +288,7 @@ public class GameManager
         while (!this.isCorrect);
     }
 
-    private void MarketSellRawScene(Farm farm)
+    private void MarketSellRawScene(final Farm farm)
     {
         System.out.println("Here is raw selling place");
         do {
@@ -314,7 +300,7 @@ public class GameManager
             {
                 case 1:
                     System.out.println("You gained " + farm.GetAllRawCost() + " money\n");
-                    farm.ChangeBalanse(farm.GetAllRawCost());
+                    farm.ChangeBalance(farm.GetAllRawCost());
                     farm.farmingList.PurgeRawFarmList();
                     MarketScene(farm);
                     break;
@@ -324,7 +310,7 @@ public class GameManager
         while (!this.isCorrect);
     }
 
-    private void MarketBuyResursesScene(Farm farm)
+    private void MarketBuyResursesScene(final Farm farm)
     {
         AbstractResourse resourse = new AbstractResourse();
         System.out.println("Here is resource spot");
@@ -362,7 +348,7 @@ public class GameManager
         {
             var price = resourse.Volume()* resourse.DefaultCost();
             farm.container.ChangeResurсeVolume(resourse, resourse.Volume());
-            farm.ChangeBalanse(-price);
+            farm.ChangeBalance(-price);
             System.out.println("you lost " + price + " money");
 
             System.out.println("[redirecting to the marcket scene]\n");
@@ -375,7 +361,7 @@ public class GameManager
         }
     }
 
-    private void MarketBuyAnimalScene(Farm farm) {
+    private void MarketBuyAnimalScene(final Farm farm) {
         if(farm.farmingList.MarketRawCattleSellList().size() == 0)
         {
             System.out.println("Unlucky day. Come later");
@@ -410,7 +396,7 @@ public class GameManager
         }
         while (!this.isCorrect);
     }
-    private boolean IsAbleToBuy(Farming farming, Farm farm) {
+    private boolean IsAbleToBuy(final Farming farming, final Farm farm) {
         return farming.CurrentCost() <= farm.Balance();
     }
     private void Start()
@@ -419,7 +405,7 @@ public class GameManager
         TradeGenerator.GenerateMarketRawCattle(save);
         MainScene(save);
     }
-    private void Start(Farm save)
+    private void Start(final Farm save)
     {
         MainScene(save);
     }
@@ -429,11 +415,11 @@ public class GameManager
         var farm = save.LoadObjectFromFile();
         Start(farm);
     }
-    private int Quit()
+    private void Quit()
     {
-        return 0;
+        System.exit(200);
     }
-    private void MainScene(Farm farm)
+    private void MainScene(final Farm farm)
     {
         boolean isCorrect = true;
         System.out.println("Day: " + farm.CurrentDay());

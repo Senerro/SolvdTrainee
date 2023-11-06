@@ -21,7 +21,9 @@ import java.io.Serializable;
 public class Farm implements Serializable {
 
     private static int purchase;
-    private static int currentDay = 1;
+    private  int currentDay = 1;
+    private static int currentDayStatic = 1;
+
     private float balance = 500000;
     public ResoursesContainer container = new ResoursesContainer();
 
@@ -33,17 +35,20 @@ public class Farm implements Serializable {
     public void Balance(float balance) {
         this.balance = balance;
     }
-    public void ChangeBalanse(float balance)
+    public void ChangeBalance(float balance)
     {
         this.balance += balance;
     }
 
-    public static int CurrentDay() {
+    public  int CurrentDay() {
         return currentDay;
+    }
+    public static int CurrentDayStatic() {
+        return currentDayStatic;
     }
     public void ChangeCurrentDay()
     {
-        currentDay++;
+        currentDay++; currentDayStatic++;
     }
 
 
@@ -87,7 +92,7 @@ public class Farm implements Serializable {
     {
         if (IsAbleToBuy(production)) {
             farmingList.RawCattle(production);
-            farm.ChangeBalanse(-production.CurrentCost());
+            farm.ChangeBalance(-production.CurrentCost());
             farm.farmingList.MarketRawCattleSellList().remove(production);
             return true;
         }

@@ -51,18 +51,18 @@ public final class FarmingList implements Serializable {
     }
 
 
-    public void FruitSpawn(FruitSpawn fruit) {
+    public void FruitSpawn(final FruitSpawn fruit) {
         this.fruitArrayList.add(fruit);
     }
 
-    public void RawCattle(RawCattle animal) {
+    public void RawCattle(final RawCattle animal) {
         this.rawCattleList.add(animal);
     }
-    public void VegetableSpawn(VegetableSpawn vegetable) {
+    public void VegetableSpawn(final VegetableSpawn vegetable) {
         this.vegetablesList.add(vegetable);
     }
 
-    public void WorkCastles(WorkCastle animal) {
+    public void WorkCastles(final WorkCastle animal) {
         this.workCastlesList.add(animal);
     }
 
@@ -74,19 +74,19 @@ public final class FarmingList implements Serializable {
         return this.marketFruitSpawnSellList;
     }
 
-    public void MarketRawCattleSellList(RawCattle cattle) {
+    public void MarketRawCattleSellList(final RawCattle cattle) {
         this.marketRawCattleSellList.add(cattle);
     }
 
-    public void MarketFruitSpawnSellList(FruitSpawn fruitSpawn) {
+    public void MarketFruitSpawnSellList(final FruitSpawn fruitSpawn) {
         this.marketFruitSpawnSellList.add(fruitSpawn);
     }
 
-    public void RawFarmList(AbstractRaw raw) {
+    public void RawFarmList(final AbstractRaw raw) {
         this.rawFarmArrayList.add(raw);
     }
 
-    public void RawInMarketList(AbstractRaw raw) {
+    public void RawInMarketList(final AbstractRaw raw) {
         this.rawMarcketArrayList.add(raw);
     }
 

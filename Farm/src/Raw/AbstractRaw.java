@@ -4,13 +4,13 @@ import Resourses.AbstractResourse;
 
 import java.io.Serializable;
 
-import static Farm.Farm.CurrentDay;
+import static Farm.Farm.CurrentDayStatic;
 
 public class AbstractRaw extends AbstractResourse implements Serializable
 {
     AbstractRaw()
     {
-        spawnDay = CurrentDay();
+        spawnDay = CurrentDayStatic();
     }
     private float volume = 0f;
     private int spawnDay;
@@ -21,18 +21,14 @@ public class AbstractRaw extends AbstractResourse implements Serializable
     }
 
 
-    public void ShelfLife(float shelfLife) {
+    public void ShelfLife(final float shelfLife) {
         this.shelfLife = shelfLife;
     }
     public int SpawnDay()
     {
         return this.spawnDay;
     }
-    public void SpawnDay(int spawnDay)
-    {
-        this.spawnDay = spawnDay;
-    }
-    public boolean IsRot(int today)
+    public boolean IsRot(final int today)
     {
         if(SpawnDay() + ShelfLife() < today)
         {
@@ -46,7 +42,7 @@ public class AbstractRaw extends AbstractResourse implements Serializable
 
     private void Rot(AbstractRaw raw)
     {
-
+        
     }
 
 }

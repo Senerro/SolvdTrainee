@@ -12,7 +12,7 @@ public abstract class FruitSpawn extends Food implements Serializable
     public int CropYield() {
         return cropYield;
     }
-    public void CropYield(int cropYield)
+    public void CropYield(final int cropYield)
     {
         this.cropYield = cropYield;
     }
@@ -28,7 +28,7 @@ public abstract class FruitSpawn extends Food implements Serializable
         return Objects.hash(name);
     }
     @Override
-    public boolean equals(Object object)
+    public boolean equals(final Object object)
     {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;

@@ -12,7 +12,7 @@ public abstract class Cattle extends Farming implements Serializable
     {
         return age;
     }
-    public void Age(int age)
+    public void Age(final int age)
     {
 
             if (age >= 0) {

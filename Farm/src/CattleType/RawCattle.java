@@ -15,7 +15,7 @@ public abstract class RawCattle extends Cattle implements Serializable
     private float weight = 0.1f;
     public abstract List<AbstractRaw> Harvest();
 
-    public void CattleWeight(float weight)
+    public void CattleWeight(final float weight)
     {
         this.weight =  weight;
     }
@@ -27,7 +27,7 @@ public abstract class RawCattle extends Cattle implements Serializable
     public boolean isDead() {
         return isDead;
     }
-    public void Death(Farm farm, Farming cattle)
+    public void Death(final Farm farm, final Farming cattle)
     {
         this.Harvest();
         farm.farmingList.RawCattleList().remove(cattle);
@@ -39,7 +39,7 @@ public abstract class RawCattle extends Cattle implements Serializable
         return Objects.hash(name, this.getClass());
     }
     @Override
-    public boolean equals(Object object)
+    public boolean equals(final Object object)
     {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
