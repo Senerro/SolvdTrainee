@@ -1,4 +1,4 @@
-package GameMananger;
+package Managers;
 
 import CattleType.RawCattle;
 import CattleType.ReqularRawCattle.Chicken;

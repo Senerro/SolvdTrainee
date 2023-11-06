@@ -6,7 +6,7 @@ public class AbstractResourse implements Serializable
 {
     public int ID;
     private String name;
-    private float volume = 0f;
+    private float volume;
     private int Chunk;
     private float defaultCost;
     private float currentCost;
@@ -23,7 +23,7 @@ public class AbstractResourse implements Serializable
     {
         this.currentCost = currentCost;
     }
-    public void ChangeCurrnentCost(float currentCost)
+    public void ChangeCurrentCost(float currentCost)
     {
      this.currentCost += currentCost;
      if(this.currentCost<0)

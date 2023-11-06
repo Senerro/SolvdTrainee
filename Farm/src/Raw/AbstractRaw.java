@@ -11,11 +11,11 @@ public class AbstractRaw extends AbstractResourse implements Serializable
     AbstractRaw()
     {
         spawnDay = CurrentDayStatic();
-    }
-    private float volume = 0f;
-    private int spawnDay;
 
-    private float shelfLife = 0f;
+    }
+    private final int spawnDay;
+
+    private float shelfLife;
     public float ShelfLife() {
         return shelfLife;
     }
@@ -37,7 +37,7 @@ public class AbstractRaw extends AbstractResourse implements Serializable
         return false;
     }
     public String toString() {
-        return "Cattle{" + "name='" + this.Name() + ", collected in day ='" + this.spawnDay + ", shelfLife is ='" + this.shelfLife+'}';
+        return "Cattle{" + "name='" + this.Name() + ", collected in day ='" + this.SpawnDay() + ", shelfLife is ='" + this.ShelfLife()+'}';
     }
 
     private void Rot(AbstractRaw raw)

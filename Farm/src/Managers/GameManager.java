@@ -1,4 +1,4 @@
-package GameMananger;
+package Managers;
 
 import AbstractEntities.Farming;
 import CattleType.RawCattle;
@@ -95,20 +95,19 @@ public class GameManager
     }
     private void ScipDay(final Farm farm)
     {
-        MainScene(ChangeFarmState(farm));//calculate and call main scene dialog
+        MainScene(ChangeFarmState(farm));
     }
 
     private Farm ChangeFarmState(final Farm farm)
     {
-        farm.ChangeCurrentDay();
-        TradeGenerator.GenerateMarketRawCattleTrades(farm);
         farm.Containing();
         farm.Harvesting();
+        farm.ChangeCurrentDay();
+        TradeGenerator.GenerateMarketRawCattleTrades(farm);
         return farm;
     }
     private void FarmScene(final Farm farm)
     {
-        boolean isCorrect = false;
         System.out.println("There is our Farm");
         do
         {
@@ -146,14 +145,7 @@ public class GameManager
 
     private void FarmResursesScene(final Farm farm)
     {
-
-        if(!farm.container.CheckCornAvailability())
-            System.out.println("We don't have corn");
-        if(!farm.container.CheckWaterAvailability())
-            System.out.println("We don't have any water");
-
         System.out.println("There is our resource tank. There we have ");
-
         System.out.println("1: Corn volume " + farm.container.CornVolume() );
         System.out.println("2: Water volume " + farm.container.WatterVolume() );
         this.FarmScene(farm);
@@ -161,8 +153,11 @@ public class GameManager
 
     private void FarmRawScene(final Farm farm)
     {
-        if(farm.farmingList.RawFarmList().isEmpty())
+        if(farm.farmingList.RawFarmList().isEmpty()) {
             System.out.println("We don't have any raw");
+            System.out.println("[redirecting to farm scene]");
+            this.FarmScene(farm);
+        }
 
         System.out.println("There is our raw container. There we have: ");
         for (int i = 0; i < farm.farmingList.RawFarmList().size(); i++)
@@ -175,8 +170,12 @@ public class GameManager
 
     private void FarmCattleScene(final Farm farm)
     {
-        if(farm.farmingList.RawCattleList().isEmpty())
-            System.out.println("We don't have any cattle");
+            if(farm.CheckRawCattleInFarm())
+            {
+                System.out.println("We don't have any cattle");
+                System.out.println("[Redirecting to FarmScene...]");
+                FarmScene(farm);
+            }
 
         ArrayList<RawCattle> cattleTypeList = new ArrayList<>();
         ArrayList<RawCattle> tmpList = new ArrayList<>();
@@ -232,7 +231,6 @@ public class GameManager
     }
 
     private void PreparationToKill(final Farm farm, final ArrayList<RawCattle> typeList) {
-        boolean isCorrect = false;
         ArrayList<RawCattle> tmp = new ArrayList<RawCattle>();
         System.out.println("Who will be killed?");
         System.out.println("===================");
@@ -246,12 +244,11 @@ public class GameManager
                 System.out.println("Wrong input. Try once more");
 
             } else isCorrect = true;
-
         }
-
         while (!isCorrect);
+
         System.out.println("Here are your chosen animals");
-        for (int i = 0; i < farm.farmingList.RawCattleList().size(); i++)//add chosen animal in special list
+        for (int i = 0; i < farm.farmingList.RawCattleList().size(); i++)
             if(farm.farmingList.RawCattleList().get(i).getClass() == typeList.get( this.answer-1).getClass())
             {
                 tmp.add(farm.farmingList.RawCattleList().get(i));

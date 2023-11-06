@@ -22,10 +22,15 @@ public class Farm implements Serializable {
 
     private static int purchase;
     private  int currentDay = 1;
-    private static int currentDayStatic = 1;
+    private static int currentDayStatic;
 
     private float balance = 500000;
     public ResoursesContainer container = new ResoursesContainer();
+
+    static
+    {
+        currentDayStatic = CurrentDayStatic();
+    }
 
     public float Balance() {
         return balance;
@@ -48,7 +53,8 @@ public class Farm implements Serializable {
     }
     public void ChangeCurrentDay()
     {
-        currentDay++; currentDayStatic++;
+        currentDay++;
+        currentDayStatic = currentDay;
     }
 
 
@@ -228,5 +234,9 @@ public class Farm implements Serializable {
         {
             this.farmingList.RawFarmList().addAll(this.farmingList.RawCattleList().get(i).Harvest());
         }
+    }
+    public boolean CheckRawCattleInFarm()
+    {
+        return this.farmingList.RawCattleList().isEmpty();
     }
 }
