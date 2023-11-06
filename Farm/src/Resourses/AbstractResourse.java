@@ -7,9 +7,17 @@ public class AbstractResourse implements Serializable
     public int ID;
     private String name;
     private float volume;
-    private int Chunk;
+    private int chunk;
     private float defaultCost;
     private float currentCost;
+    public int Chunk()
+    {
+        return this.chunk;
+    }
+    public void IncreaseChunk(int chunk)
+    {
+        this.chunk+=chunk;
+    }
 
 
     public float DefaultCost() {

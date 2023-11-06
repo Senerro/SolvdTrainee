@@ -14,15 +14,21 @@ import FoodTypes.ReqularVegetablesSpawn.Cabbage;
 import FoodTypes.ReqularFruitsSpawn.LemonTree;
 import FoodTypes.ReqularVegetablesSpawn.Potato;
 import FoodTypes.VegetableSpawn;
+import Interfaces.IFarmingExistable;
+import Interfaces.IGameSessionGain;
+import Interfaces.IResourcesExistable;
 import Resourses.ResoursesContainer;
 
 import java.io.Serializable;
 
-public class Farm implements Serializable {
+public class Farm implements Serializable, IFarmingExistable, IResourcesExistable, IGameSessionGain {
 
     private static int purchase;
     private  int currentDay = 1;
     private static int currentDayStatic;
+    private static float sessionGain;
+    private  float globalGain;
+
 
     private float balance = 500000;
     public ResoursesContainer container = new ResoursesContainer();
@@ -30,12 +36,21 @@ public class Farm implements Serializable {
     static
     {
         currentDayStatic = CurrentDayStatic();
+        sessionGain = 0;
     }
+
 
     public float Balance() {
         return balance;
     }
-
+    public void IncreaseGain(float gain)
+    {
+        sessionGain += gain;
+    }
+    public static float GetGain()
+    {
+        return sessionGain;
+    }
 
     public void Balance(float balance) {
         this.balance = balance;
@@ -43,6 +58,8 @@ public class Farm implements Serializable {
     public void ChangeBalance(float balance)
     {
         this.balance += balance;
+        if(balance>0)
+            IncreaseGain(balance);
     }
 
     public  int CurrentDay() {
@@ -213,30 +230,80 @@ public class Farm implements Serializable {
 
     public void Containing()
     {
-        for (int i = 0; i < this.farmingList.RawCattleList().size(); i++)
+        for (int i = 0; i < this.farmingList.RawCattle().size(); i++)
         {
-            this.container.ReduceResource(this.farmingList.RawCattleList().get(i));
+            this.container.ReduceResource(this.farmingList.RawCattle().get(i));
         }
     }
     public float GetAllRawCost()
     {
         float totalPrice = 0f;
-        for (int i = 0; i < this.farmingList.RawFarmList().size(); i++)
+        for (int i = 0; i < this.farmingList.RawFarm().size(); i++)
         {
-           totalPrice +=  this.farmingList.RawFarmList().get(i).DefaultCost();
+           totalPrice +=  this.farmingList.RawFarm().get(i).DefaultCost();
         }
         return totalPrice;
     }
 
     public void Harvesting()
     {
-        for (int i = 0; i < this.farmingList.RawCattleList().size(); i++)
+        for (int i = 0; i < this.farmingList.RawCattle().size(); i++)
         {
-            this.farmingList.RawFarmList().addAll(this.farmingList.RawCattleList().get(i).Harvest());
+            this.farmingList.RawFarm().addAll(this.farmingList.RawCattle().get(i).Harvest());
         }
     }
-    public boolean CheckRawCattleInFarm()
+
+    @Override
+    public boolean CheckFarmRawCattle()
     {
-        return this.farmingList.RawCattleList().isEmpty();
+        return !this.farmingList.RawCattle().isEmpty();
     }
+
+    @Override
+    public boolean CheckMarketRawCattle() {
+        return !this.farmingList.MarketRawCattleSellList().isEmpty();
+    }
+
+    @Override
+    public boolean CheckRaw() {
+        return this.farmingList.RawFarm().isEmpty();
+    }
+
+    @Override
+    public boolean CheckWater() {
+        return this.container.CheckWaterAvailability();
+    }
+
+    @Override
+    public boolean CheckCorn() {
+        return this.container.CheckCornAvailability();
+    }
+
+    public void ValidateExpirationDate()
+    {
+        for(int i = 0; i < this.farmingList.RawFarm().size(); i++)
+        {
+            if(this.farmingList.RawFarm().get(i).IsRot())
+            {
+                this.farmingList.PurgeRawFarm(this.farmingList.RawFarm().get(i));
+            }
+        }
+    }
+    public float GlobalGain()
+    {
+        return this.globalGain;
+    }
+
+    @Override
+    public float CalculateCurrentProfit() {
+        CalculateGlobalProfit(GetGain());
+        return GetGain();
+    }
+
+    @Override
+    public void CalculateGlobalProfit(float gain) {
+       this.globalGain+=gain;
+    }
+
+
 }

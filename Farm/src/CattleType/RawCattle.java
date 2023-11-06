@@ -3,6 +3,7 @@ package CattleType;
 import AbstractEntities.Cattle;
 import AbstractEntities.Farming;
 import Farm.Farm;
+import Interfaces.IChunkable;
 import Raw.AbstractRaw;
 
 import java.io.Serializable;
@@ -11,6 +12,7 @@ import java.util.Objects;
 
 public abstract class RawCattle extends Cattle implements Serializable
 {
+
     public boolean isDead = false;
     private float weight = 0.1f;
     public abstract List<AbstractRaw> Harvest();
@@ -30,7 +32,7 @@ public abstract class RawCattle extends Cattle implements Serializable
     public void Death(final Farm farm, final Farming cattle)
     {
         this.Harvest();
-        farm.farmingList.RawCattleList().remove(cattle);
+        farm.farmingList.RawCattle().remove(cattle);
     }
     @Override
     public int hashCode()
@@ -43,9 +45,8 @@ public abstract class RawCattle extends Cattle implements Serializable
     {
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
-
-        if(this.currentCost == ((RawCattle) object).currentCost && this.defaultCost == ((RawCattle) object).defaultCost)
-            if (this.name == ((RawCattle) object).name)
+        if(this.DefaultCost() == ((RawCattle) object).DefaultCost() && this.Age() == ((RawCattle) object).Age())
+            if (this.Name() == ((RawCattle) object).Name() && this.CattleWeight() == ((RawCattle) object).CattleWeight())
                 return true;
 
         return false;
@@ -57,4 +58,5 @@ public abstract class RawCattle extends Cattle implements Serializable
     public String toStringInFarm() {
         return "Cattle{" + "name='" + Name() + '\'' + ", age='" + Age() + '\'' + ", weight =" + CattleWeight() + '\'' + '}';
     }
+
 }

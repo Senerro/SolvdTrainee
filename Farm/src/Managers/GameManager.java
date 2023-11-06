@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class GameManager
 {
     final Scanner input = new Scanner(System.in);
+
     public int answer;
     public boolean isCorrect = true;
     public GameManager()
@@ -32,7 +33,6 @@ public class GameManager
             System.out.println("3: Quit");
 
             this.answer = input.nextInt();
-
             switch (this.answer) {
                 case 1:
                     this.isCorrect = true;
@@ -53,7 +53,7 @@ public class GameManager
 
     private void PauseMenu(final Farm save)
     {
-        System.out.println("PAUSE?");
+        System.out.println("PAUSE");
         System.out.println("===================");
         System.out.println("1: Save Game");
         System.out.println("2: Load Game");
@@ -86,7 +86,6 @@ public class GameManager
         }
         while (!this.isCorrect);
     }
-
     private void SaveGame(final Farm save)
     {
         JsonFileConverter converter = new JsonFileConverter();
@@ -100,6 +99,7 @@ public class GameManager
 
     private Farm ChangeFarmState(final Farm farm)
     {
+        farm.ValidateExpirationDate();
         farm.Containing();
         farm.Harvesting();
         farm.ChangeCurrentDay();
@@ -120,7 +120,7 @@ public class GameManager
             switch (this.answer ) {
                 case 1:
                     this.isCorrect = true;
-                    FarmResursesScene(farm);
+                    FarmResourcesScene(farm);
                     break;
                 case 2:
                     this.isCorrect = true;
@@ -143,8 +143,16 @@ public class GameManager
         while (!this.isCorrect);
     }
 
-    private void FarmResursesScene(final Farm farm)
+    private void FarmResourcesScene(final Farm farm)
     {
+        if(farm.CheckCorn()) {
+            System.out.println("We don't have any corn");
+            this.FarmScene(farm);
+        }
+        if(farm.CheckWater()) {
+            System.out.println("We don't have any water");
+            this.FarmScene(farm);
+        }
         System.out.println("There is our resource tank. There we have ");
         System.out.println("1: Corn volume " + farm.container.CornVolume() );
         System.out.println("2: Water volume " + farm.container.WatterVolume() );
@@ -153,16 +161,16 @@ public class GameManager
 
     private void FarmRawScene(final Farm farm)
     {
-        if(farm.farmingList.RawFarmList().isEmpty()) {
+        if(!farm.CheckRaw()) {
             System.out.println("We don't have any raw");
             System.out.println("[redirecting to farm scene]");
             this.FarmScene(farm);
         }
 
         System.out.println("There is our raw container. There we have: ");
-        for (int i = 0; i < farm.farmingList.RawFarmList().size(); i++)
+        for (int i = 0; i < farm.farmingList.RawFarm().size(); i++)
         {
-            System.out.println(farm.farmingList.RawFarmList().get(i).toString());
+            System.out.println(farm.farmingList.RawFarm().get(i).toString());
         }
         System.out.println("[redirecting to farm scene]");
         this.FarmScene(farm);
@@ -170,25 +178,24 @@ public class GameManager
 
     private void FarmCattleScene(final Farm farm)
     {
-            if(farm.CheckRawCattleInFarm())
+            if(farm.CheckFarmRawCattle())
             {
                 System.out.println("We don't have any cattle");
                 System.out.println("[Redirecting to FarmScene...]");
                 FarmScene(farm);
             }
-
         ArrayList<RawCattle> cattleTypeList = new ArrayList<>();
         ArrayList<RawCattle> tmpList = new ArrayList<>();
 
-        System.out.println("Right now we have " + farm.farmingList.RawCattleList().size() + " castles");
+        System.out.println("Right now we have " + farm.farmingList.RawCattle().size() + " castles");
         System.out.println("groups: ");
-        cattleTypeList.add(farm.farmingList.RawCattleList().get(0));
-        for(int i = 0; i < farm.farmingList.RawCattleList().size(); i++)
+        cattleTypeList.add(farm.farmingList.RawCattle().get(0));
+        for(int i = 0; i < farm.farmingList.RawCattle().size(); i++)
         {
             boolean isUnique = false;
             for ( int a = 0; a <cattleTypeList.size(); a++)
             {
-              if((farm.farmingList.RawCattleList().get(i).equals(cattleTypeList.get(a))))
+              if((farm.farmingList.RawCattle().get(i).equals(cattleTypeList.get(a))))
                 {
                     isUnique = false;
                     break;
@@ -198,7 +205,7 @@ public class GameManager
             }
 
             if (isUnique)
-                cattleTypeList.add(farm.farmingList.RawCattleList().get(i));
+                cattleTypeList.add(farm.farmingList.RawCattle().get(i));
         }
         int iterator = 0;
         for (var tmp:cattleTypeList)
@@ -248,10 +255,10 @@ public class GameManager
         while (!isCorrect);
 
         System.out.println("Here are your chosen animals");
-        for (int i = 0; i < farm.farmingList.RawCattleList().size(); i++)
-            if(farm.farmingList.RawCattleList().get(i).getClass() == typeList.get( this.answer-1).getClass())
+        for (int i = 0; i < farm.farmingList.RawCattle().size(); i++)
+            if(farm.farmingList.RawCattle().get(i).getClass() == typeList.get( this.answer-1).getClass())
             {
-                tmp.add(farm.farmingList.RawCattleList().get(i));
+                tmp.add(farm.farmingList.RawCattle().get(i));
             }
 
         for (RawCattle cattle : tmp) {
@@ -359,7 +366,7 @@ public class GameManager
     }
 
     private void MarketBuyAnimalScene(final Farm farm) {
-        if(farm.farmingList.MarketRawCattleSellList().size() == 0)
+        if(farm.CheckMarketRawCattle())
         {
             System.out.println("Unlucky day. Come later");
             this.MarketScene(farm);
@@ -421,6 +428,11 @@ public class GameManager
         boolean isCorrect = true;
         System.out.println("Day: " + farm.CurrentDay());
         System.out.println("Money: " + farm.Balance());
+        if(farm.CalculateCurrentProfit()>0)
+            System.out.println("Current gain: " + farm.CalculateCurrentProfit());
+        if(farm.GlobalGain() > 0)
+            System.out.println("Global gain: " + farm.GlobalGain());
+
 
         System.out.println("What we shall to do?");
         System.out.println("1: Go to the market");

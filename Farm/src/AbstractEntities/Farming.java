@@ -1,20 +1,27 @@
 package AbstractEntities;
 
-import Raw.AbstractRaw;
 import Resourses.AbstractResourse;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 public abstract class Farming implements Serializable
 {
-    private int chunk;
+    private int chunk = 1;
+
+    public void IncreaseChunk(final int chunk)
+    {
+        this.chunk += chunk;
+    }
+    public int Chunk()
+    {
+        return this.chunk;
+    }
 
     protected float defaultCost;
     protected float currentCost;
     protected String name;
-    private float solidResourseVolumRequierment;
-    private float liquidResourseVolumRequierment;
+    private float solidResourceVolumeRequirement;
+    private float liquidResourceVolumeRequirement;
 
     private AbstractResourse solidFood = new AbstractResourse();
     private AbstractResourse liquidFood = new AbstractResourse();
@@ -39,19 +46,19 @@ public abstract class Farming implements Serializable
     }
     public float SolidResourceVolumeRequirement()
     {
-        return this.solidResourseVolumRequierment;
+        return this.solidResourceVolumeRequirement;
     }
-    public void LiquidResourceVolumeRequirement(final float resourseVolumRequierment)
+    public void LiquidResourceVolumeRequirement(final float resourceVolumeRequirement)
     {
-        this.liquidResourseVolumRequierment = resourseVolumRequierment;
+        this.liquidResourceVolumeRequirement = resourceVolumeRequirement;
     }
     public float LiquidResourceVolumeRequirement()
     {
-        return this.solidResourseVolumRequierment;
+        return this.liquidResourceVolumeRequirement;
     }
-    public void SolidResourceVolumeRequirement(final float resourseVolumRequierment)
+    public void SolidResourceVolumeRequirement(final float resourceVolumeRequirement)
     {
-        this.solidResourseVolumRequierment = resourseVolumRequierment;
+        this.solidResourceVolumeRequirement = resourceVolumeRequirement;
     }
     public String Name()
     {
@@ -63,10 +70,6 @@ public abstract class Farming implements Serializable
             this.name = name;
         else
             this.name = "unknown";
-    }
-    public ArrayList<AbstractRaw> RawResult()
-    {
-        return this.RawResult();
     }
 
     public float CurrentCost() {
@@ -83,8 +86,6 @@ public abstract class Farming implements Serializable
     public void DefaultCost(final float defaultCost) {
         this.defaultCost = defaultCost;
     }
-
-
     public abstract void Eat() ;
     public abstract void Drink();
     public abstract void GrowUp();

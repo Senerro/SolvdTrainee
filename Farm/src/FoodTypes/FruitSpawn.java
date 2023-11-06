@@ -43,4 +43,5 @@ public abstract class FruitSpawn extends Food implements Serializable
     public String toString() {
         return "Cattle{" + "name='" + Name()  + '\'' + ", cropYield  is" + CropYield() + '}';
     }
+
 }

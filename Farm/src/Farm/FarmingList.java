@@ -4,13 +4,14 @@ import CattleType.RawCattle;
 import CattleType.WorkCastle;
 import FoodTypes.FruitSpawn;
 import FoodTypes.VegetableSpawn;
+import Interfaces.IChunkable;
 import Raw.AbstractRaw;
 import Resourses.AbstractResourse;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public final class FarmingList implements Serializable {
+public final class FarmingList implements Serializable, IChunkable {
     ArrayList<FruitSpawn> fruitArrayList = new ArrayList<FruitSpawn>();
     ArrayList<VegetableSpawn> vegetablesList = new ArrayList<VegetableSpawn>();
     ArrayList<RawCattle> rawCattleList = new ArrayList<RawCattle>();
@@ -25,6 +26,10 @@ public final class FarmingList implements Serializable {
     public void PurgeRawFarmList()
     {
         this.rawFarmArrayList.clear();
+    }
+    public void PurgeRawFarm(AbstractRaw raw)
+    {
+        this.rawFarmArrayList.remove(raw);
     }
 
     public ArrayList<AbstractResourse> ResoursesArrayList()
@@ -42,9 +47,10 @@ public final class FarmingList implements Serializable {
     }
 
 
-    public ArrayList<RawCattle> RawCattleList() {
+    public ArrayList<RawCattle> RawCattle() {
         return rawCattleList;
     }
+
 
     public ArrayList<WorkCastle> WorkCastlesList() {
         return workCastlesList;
@@ -56,7 +62,13 @@ public final class FarmingList implements Serializable {
     }
 
     public void RawCattle(final RawCattle animal) {
-        this.rawCattleList.add(animal);
+        for (var element:RawCattle())
+        {
+           if(!MergeInChunk(element, animal))
+           {
+               this.rawCattleList.add(animal);
+           }
+        }
     }
     public void VegetableSpawn(final VegetableSpawn vegetable) {
         this.vegetablesList.add(vegetable);
@@ -82,7 +94,7 @@ public final class FarmingList implements Serializable {
         this.marketFruitSpawnSellList.add(fruitSpawn);
     }
 
-    public void RawFarmList(final AbstractRaw raw) {
+    public void RawFarm(final AbstractRaw raw) {
         this.rawFarmArrayList.add(raw);
     }
 
@@ -90,12 +102,21 @@ public final class FarmingList implements Serializable {
         this.rawMarcketArrayList.add(raw);
     }
 
-    public ArrayList<AbstractRaw> RawFarmList() {
+    public ArrayList<AbstractRaw> RawFarm() {
         return this.rawFarmArrayList;
     }
 
 
     public ArrayList<AbstractRaw> RawFromMarketList() {
         return this.rawFarmArrayList;
+    }
+
+    @Override
+    public boolean MergeInChunk(RawCattle animal, RawCattle animal2) {
+        if(animal.equals(animal2)) {
+            animal.IncreaseChunk(animal2.Chunk());
+            return true;
+        }
+        return false;
     }
 }

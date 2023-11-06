@@ -44,11 +44,11 @@ public class ResoursesContainer implements Serializable
 
     public boolean CheckWaterAvailability()
     {
-        return !(container.get(0).Volume() <= 0);
+        return (container.get(0).Volume() > 0);
     }
     public boolean CheckCornAvailability()
     {
-        return !(container.get(1).Volume() <= 0);
+        return (container.get(1).Volume() > 0);
     }
     public final void ReduceResource(Farming farming)
     {
