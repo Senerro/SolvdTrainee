@@ -7,12 +7,16 @@ import File.JsonFileConverter;
 import Resourses.AbstractResourse;
 import Resourses.Corn;
 import Resourses.Water;
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class GameManager
 {
+    Logger logger = Logger.getLogger(GameManager.class);
     final Scanner input = new Scanner(System.in);
 
     public int answer;
@@ -25,7 +29,13 @@ public class GameManager
     private  void MainMenu()
     {
 
+
+
         System.out.println("Welcome to the FarmIO");
+        logger.setLevel(Level.ERROR);
+        logger.info("logger is warning");
+
+
         System.out.println("======================");
         do {
             System.out.println("1: Start new game");
@@ -463,6 +473,7 @@ public class GameManager
 
     public static void main(String[] args)
     {
+        BasicConfigurator.configure();
         var game = new GameManager();
     }
 }

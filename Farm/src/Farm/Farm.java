@@ -17,7 +17,7 @@ import FoodTypes.VegetableSpawn;
 import Interfaces.IFarmingExistable;
 import Interfaces.IGameSessionGain;
 import Interfaces.IResourcesExistable;
-import Resourses.ResoursesContainer;
+import Resourses.ResourcesContainer;
 
 import java.io.Serializable;
 
@@ -31,7 +31,7 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
 
 
     private float balance = 500000;
-    public ResoursesContainer container = new ResoursesContainer();
+    public ResourcesContainer container = new ResourcesContainer();
 
     static
     {

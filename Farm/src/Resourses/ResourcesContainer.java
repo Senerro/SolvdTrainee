@@ -5,17 +5,16 @@ import AbstractEntities.Farming;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ResoursesContainer implements Serializable
+public class ResourcesContainer implements Serializable
 {
     Corn corn = new Corn();
     Water water = new Water();
     ArrayList<AbstractResourse> container = new ArrayList<AbstractResourse>();
 
-    public ResoursesContainer()
+    public ResourcesContainer()
     {
         container.add(corn);
         container.add(water);
-
     }
 
     public float CornVolume()
