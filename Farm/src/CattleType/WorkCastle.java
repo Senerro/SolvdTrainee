@@ -4,6 +4,7 @@ import AbstractEntities.Cattle;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 public abstract class WorkCastle extends Cattle implements Serializable
 {

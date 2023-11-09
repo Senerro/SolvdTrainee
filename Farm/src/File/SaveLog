@@ -1,0 +1,12 @@
+2023-11-09 17:49:49 WARN  GameManager:29 - Welcome to the FarmIO
+2023-11-09 17:50:09 WARN  GameManager:29 - Welcome to the FarmIO
+2023-11-09 17:52:53 WARN  Cattle:27 - Age isn't able to be negative or unnatural. You entered 0.0
+2023-11-09 18:07:56 WARN  Cattle:27 - Age isn't able to be negative or unnatural. You entered 0.0
+2023-11-09 18:07:56 WARN  Cattle:27 - Age isn't able to be negative or unnatural. You entered 0.0
+2023-11-09 18:07:56 WARN  Cattle:27 - Age isn't able to be negative or unnatural. You entered 0.0
+2023-11-09 19:22:08 ERROR RawCattle:31 - Value isn't able to be negative You entered 0.0
+2023-11-09 19:22:08 WARN  Cattle:28 - Age isn't able to be negative or unnatural. You entered 0.0
+2023-11-09 19:22:08 ERROR TradeGenerator:61 - We aren't charity organization Entered cost was 0.0
+2023-11-09 19:22:08 ERROR RawCattle:31 - Value isn't able to be negative You entered 0.0
+2023-11-09 19:22:08 WARN  Cattle:28 - Age isn't able to be negative or unnatural. You entered 0.0
+2023-11-09 19:22:08 ERROR TradeGenerator:61 - We aren't charity organization Entered cost was 0.0

@@ -81,6 +81,9 @@ public final class FarmingList implements Serializable, IChunkable {
     public ArrayList<RawCattle> MarketRawCattleSellList() {
         return this.marketRawCattleSellList;
     }
+    public void PurgeMarketRawCattle(RawCattle cattle) {
+       MarketRawCattleSellList().remove(cattle);
+    }
 
     public ArrayList<FruitSpawn> MarketFruitSpawnSellList() {
         return this.marketFruitSpawnSellList;

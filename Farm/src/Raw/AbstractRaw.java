@@ -2,6 +2,7 @@ package Raw;
 
 import Interfaces.IRotting;
 import Resourses.AbstractResourse;
+import Exception.*;
 
 import java.io.Serializable;
 
@@ -12,7 +13,6 @@ public class AbstractRaw extends AbstractResourse implements Serializable, IRott
     AbstractRaw()
     {
         spawnDay = CurrentDayStatic();
-
     }
     private final int spawnDay;
 
@@ -22,7 +22,9 @@ public class AbstractRaw extends AbstractResourse implements Serializable, IRott
     }
 
 
-    public void ShelfLife(final float shelfLife) {
+    public void ShelfLife(final float shelfLife) throws ShelfLifeException {
+        if(shelfLife<=0)
+            throw new ShelfLifeException("Resource must have period of lide", shelfLife);
         this.shelfLife = shelfLife;
     }
     public int SpawnDay()

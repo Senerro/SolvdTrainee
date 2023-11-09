@@ -3,8 +3,9 @@ package CattleType;
 import AbstractEntities.Cattle;
 import AbstractEntities.Farming;
 import Farm.Farm;
-import Interfaces.IChunkable;
 import Raw.AbstractRaw;
+import Exception.CattleWeightException;
+import org.apache.log4j.Logger;
 
 import java.io.Serializable;
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.Objects;
 
 public abstract class RawCattle extends Cattle implements Serializable
 {
+    private static final Logger LOGGER = Logger.getLogger(RawCattle.class);
+
 
     public boolean isDead = false;
     private float weight = 0.1f;
@@ -19,6 +22,16 @@ public abstract class RawCattle extends Cattle implements Serializable
 
     public void CattleWeight(final float weight)
     {
+        if(weight <= 0)
+        {
+            try{throw new CattleWeightException(weight);}
+            catch (CattleWeightException e)
+            {
+                this.weight = 0.1f;
+                LOGGER.error(e.GetInfo());
+            }
+        }
+
         this.weight =  weight;
     }
     public float CattleWeight()

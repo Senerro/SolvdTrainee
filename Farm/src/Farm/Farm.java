@@ -17,7 +17,7 @@ import FoodTypes.VegetableSpawn;
 import Interfaces.IFarmingExistable;
 import Interfaces.IGameSessionGain;
 import Interfaces.IResourcesExistable;
-import Resourses.ResourcesContainer;
+import Resourses.ResoursesContainer;
 
 import java.io.Serializable;
 
@@ -31,7 +31,7 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
 
 
     private float balance = 500000;
-    public ResourcesContainer container = new ResourcesContainer();
+    public ResoursesContainer container = new ResoursesContainer();
 
     static
     {
@@ -116,7 +116,7 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
         if (IsAbleToBuy(production)) {
             farmingList.RawCattle(production);
             farm.ChangeBalance(-production.CurrentCost());
-            farm.farmingList.MarketRawCattleSellList().remove(production);
+            farm.farmingList.PurgeMarketRawCattle(production);
             return true;
         }
         return false;

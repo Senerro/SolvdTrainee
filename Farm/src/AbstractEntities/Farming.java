@@ -1,11 +1,14 @@
 package AbstractEntities;
 
 import Resourses.AbstractResourse;
+import Exception.*;
+import org.apache.log4j.Logger;
 
 import java.io.Serializable;
 
 public abstract class Farming implements Serializable
 {
+    private static final Logger LOGGER = Logger.getLogger(Farming.class);
     private int chunk = 1;
 
     public void IncreaseChunk(final int chunk)
@@ -36,9 +39,9 @@ public abstract class Farming implements Serializable
     {
         return this.liquidFood;
     }
-    public void SolidAbstractResource(final AbstractResourse resourse)
+    public void SolidAbstractResource(final AbstractResourse resource)
     {
-        this.solidFood = resourse;
+        this.solidFood = resource;
     }
     public AbstractResourse SolidAbstractResource()
     {
@@ -66,19 +69,29 @@ public abstract class Farming implements Serializable
     }
     public void Name(final String name)
     {
-        if (!name.isEmpty())
-            this.name = name;
+        if(name.isEmpty()) {
+            try {
+                throw new NameFarmingException();
+                }
+            catch (NameFarmingException e) {
+                LOGGER.warn(e.GetInfo());
+                this.name = e.Name();
+            }
+        }
         else
-            this.name = "unknown";
+            this.name = name;
     }
-
     public float CurrentCost() {
         return currentCost;
     }
+    public void CurrentCost(final float currentCost) throws CostException {
+        if(currentCost<=0) {
+            throw new CostException("We aren't charity organization", currentCost);
+        }
 
-    public void CurrentCost(final float currentCost) {
         this.currentCost = currentCost;
     }
+
     public float DefaultCost() {
         return defaultCost;
     }
@@ -89,6 +102,4 @@ public abstract class Farming implements Serializable
     public abstract void Eat() ;
     public abstract void Drink();
     public abstract void GrowUp();
-
-
 }
