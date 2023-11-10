@@ -2,13 +2,19 @@ package AbstractEntities;
 
 import Resourses.AbstractResourse;
 import Exception.*;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import java.io.Serializable;
 
 public abstract class Farming implements Serializable
 {
-    private static final Logger LOGGER = Logger.getLogger(Farming.class);
+    static final Logger LOGGER = LogManager.getLogger(Farming.class);
+    static
+    {
+        System.setProperty("log4j.configurationFile","log4j.xml");
+    }
     private int chunk = 1;
 
     public void IncreaseChunk(final int chunk)

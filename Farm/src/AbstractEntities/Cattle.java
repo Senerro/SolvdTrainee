@@ -1,12 +1,18 @@
 package AbstractEntities;
 import Exception.CattleAgeException;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import java.io.Serializable;
 
 public abstract class Cattle extends Farming implements Serializable
 {
-    private static final Logger LOGGER = Logger.getLogger(Cattle.class);
+    private static final Logger LOGGER = LogManager.getLogger(Cattle.class);
+    static
+    {
+        System.setProperty("log4j.configurationFile","log4j.xml");
+    }
 
     protected float workingHours;
     protected int age;

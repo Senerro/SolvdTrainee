@@ -5,7 +5,8 @@ import AbstractEntities.Farming;
 import Farm.Farm;
 import Raw.AbstractRaw;
 import Exception.CattleWeightException;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,8 +14,11 @@ import java.util.Objects;
 
 public abstract class RawCattle extends Cattle implements Serializable
 {
-    private static final Logger LOGGER = Logger.getLogger(RawCattle.class);
-
+    static final Logger LOGGER = LogManager.getLogger(RawCattle.class);
+    static
+    {
+        System.setProperty("log4j.configurationFile","log4j.xml");
+    }
 
     public boolean isDead = false;
     private float weight = 0.1f;

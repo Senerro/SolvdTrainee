@@ -7,12 +7,18 @@ import CattleType.ReqularRawCattle.Pig;
 import CattleType.ReqularRawCattle.Sheep;
 import Farm.Farm;
 import Exception.CostException;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import java.util.zip.DataFormatException;
 
 public final class TradeGenerator {
-    static final org.apache.log4j.Logger LOGGER = Logger.getLogger(TradeGenerator.class);
+    static final Logger LOGGER = LogManager.getLogger(TradeGenerator.class);
+    static
+    {
+        System.setProperty("log4j.configurationFile","log4j.xml");
+    }
         public static void GenerateMarketRawCattleTrades(final Farm farming)
         {
             double random = Math.random()*6+2;

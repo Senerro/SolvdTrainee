@@ -1,12 +1,17 @@
 package Raw;
 import Exception.*;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.Serializable;
 
 public class Wool extends AbstractRaw implements Serializable
 {
-    static final Logger LOGGER = Logger.getLogger(Wool.class);
+    static final Logger LOGGER = LogManager.getLogger(Wool.class);
+    static
+    {
+        System.setProperty("log4j.configurationFile","log4j.xml");
+    }
     public Wool()
     {
         try{

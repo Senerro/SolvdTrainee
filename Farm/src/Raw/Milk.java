@@ -1,12 +1,18 @@
 package Raw;
 import Exception.*;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import java.io.Serializable;
 
 public class Milk extends AbstractRaw implements Serializable
 {
-    static final Logger LOGGER = Logger.getLogger(Milk.class);
+    static final Logger LOGGER = LogManager.getLogger(Milk.class);
+    static
+    {
+        System.setProperty("log4j.configurationFile","log4j.xml");
+    }
     public Milk()
     {
         try{

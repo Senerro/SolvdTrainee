@@ -7,7 +7,9 @@ import File.JsonFileConverter;
 import Resourses.AbstractResourse;
 import Resourses.Corn;
 import Resourses.Water;
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -15,10 +17,15 @@ import java.util.Scanner;
 public class GameManager
 {
     final Scanner input = new Scanner(System.in);
-    static final Logger LOGGER = Logger.getLogger(GameManager.class);
 
     public int answer;
     public boolean isCorrect = true;
+    static
+    {
+        System.setProperty("log4j.configurationFile","log4j.xml");
+    }
+    private static final Logger LOGGER = LogManager.getLogger(GameManager.class);
+
     public GameManager()
         {
             LOGGER.trace("Application successfully started");
