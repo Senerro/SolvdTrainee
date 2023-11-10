@@ -2,7 +2,7 @@ package Exception;
 
 public class ShelfLifeException extends Exception
 {
-    private float shelfLife;
+    private final float shelfLife;
     public ShelfLifeException(String message, float seedingArea)
     {
         super(message);

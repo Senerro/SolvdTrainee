@@ -22,10 +22,9 @@ public abstract class Food extends Farming implements Serializable
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
 
-        if(this.Sort() == ((Food) object).Sort())
+        if(this.Sort().equals(((Food) object).Sort()))
             if (this.DefaultCost() == ((Food) object).DefaultCost() && this.SeedingArea() == ((Food) object).SeedingArea())
-                if (this.name == ((Food) object).name)
-                    return true;
+                return this.name.equals(((Food) object).name);
 
         return false;
     }
@@ -37,10 +36,6 @@ public abstract class Food extends Farming implements Serializable
     public Food()
     {
         Sort("unknown");
-    }
-    public Food(final String sort)
-    {
-        Sort(sort);
     }
     public String Sort()
     {

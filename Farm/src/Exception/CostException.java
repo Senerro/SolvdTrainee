@@ -1,7 +1,7 @@
 package Exception;
 
 public class CostException extends Exception {
-    private float cost;
+    private final float cost;
     public CostException(String message, float cost)
     {
         super(message);

@@ -10,3 +10,4 @@
 2023-11-09 19:22:08 ERROR RawCattle:31 - Value isn't able to be negative You entered 0.0
 2023-11-09 19:22:08 WARN  Cattle:28 - Age isn't able to be negative or unnatural. You entered 0.0
 2023-11-09 19:22:08 ERROR TradeGenerator:61 - We aren't charity organization Entered cost was 0.0
+2023-11-10 13:28:30 ERROR JsonFileConverter:59 - Farm.Farm; local class incompatible: stream classdesc serialVersionUID = -5876505411080129424, local class serialVersionUID = 952419988913019741

@@ -45,7 +45,7 @@ public abstract class RawCattle extends Cattle implements Serializable
     public void Death(final Farm farm, final Farming cattle)
     {
         this.Harvest();
-        farm.farmingList.RawCattle().remove(cattle);
+        farm.farmingList.RawCattle().remove((RawCattle)cattle);
     }
     @Override
     public int hashCode()
@@ -59,7 +59,7 @@ public abstract class RawCattle extends Cattle implements Serializable
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
         if(this.DefaultCost() == ((RawCattle) object).DefaultCost() && this.Age() == ((RawCattle) object).Age())
-            if (this.Name() == ((RawCattle) object).Name() && this.CattleWeight() == ((RawCattle) object).CattleWeight())
+            if (this.Name().equals(((RawCattle) object).Name()) && this.CattleWeight() == ((RawCattle) object).CattleWeight())
                 return true;
 
         return false;

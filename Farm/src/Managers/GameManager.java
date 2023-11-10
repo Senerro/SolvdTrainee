@@ -21,6 +21,7 @@ public class GameManager
     public boolean isCorrect = true;
     public GameManager()
         {
+            LOGGER.trace("Application successfully started");
             MainMenu();
         }
 
@@ -189,7 +190,6 @@ public class GameManager
                 FarmScene(farm);
             }
         ArrayList<RawCattle> cattleTypeList = new ArrayList<>();
-        ArrayList<RawCattle> tmpList = new ArrayList<>();
 
         LOGGER.info("Right now we have " + farm.farmingList.RawCattle().size() + " castles");
         LOGGER.info("groups: ");
@@ -197,15 +197,12 @@ public class GameManager
         for(int i = 0; i < farm.farmingList.RawCattle().size(); i++)
         {
             boolean isUnique = false;
-            for ( int a = 0; a <cattleTypeList.size(); a++)
-            {
-              if((farm.farmingList.RawCattle().get(i).equals(cattleTypeList.get(a))))
-                {
+            for (RawCattle cattle : cattleTypeList) {
+                if ((farm.farmingList.RawCattle().get(i).equals(cattle))) {
                     isUnique = false;
                     break;
-                }
-              else
-                  isUnique = true;
+                } else
+                    isUnique = true;
             }
 
             if (isUnique)
@@ -244,7 +241,7 @@ public class GameManager
     }
 
     private void PreparationToKill(final Farm farm, final ArrayList<RawCattle> typeList) {
-        ArrayList<RawCattle> tmp = new ArrayList<RawCattle>();
+        ArrayList<RawCattle> tmp = new ArrayList<>();
         LOGGER.info("Who will be killed?");
         LOGGER.info("===================");
         do {
@@ -280,7 +277,7 @@ public class GameManager
         LOGGER.info("Here is our market");
         LOGGER.info("What shall we do");
         LOGGER.info("1: Buy a cattle");
-        LOGGER.info("2: Buy a resourses");
+        LOGGER.info("2: Buy a resources");
         LOGGER.info("3: Sell a raw");
         LOGGER.info("4: Fall back");
         this.answer =  input.nextInt();
@@ -291,7 +288,7 @@ public class GameManager
             switch (this.answer)
             {
                 case 1:  this.isCorrect = true; MarketBuyAnimalScene(farm);
-                case 2:  this.isCorrect = true; MarketBuyResursesScene(farm);
+                case 2:  this.isCorrect = true; MarketBuyResourcesScene(farm);
                 case 3:  this.isCorrect = true; MarketSellRawScene(farm); break;
                 case 4:  this.isCorrect = true; MainScene(farm); break;
                 default: this.isCorrect = false; break;
@@ -324,57 +321,55 @@ public class GameManager
         while (!this.isCorrect);
     }
 
-    private void MarketBuyResursesScene(final Farm farm)
+    private void MarketBuyResourcesScene(final Farm farm)
     {
-        AbstractResourse resourse = new AbstractResourse();
-        LOGGER.info("Here is resource spot");
-        do {
+            AbstractResourse resource = new AbstractResourse();
+            LOGGER.info("Here is resource spot");
+            do {
 
-            LOGGER.info("What are you going to buy?");
-            LOGGER.info("1: Corn");
-            LOGGER.info("2: Water");
-            LOGGER.info("3: Nothing, go back");
-            this.answer = input.nextInt();
-            LOGGER.trace(this.answer);
+                LOGGER.info("What are you going to buy?");
+                LOGGER.info("1: Corn");
+                LOGGER.info("2: Water");
+                LOGGER.info("3: Nothing, go back");
+                this.answer = input.nextInt();
+                LOGGER.trace(this.answer);
 
-            switch (this.answer)
-            {
-                case 1:
-                    this.isCorrect = true;
-                    resourse = new Corn();
-                    LOGGER.info("How much corn do you need?");
+                switch (this.answer) {
+                    case 1:
+                        this.isCorrect = true;
+                        resource = new Corn();
+                        LOGGER.info("How much corn do you need?");
 
-                    break;
-                case 2:
-                    this.isCorrect = true;
-                    resourse = new Water();
-                    LOGGER.info("How much water do you need?");
-                    break;
-                case 3:
-                    this.isCorrect = true;
-                    LOGGER.info("[Returning to the MarketScene]]");
-                    this.MarketScene(farm);
-                default: this.isCorrect = false;
+                        break;
+                    case 2:
+                        this.isCorrect = true;
+                        resource = new Water();
+                        LOGGER.info("How much water do you need?");
+                        break;
+                    case 3:
+                        this.isCorrect = true;
+                        LOGGER.info("[Returning to the MarketScene]]");
+                        this.MarketScene(farm);
+                    default:
+                        this.isCorrect = false;
+                }
+            } while (!isCorrect);
+
+            resource.Volume(input.nextInt());
+
+            if (farm.Balance() > resource.Volume() * resource.DefaultCost()) {
+                var price = resource.Volume() * resource.DefaultCost();
+                farm.container.ChangeResurceVolume(resource, resource.Volume());
+                farm.ChangeBalance(-price);
+                LOGGER.info("you lost " + price + " money");
+
+                LOGGER.info("[redirecting to the market scene]\n");
+                this.MarketBuyResourcesScene(farm);
+            } else {
+                LOGGER.info("You don't have enough money");
+                this.MarketBuyResourcesScene(farm);
             }
-        }while (!isCorrect);
 
-        resourse.Volume(input.nextInt());
-
-        if(farm.Balance()> resourse.Volume()* resourse.DefaultCost() )
-        {
-            var price = resourse.Volume()* resourse.DefaultCost();
-            farm.container.ChangeResurсeVolume(resourse, resourse.Volume());
-            farm.ChangeBalance(-price);
-            LOGGER.info("you lost " + price + " money");
-
-            LOGGER.info("[redirecting to the marcket scene]\n");
-            this.MarketBuyResursesScene(farm);
-        }
-        else
-        {
-            LOGGER.info("You don't have enough money");
-            this.MarketBuyResursesScene(farm);
-        }
     }
 
     private void MarketBuyAnimalScene(final Farm farm) {
@@ -384,11 +379,10 @@ public class GameManager
             this.MarketScene(farm);
         }
         LOGGER.info("Here is our market place. Look at these trades:");
-        int i = 0;
-        for (var element:farm.farmingList.MarketRawCattleSellList())
+
+        for(int i = 0; i < farm.farmingList.MarketRawCattleSellList().size(); i++)
         {
-            i++;
-            LOGGER.info(element.toString());
+            LOGGER.info(farm.farmingList.MarketRawCattleSellList().get(i).toString());
         }
         do
         {

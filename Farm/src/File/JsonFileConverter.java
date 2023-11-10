@@ -6,9 +6,11 @@ import java.io.*;
 
 import Farm.Farm;
 import com.google.gson.Gson;
+import org.apache.log4j.Logger;
 
 public class JsonFileConverter
 {
+    private static final Logger LOGGER = Logger.getLogger(JsonFileConverter.class);
     private final String PATH;
     public JsonFileConverter()
     {
@@ -29,20 +31,19 @@ public class JsonFileConverter
 
         } catch (Exception e)
         {
-            e.printStackTrace();
+            LOGGER.error(e.getMessage());
         }
     }
     public void SaveObjectToFile(final Farm object)
     {
-        String filename = PATH;
-        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename)))
+        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(PATH)))
         {
             oos.writeObject(object);
-            System.out.println("File has been written");
+            LOGGER.debug("Save file has been saved");
         }
         catch(Exception ex){
 
-            System.out.println(ex.getMessage());
+            LOGGER.error(ex.getMessage());
         }
 
     }
@@ -55,7 +56,7 @@ public class JsonFileConverter
         }
         catch(Exception ex){
 
-            System.out.println(ex.getMessage());
+            LOGGER.error(ex.getMessage());
         }
 
         return newFarm;

@@ -12,12 +12,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public final class FarmingList implements Serializable, IChunkable {
-    ArrayList<FruitSpawn> fruitArrayList = new ArrayList<FruitSpawn>();
-    ArrayList<VegetableSpawn> vegetablesList = new ArrayList<VegetableSpawn>();
-    ArrayList<RawCattle> rawCattleList = new ArrayList<RawCattle>();
-    ArrayList<WorkCastle> workCastlesList = new ArrayList<WorkCastle>();
-    ArrayList<RawCattle> marketRawCattleSellList = new ArrayList<RawCattle>();
-    ArrayList<FruitSpawn> marketFruitSpawnSellList = new ArrayList<FruitSpawn>();
+    ArrayList<FruitSpawn> fruitArrayList = new ArrayList<>();
+    ArrayList<VegetableSpawn> vegetablesList = new ArrayList<>();
+    ArrayList<RawCattle> rawCattleList = new ArrayList<>();
+    ArrayList<WorkCastle> workCastlesList = new ArrayList<>();
+    ArrayList<RawCattle> marketRawCattleSellList = new ArrayList<>();
+    ArrayList<FruitSpawn> marketFruitSpawnSellList = new ArrayList<>();
 
     ArrayList<AbstractRaw> rawFarmArrayList = new ArrayList<>();
     ArrayList<AbstractRaw> rawMarcketArrayList = new ArrayList<>();

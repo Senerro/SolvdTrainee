@@ -4,7 +4,6 @@ import AbstractEntities.Cattle;
 
 import java.io.Serializable;
 import java.util.Objects;
-import java.util.logging.Logger;
 
 public abstract class WorkCastle extends Cattle implements Serializable
 {
@@ -31,8 +30,7 @@ public abstract class WorkCastle extends Cattle implements Serializable
         if (object == null || getClass() != object.getClass()) return false;
 
         if(this.currentCost == ((WorkCastle) object).currentCost && this.defaultCost == ((WorkCastle) object).defaultCost)
-            if (this.name == ((WorkCastle) object).name)
-                return true;
+            return this.name.equals(((WorkCastle) object).name);
 
         return false;
     }

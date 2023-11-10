@@ -5,10 +5,8 @@ public class NameFarmingException extends Exception
     private final String name;
     public NameFarmingException()
     {
-
         super("Name can not be empty");
         this.name = "unknown";
-
     }
     public String Name()
     {

@@ -9,7 +9,6 @@ public abstract class Cattle extends Farming implements Serializable
     private static final Logger LOGGER = Logger.getLogger(Cattle.class);
 
     protected float workingHours;
-    protected Boolean isDead;
     protected int age;
 
     public int Age()

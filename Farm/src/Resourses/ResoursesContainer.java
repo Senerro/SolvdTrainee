@@ -26,7 +26,7 @@ public class ResoursesContainer implements Serializable
     {
         return this.water.Volume();
     }
-    public final void ChangeResurсeVolume(AbstractResourse resource, float volume)
+    public final void ChangeResurceVolume(AbstractResourse resource, float volume)
     {
         boolean isSpotted = false;
                 do
@@ -52,7 +52,7 @@ public class ResoursesContainer implements Serializable
     }
     public final void ReduceResource(Farming farming)
     {
-            ChangeResurсeVolume(farming.SolidAbstractResource(),-1*farming.SolidResourceVolumeRequirement());
-            ChangeResurсeVolume(farming.LiquidAbstractResource(), -1*farming.LiquidResourceVolumeRequirement());
+            ChangeResurceVolume(farming.SolidAbstractResource(),-1*farming.SolidResourceVolumeRequirement());
+            ChangeResurceVolume(farming.LiquidAbstractResource(), -1*farming.LiquidResourceVolumeRequirement());
     }
 }
