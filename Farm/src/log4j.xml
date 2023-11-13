@@ -3,7 +3,7 @@
  Set to debug or trace if log4j initialization is failing. -->
 <Configuration status="warn">
     <Appenders>
-      
+
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
         </Console>

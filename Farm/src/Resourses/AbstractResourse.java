@@ -1,6 +1,7 @@
 package Resourses;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class AbstractResourse implements Serializable
 {
@@ -57,6 +58,11 @@ public class AbstractResourse implements Serializable
     public String Name()
     {
         return this.name;
+    }
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(this.getClass(), this.name)+34;
     }
 }
 

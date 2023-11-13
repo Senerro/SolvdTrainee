@@ -2,6 +2,8 @@ package Managers;
 
 import AbstractEntities.Farming;
 import CattleType.RawCattle;
+import CattleType.ReqularRawCattle.Pig;
+import CattleType.ReqularRawCattle.Sheep;
 import Farm.Farm;
 import File.JsonFileConverter;
 import Resourses.AbstractResourse;
@@ -199,6 +201,12 @@ public class GameManager
         ArrayList<RawCattle> cattleTypeList = new ArrayList<>();
 
         LOGGER.info("Right now we have " + farm.farmingList.RawCattle().size() + " castles");
+        farm.farmingList.Animal();
+       // LOGGER.info(farm.farmingList.Animal(1));
+        for (var element :farm.farmingList.Animal(1))
+        {
+            LOGGER.info(element.toString());
+        }
         LOGGER.info("groups: ");
         cattleTypeList.add(farm.farmingList.RawCattle().get(0));
         for(int i = 0; i < farm.farmingList.RawCattle().size(); i++)
@@ -422,6 +430,45 @@ public class GameManager
     {
         Farm save = new Farm();
         TradeGenerator.GenerateMarketRawCattle(save);
+        ArrayList<RawCattle> animals = new ArrayList<>();
+
+        RawCattle animal1 = new Pig();
+        RawCattle animal2 = new Pig();
+        RawCattle animal3 = new Pig();
+        RawCattle animal4 = new Pig();
+        RawCattle animal5 = new Pig();
+        RawCattle animal6 = new Pig();
+        RawCattle animal7 = new Sheep();
+        RawCattle animal8 = new Sheep();
+
+
+
+        animal1.Age(1);
+        animal1.CattleWeight(52);
+        animal2.Age(2);
+        animal2.CattleWeight(51);
+        animal3.Age(2);
+        animal3.CattleWeight(52);
+        animal4.Age(3);
+        animal4.CattleWeight(40);
+        animal5.Age(3);
+        animal5.CattleWeight(34);
+        animal6.Age(3);
+        animal6.CattleWeight(90);
+        animal7.Age(5);
+        animal7.CattleWeight(120);
+        animal8.Age(6);
+        animal8.CattleWeight(91);
+
+        save.farmingList.RawCattle(animal1);
+        save.farmingList.RawCattle(animal2);
+        save.farmingList.RawCattle(animal3);
+        save.farmingList.RawCattle(animal4);
+        save.farmingList.RawCattle(animal5);
+        save.farmingList.RawCattle(animal6);
+        save.farmingList.RawCattle(animal7);
+        save.farmingList.RawCattle(animal8);
+
         MainScene(save);
     }
     private void Start(final Farm save)

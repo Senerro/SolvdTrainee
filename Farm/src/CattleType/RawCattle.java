@@ -9,6 +9,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
 
@@ -19,6 +20,7 @@ public abstract class RawCattle extends Cattle implements Serializable
     {
         System.setProperty("log4j.configurationFile","log4j.xml");
     }
+
 
     public boolean isDead = false;
     private float weight = 0.1f;

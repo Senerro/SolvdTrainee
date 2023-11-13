@@ -256,7 +256,7 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
     @Override
     public boolean CheckFarmRawCattle()
     {
-        return !this.farmingList.RawCattle().isEmpty();
+        return this.farmingList.RawCattle().isEmpty();
     }
 
     @Override

@@ -5,23 +5,73 @@ import CattleType.WorkCastle;
 import FoodTypes.FruitSpawn;
 import FoodTypes.VegetableSpawn;
 import Interfaces.IChunkable;
+import Managers.Comparators.RawCattleAgeComparator;
+import Managers.Comparators.RawCattleNameComparator;
+import Managers.Comparators.RawCattleWeighComparator;
 import Raw.AbstractRaw;
+import Raw.Egg;
 import Resourses.AbstractResourse;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.Serializable;
-import java.util.ArrayList;
+import java.util.*;
 
 public final class FarmingList implements Serializable, IChunkable {
+    static final Logger LOGGER = LogManager.getLogger(Egg.class);
+    Comparator<RawCattle> RCcomp = new RawCattleNameComparator().thenComparing(new RawCattleAgeComparator()).thenComparing(new RawCattleWeighComparator());
     ArrayList<FruitSpawn> fruitArrayList = new ArrayList<>();
     ArrayList<VegetableSpawn> vegetablesList = new ArrayList<>();
     ArrayList<RawCattle> rawCattleList = new ArrayList<>();
     ArrayList<WorkCastle> workCastlesList = new ArrayList<>();
     ArrayList<RawCattle> marketRawCattleSellList = new ArrayList<>();
-    ArrayList<FruitSpawn> marketFruitSpawnSellList = new ArrayList<>();
+
+    LinkedList<FruitSpawn> marketFruitSpawnSellLinkedList = new LinkedList<>();
+    public void MarketFruitSpawnSellLinkedList(final FruitSpawn fruitSpawn) {
+        this.marketFruitSpawnSellLinkedList.add(fruitSpawn);
+    }
+    public LinkedList<FruitSpawn> MarketFruitSpawnSellLinkedList() {
+        return this.marketFruitSpawnSellLinkedList;
+    }
+    HashMap<Integer, RawCattle> rawCattleHashMap = new HashMap<>();
+    public void RawCattleHashMap(RawCattle animal)
+    {
+        boolean isUnique= true;
+        if(rawCattleHashMap.containsKey(animal.hashCode())) {
+            for (var element : rawCattleHashMap.values()) {
+                if (element.equals(animal)) {
+                    isUnique = false;
+                    break;
+                }
+            }
+            if (isUnique) {
+                LOGGER.warn("RawCattle animal was rewritten to this animal ->" + animal.toString());
+                rawCattleHashMap.put(animal.hashCode(), animal);
+            }
+        }
+        else
+            rawCattleHashMap.put(animal.hashCode(), animal);
+    }
+    TreeSet<RawCattle> animal = new TreeSet<>(RCcomp);
+    public  void Animal()
+    {
+        animal.clear();
+        animal.addAll(RawCattle());
+    }
+    public  ArrayList<RawCattle> Animal(int a)
+    {
+        return new ArrayList<>(animal);
+    }
+    public ArrayList<RawCattle> RawCattleHashMap()
+    {
+        return new ArrayList<>(rawCattleHashMap.values());
+    }
 
     ArrayList<AbstractRaw> rawFarmArrayList = new ArrayList<>();
     ArrayList<AbstractRaw> rawMarcketArrayList = new ArrayList<>();
     ArrayList<AbstractResourse> resoursesArrayList = new ArrayList<>();
+
+
 
     public void PurgeRawFarmList()
     {
@@ -62,13 +112,17 @@ public final class FarmingList implements Serializable, IChunkable {
     }
 
     public void RawCattle(final RawCattle animal) {
-        for (var element:RawCattle())
+        if(RawCattle().isEmpty())
+            this.rawCattleList.add(animal);
+        else
         {
-           if(!MergeInChunk(element, animal))
-           {
-               this.rawCattleList.add(animal);
-           }
-        }
+           // for (var element : RawCattle()) {
+               // if (!MergeInChunk(element, animal))
+                    this.rawCattleList.add(animal);
+                }
+           // }
+
+
     }
     public void VegetableSpawn(final VegetableSpawn vegetable) {
         this.vegetablesList.add(vegetable);
@@ -85,17 +139,13 @@ public final class FarmingList implements Serializable, IChunkable {
        MarketRawCattleSellList().remove(cattle);
     }
 
-    public ArrayList<FruitSpawn> MarketFruitSpawnSellList() {
-        return this.marketFruitSpawnSellList;
-    }
+
 
     public void MarketRawCattleSellList(final RawCattle cattle) {
         this.marketRawCattleSellList.add(cattle);
     }
 
-    public void MarketFruitSpawnSellList(final FruitSpawn fruitSpawn) {
-        this.marketFruitSpawnSellList.add(fruitSpawn);
-    }
+
 
     public void RawFarm(final AbstractRaw raw) {
         this.rawFarmArrayList.add(raw);

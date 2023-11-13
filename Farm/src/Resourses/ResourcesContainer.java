@@ -4,12 +4,14 @@ import AbstractEntities.Farming;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Objects;
 
 public class ResourcesContainer implements Serializable
 {
     Corn corn = new Corn();
     Water water = new Water();
-    ArrayList<AbstractResourse> container = new ArrayList<AbstractResourse>();
+    HashSet<AbstractResourse> container = new HashSet<>();
 
     public ResourcesContainer()
     {
@@ -25,9 +27,9 @@ public class ResourcesContainer implements Serializable
     {
         return this.water.Volume();
     }
-    public final void ChangeResurсeVolume(AbstractResourse resource, float volume)
+    public final void ChangeResourceVolume(AbstractResourse resource, float volume)
     {
-        boolean isSpotted = false;
+      /*  boolean isSpotted = false;
                 do
                 {
                     for (int i = 0; i < container.size(); i++)
@@ -37,21 +39,25 @@ public class ResourcesContainer implements Serializable
                             isSpotted = true;
                         }
                 }
-                while (!isSpotted);
+                while (!isSpotted);*/
+        for (var element:container) {
+            if(element.getClass().equals(resource.getClass()))
+                element.ChangeVolume(volume);
+        }
     }
-
 
     public boolean CheckWaterAvailability()
     {
-        return (container.get(0).Volume() > 0);
+        return( WatterVolume() > 0);
     }
     public boolean CheckCornAvailability()
     {
-        return (container.get(1).Volume() > 0);
+        return (CornVolume() > 0);
     }
     public final void ReduceResource(Farming farming)
     {
-            ChangeResurсeVolume(farming.SolidAbstractResource(),-1*farming.SolidResourceVolumeRequirement());
-            ChangeResurсeVolume(farming.LiquidAbstractResource(), -1*farming.LiquidResourceVolumeRequirement());
+            ChangeResourceVolume(farming.SolidAbstractResource(),-1*farming.SolidResourceVolumeRequirement());
+            ChangeResourceVolume(farming.LiquidAbstractResource(), -1*farming.LiquidResourceVolumeRequirement());
     }
+
 }
