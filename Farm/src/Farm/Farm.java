@@ -29,7 +29,6 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
     private static float sessionGain;
     private  float globalGain;
 
-
     private float balance = 500000;
     public ResoursesContainer container = new ResoursesContainer();
 
@@ -67,6 +66,7 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
     }
     public static int CurrentDayStatic() {
         return currentDayStatic;
+
     }
     public void ChangeCurrentDay()
     {

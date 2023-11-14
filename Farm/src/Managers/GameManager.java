@@ -536,7 +536,12 @@ public class GameManager
         listic.addInEnd(4);
         listic.addInEnd(5);
         listic.addInEnd(6);
-        var a = listic.Println();
+        listic.addInEnd(7);
+        listic.addInEnd(8);
+        listic.addInEnd(9);
+
+        listic.deleteLast();
+        var a = listic.toArrayList();
 
 
 

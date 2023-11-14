@@ -9,6 +9,7 @@ public class MyList<T> {
     private float sizeFactor;
     private Node<T> firstNode;
     private Node<T> lastNode;
+    private ArrayList<T> returnList = new ArrayList<>();
 
     private static class Node<T>
     {
@@ -40,7 +41,6 @@ public class MyList<T> {
             }
             else {
                 lastNode = new Node<T>(lastNode, object);
-                System.out.println("FD");
             }
     }
     public void addInStart(T object)
@@ -48,7 +48,6 @@ public class MyList<T> {
         if(CheckFirstElement(object))
         {
             lastNode = new Node<T>(lastNode, object);
-            System.out.println("FD");
         }
     }
     private boolean CheckFirstElement(T object)
@@ -65,41 +64,19 @@ public class MyList<T> {
         this.lastNode.previous.next=null;
         this.lastNode.previous=null;
     }
-    /*public Node search(Node<T> currentNode) //поиск последней заполненной ноды
+    private void getNextNode(Node<T> currentNode)
     {
-        if (currentNode.next != null)
+        System.out.println(currentNode.value);
+        returnList.add(currentNode.value);
+        if(currentNode.next !=null)
         {
-            var a = currentNode.next;
-            search(a);
+            getNextNode(currentNode.next);
         }
-        return currentNode;
-    }*/
+
+    }
     public ArrayList<T> toArrayList()
     {
-        ArrayList<T> returnList = new ArrayList<>();
-        returnList.add(firstNode.value);
-        boolean isEnd = false;
-        do {
-            var node = getNextNode(firstNode.next);
-            returnList.add(node.value);
-            if (node.next==null)
-                isEnd=true;
-            else getNextNode(node.next);
-        }
-        while (!isEnd);
-       return returnList;
-    }
-    private Node<T> getNextNode(Node<T> currentNode)
-    {
-        System.out.println("add value " + currentNode.value);
-        return currentNode.next;
-    }
-    public void Println()
-    {
-        System.out.println("value " + firstNode.value);
-        if(firstNode.next!=null)
-        {
-            Println(firstNode.next);
-        }
+        getNextNode(firstNode);
+        return returnList;
     }
 }

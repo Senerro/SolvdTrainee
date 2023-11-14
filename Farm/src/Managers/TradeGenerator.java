@@ -7,6 +7,7 @@ import CattleType.ReqularRawCattle.Pig;
 import CattleType.ReqularRawCattle.Sheep;
 import Farm.Farm;
 import Exception.CostException;
+import Listic.MyList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -36,7 +37,8 @@ public final class TradeGenerator {
             RawCattle farming;
             switch (iterator)
             {
-                case 1:  farming = new Chicken(); GenerateRawCattleProperties(farming, save);break;
+                case 1:  farming = new Chicken();
+                    GenerateRawCattleProperties(farming, save);break;
                 case 2:  farming = new Cow();
                     GenerateRawCattleProperties(farming, save);break;
                 case 3:  farming = new Pig();
@@ -49,13 +51,13 @@ public final class TradeGenerator {
         public static void GenerateRawCattleProperties(final RawCattle cattle, final Farm save)
         {
             save.farmingList.MarketRawCattleSellList().clear();
+            MyList<RawCattle> rawCattleMySellList = new MyList<>();
 
             int iterator = (int) (Math.random()*5)+2;
             for (int i = 0; i < iterator; i++) {
                 cattle.CattleWeight((int) (Math.random() * 8) + 2);
                 cattle.Age((int) (Math.random() * 9) + 1);
                 cattle.CurrentCost(cattle.DefaultCost() * ((float) Math.random() * 30 + 80) / 100);
-
 //                cattle.CattleWeight((int) (0));
 //                cattle.Age((int) (0));
               /*  try {
@@ -67,10 +69,13 @@ public final class TradeGenerator {
                    LOGGER.error(ex.getMessage() + " Entered cost was " + ex.EnteredCost());
 
                 }*/
-
-
-                save.farmingList.MarketRawCattleSellList(cattle);
+                rawCattleMySellList.addInEnd(cattle);
+                //save.farmingList.MarketRawCattleSellList(cattle);
             }
-
+            var rawCattleArrayList = rawCattleMySellList.toArrayList();
+            for (int i = 0; i<rawCattleArrayList.size(); i++)
+            {
+                save.farmingList.MarketRawCattleSellList(rawCattleArrayList.get(i));
+            }
         }
 }
