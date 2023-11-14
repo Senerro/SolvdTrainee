@@ -6,18 +6,17 @@ import CattleType.ReqularRawCattle.Pig;
 import CattleType.ReqularRawCattle.Sheep;
 import Farm.Farm;
 import File.JsonFileConverter;
+import Listic.MyList;
 import Resourses.AbstractResourse;
 import Resourses.Corn;
 import Resourses.Water;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-
 import java.util.ArrayList;
 import java.util.Scanner;
-
 public class GameManager
 {
+
     final Scanner input = new Scanner(System.in);
 
     public int answer;
@@ -530,6 +529,17 @@ public class GameManager
 
     public static void main(String[] args)
     {
+        MyList<Integer> listic = new MyList<>();
+        listic.addInEnd(1);
+        listic.addInEnd(2);
+        listic.addInEnd(3);
+        listic.addInEnd(4);
+        listic.addInEnd(5);
+        listic.addInEnd(6);
+        var a = listic.Println();
+
+
+
         var game = new GameManager();
     }
 }
