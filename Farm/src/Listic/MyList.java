@@ -4,9 +4,7 @@ import java.util.ArrayList;
 
 public class MyList<T> {
 
-    private int maxSize;
-    private int currentSize;
-    private float sizeFactor;
+
     private Node<T> firstNode;
     private Node<T> lastNode;
     private ArrayList<T> returnList = new ArrayList<>();
@@ -45,12 +43,12 @@ public class MyList<T> {
     }
     public void addInStart(T object)
     {
-        if(CheckFirstElement(object))
+        if(CheckFirstValue(object))
         {
             lastNode = new Node<T>(lastNode, object);
         }
     }
-    private boolean CheckFirstElement(T object)
+    private boolean CheckFirstValue(T object)
     {
         if(firstNode.value == null) {
             firstNode.value = object;
@@ -72,7 +70,6 @@ public class MyList<T> {
         {
             getNextNode(currentNode.next);
         }
-
     }
     public ArrayList<T> toArrayList()
     {

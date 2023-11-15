@@ -2,11 +2,15 @@ package Managers;
 
 import AbstractEntities.Farming;
 import CattleType.RawCattle;
+import CattleType.ReqularRawCattle.Chicken;
 import CattleType.ReqularRawCattle.Pig;
 import CattleType.ReqularRawCattle.Sheep;
 import Farm.Farm;
 import File.JsonFileConverter;
+import FoodTypes.FruitSpawn;
+import FoodTypes.ReqularFruitsSpawn.Appletree;
 import Listic.MyList;
+import Raw.Apple;
 import Resourses.AbstractResourse;
 import Resourses.Corn;
 import Resourses.Water;
@@ -473,6 +477,15 @@ public class GameManager
     private void Start(final Farm save)
     {
         MainScene(save);
+        save.farmingList.RawCattleHashMap();
+        RawCattle animal = new Sheep();
+        save.farmingList.RawCattleHashMap(animal);
+        save.farmingList.MarketFruitSpawnSellLinkedList();
+        FruitSpawn farming = new Appletree();
+        save.farmingList.MarketFruitSpawnSellLinkedList(farming);
+
+
+
     }
     private void Load()
     {
