@@ -15,6 +15,7 @@ import com.solvd.mavenFarm.resourses.Water;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 public class GameManager
 {
@@ -538,20 +539,26 @@ public class GameManager
 
     public static void main(String[] args)
     {
-        MyList<Integer> listic = new MyList<>();
-        listic.add(1);
-        listic.add(2);
-        listic.add(3);
-        listic.add(4);
-        listic.add(5);
-        listic.add(6);
-        listic.add(7);
-        listic.add(8);
-        listic.add(9);
+        MyList<String> listic = new MyList<>();
+        listic.add("1");
+        listic.add("2");
+        listic.add("3");
+        listic.add("4");
+        listic.add("5");
+        listic.add("6");
+        listic.add("7");
+        listic.add("8");
+        listic.add("9");
+        listic.add(0, "0");
+        listic.add(9, "99");
+        listic.set(4, "987");
+       listic.remove(5);
+       listic.remove("8");
 
-        listic.deleteLast();
+
+
+        // listic.deleteLast();
         var a = listic.toArrayList();
-
 
 
         var game = new GameManager();
