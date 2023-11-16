@@ -553,3 +553,9 @@
 [INFO ] 2023-11-16 18:00:25.687 [main] GameManager - 1: Start new game
 [INFO ] 2023-11-16 18:00:25.688 [main] GameManager - 2: Load
 [INFO ] 2023-11-16 18:00:25.689 [main] GameManager - 3: Quit
+[TRACE] 2023-11-16 18:32:13.448 [main] GameManager - Application successfully started
+[INFO ] 2023-11-16 18:32:13.453 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-16 18:32:13.453 [main] GameManager - ======================
+[INFO ] 2023-11-16 18:32:13.454 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-16 18:32:13.454 [main] GameManager - 2: Load
+[INFO ] 2023-11-16 18:32:13.455 [main] GameManager - 3: Quit
