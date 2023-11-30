@@ -1,0 +1,1148 @@
+[TRACE] 2023-11-30 12:26:07.748 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 12:26:07.773 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 12:26:07.774 [main] GameManager - ======================
+[INFO ] 2023-11-30 12:26:07.776 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 12:26:07.777 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 12:26:07.778 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 12:49:30.322 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 12:49:30.329 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 12:49:30.331 [main] GameManager - ======================
+[INFO ] 2023-11-30 12:49:30.331 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 12:49:30.332 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 12:49:30.333 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 12:49:42.880 [main] GameManager - 1
+[INFO ] 2023-11-30 12:49:42.914 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 12:49:42.917 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 12:49:42.917 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 12:49:42.918 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 12:49:42.918 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 12:49:42.918 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 12:49:42.918 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 12:49:44.467 [main] GameManager - 1
+[INFO ] 2023-11-30 12:49:44.467 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 12:49:44.468 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 12:49:44.468 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 12:49:44.469 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 12:49:44.469 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 12:49:44.470 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 12:49:44.470 [main] GameManager - 1
+[INFO ] 2023-11-30 12:49:44.471 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 12:49:44.480 [main] GameManager - Cattle{name='Chicken', age='9', weight =4.0', cost='1800.3247}
+[INFO ] 2023-11-30 12:49:44.481 [main] GameManager - Cattle{name='Chicken', age='9', weight =4.0', cost='1800.3247}
+[INFO ] 2023-11-30 12:49:44.481 [main] GameManager - Cattle{name='Chicken', age='9', weight =4.0', cost='1800.3247}
+[INFO ] 2023-11-30 12:49:44.481 [main] GameManager - Cattle{name='Chicken', age='9', weight =4.0', cost='1800.3247}
+[INFO ] 2023-11-30 12:49:44.481 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 12:49:44.482 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 12:49:44.482 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 12:49:46.326 [main] GameManager - 2
+[INFO ] 2023-11-30 12:49:46.327 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 12:49:46.328 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 12:49:46.329 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 12:49:46.330 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 12:49:46.330 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 12:49:46.331 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 12:49:46.331 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 12:49:47.915 [main] GameManager - 2
+[INFO ] 2023-11-30 12:49:47.916 [main] GameManager - There is our Farm
+[INFO ] 2023-11-30 12:49:47.916 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 12:49:47.917 [main] Questionnaire - 1. Check resources
+[INFO ] 2023-11-30 12:49:47.917 [main] Questionnaire - 2. Check Cattle
+[INFO ] 2023-11-30 12:49:47.918 [main] Questionnaire - 3. Check Raw
+[INFO ] 2023-11-30 12:49:47.918 [main] Questionnaire - 4. Fall back
+[TRACE] 2023-11-30 12:49:48.993 [main] GameManager - 1
+[INFO ] 2023-11-30 12:49:48.994 [main] GameManager - There is our resource tank. There we have 
+[INFO ] 2023-11-30 12:49:48.994 [main] GameManager - 1: Corn volume 0.0
+[INFO ] 2023-11-30 12:49:48.995 [main] GameManager - 2: Water volume 0.0
+[INFO ] 2023-11-30 12:49:48.995 [main] GameManager - There is our Farm
+[INFO ] 2023-11-30 12:49:48.996 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 12:49:48.996 [main] Questionnaire - 1. Check resources
+[INFO ] 2023-11-30 12:49:48.997 [main] Questionnaire - 2. Check Cattle
+[INFO ] 2023-11-30 12:49:48.997 [main] Questionnaire - 3. Check Raw
+[INFO ] 2023-11-30 12:49:48.997 [main] Questionnaire - 4. Fall back
+[TRACE] 2023-11-30 12:49:50.144 [main] GameManager - 2
+[INFO ] 2023-11-30 12:49:50.145 [main] GameManager - Right now we have 8 castles
+[INFO ] 2023-11-30 12:49:50.146 [main] GameManager - Cattle{name='Pig', age='3', weight =90.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:50.146 [main] GameManager - Cattle{name='Pig', age='3', weight =40.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:50.147 [main] GameManager - Cattle{name='Pig', age='3', weight =34.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:50.147 [main] GameManager - Cattle{name='Pig', age='2', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:50.147 [main] GameManager - Cattle{name='Pig', age='2', weight =51.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:50.148 [main] GameManager - Cattle{name='Pig', age='1', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:50.148 [main] GameManager - Cattle{name='Sheep', age='6', weight =91.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:50.149 [main] GameManager - Cattle{name='Sheep', age='5', weight =120.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:50.149 [main] GameManager - groups: 
+[INFO ] 2023-11-30 12:49:50.168 [main] Questionnaire - Do you want to kill someone?
+[INFO ] 2023-11-30 12:49:50.169 [main] Questionnaire - ============================
+[INFO ] 2023-11-30 12:49:50.169 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 12:49:50.169 [main] Questionnaire - 2: No, leave
+[TRACE] 2023-11-30 12:49:52.261 [main] GameManager - 1
+[INFO ] 2023-11-30 12:49:52.261 [main] Questionnaire - Who will be killed?
+[INFO ] 2023-11-30 12:49:52.261 [main] Questionnaire - ===================
+[INFO ] 2023-11-30 12:49:57.494 [main] GameManager - Here are your chosen animals
+[DEBUG] 2023-11-30 12:49:57.495 [main] GameManager - 2 cattles were added into tmp list
+[INFO ] 2023-11-30 12:49:57.501 [main] GameManager - Cattle{name='Sheep', age='5', weight =120.0'}
+[INFO ] 2023-11-30 12:49:57.502 [main] GameManager - Cattle{name='Sheep', age='6', weight =91.0'}
+[INFO ] 2023-11-30 12:49:57.506 [main] GameManager - First animal was murdered
+[INFO ] 2023-11-30 12:49:57.507 [main] GameManager - Right now we have 7 castles
+[INFO ] 2023-11-30 12:49:57.507 [main] GameManager - Cattle{name='Pig', age='3', weight =90.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:57.508 [main] GameManager - Cattle{name='Pig', age='3', weight =40.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:57.508 [main] GameManager - Cattle{name='Pig', age='3', weight =34.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:57.508 [main] GameManager - Cattle{name='Pig', age='2', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:57.508 [main] GameManager - Cattle{name='Pig', age='2', weight =51.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:57.509 [main] GameManager - Cattle{name='Pig', age='1', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:57.509 [main] GameManager - Cattle{name='Sheep', age='6', weight =91.0', cost='0.0}
+[INFO ] 2023-11-30 12:49:57.509 [main] GameManager - groups: 
+[INFO ] 2023-11-30 12:49:57.510 [main] Questionnaire - Do you want to kill someone?
+[INFO ] 2023-11-30 12:49:57.510 [main] Questionnaire - ============================
+[INFO ] 2023-11-30 12:49:57.511 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 12:49:57.511 [main] Questionnaire - 2: No, leave
+[TRACE] 2023-11-30 12:50:02.927 [main] GameManager - 2
+[INFO ] 2023-11-30 12:50:02.927 [main] GameManager - There is our Farm
+[INFO ] 2023-11-30 12:50:02.928 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 12:50:02.929 [main] Questionnaire - 1. Check resources
+[INFO ] 2023-11-30 12:50:02.929 [main] Questionnaire - 2. Check Cattle
+[INFO ] 2023-11-30 12:50:02.930 [main] Questionnaire - 3. Check Raw
+[INFO ] 2023-11-30 12:50:02.930 [main] Questionnaire - 4. Fall back
+[TRACE] 2023-11-30 12:50:05.560 [main] GameManager - 3
+[INFO ] 2023-11-30 12:50:05.561 [main] GameManager - There is our raw container. There we have: 
+[INFO ] 2023-11-30 12:50:05.562 [main] GameManager - [redirecting to farm scene]
+[INFO ] 2023-11-30 12:50:05.562 [main] GameManager - There is our Farm
+[INFO ] 2023-11-30 12:50:05.562 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 12:50:05.562 [main] Questionnaire - 1. Check resources
+[INFO ] 2023-11-30 12:50:05.562 [main] Questionnaire - 2. Check Cattle
+[INFO ] 2023-11-30 12:50:05.562 [main] Questionnaire - 3. Check Raw
+[INFO ] 2023-11-30 12:50:05.562 [main] Questionnaire - 4. Fall back
+[TRACE] 2023-11-30 12:50:07.621 [main] GameManager - 4
+[INFO ] 2023-11-30 12:50:07.622 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 12:50:07.622 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 12:50:07.623 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 12:50:07.623 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 12:50:07.623 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 12:50:07.623 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 12:50:07.624 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 12:50:11.735 [main] GameManager - 3
+[INFO ] 2023-11-30 12:50:11.736 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 12:50:11.736 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 12:50:11.737 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 12:50:11.737 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 12:50:11.737 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 12:50:11.738 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 12:50:11.738 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 12:50:13.212 [main] GameManager - 4
+[INFO ] 2023-11-30 12:50:13.213 [main] GameManager - PAUSE
+[INFO ] 2023-11-30 12:50:13.214 [main] GameManager - ===================
+[INFO ] 2023-11-30 12:50:13.214 [main] Questionnaire - PAUSE
+[INFO ] 2023-11-30 12:50:13.215 [main] Questionnaire - ===================
+[INFO ] 2023-11-30 12:50:13.216 [main] Questionnaire - 1: Save Game
+[INFO ] 2023-11-30 12:50:13.216 [main] Questionnaire - 2: Load Game
+[INFO ] 2023-11-30 12:50:13.216 [main] Questionnaire - 3: Continue
+[INFO ] 2023-11-30 12:50:13.217 [main] Questionnaire - 4: Return to main menu
+[TRACE] 2023-11-30 12:50:14.680 [main] GameManager - 1
+[DEBUG] 2023-11-30 12:50:14.731 [main] JsonFileConverter - Save file has been saved
+[INFO ] 2023-11-30 12:50:14.733 [main] GameManager - PAUSE
+[INFO ] 2023-11-30 12:50:14.733 [main] GameManager - ===================
+[INFO ] 2023-11-30 12:50:14.734 [main] Questionnaire - PAUSE
+[INFO ] 2023-11-30 12:50:14.734 [main] Questionnaire - ===================
+[INFO ] 2023-11-30 12:50:14.734 [main] Questionnaire - 1: Save Game
+[INFO ] 2023-11-30 12:50:14.734 [main] Questionnaire - 2: Load Game
+[INFO ] 2023-11-30 12:50:14.734 [main] Questionnaire - 3: Continue
+[INFO ] 2023-11-30 12:50:14.734 [main] Questionnaire - 4: Return to main menu
+[TRACE] 2023-11-30 12:50:18.048 [main] GameManager - 2
+[INFO ] 2023-11-30 12:50:18.064 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 12:50:18.064 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 12:50:18.065 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 12:50:18.065 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 12:50:18.065 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 12:50:18.065 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 12:50:18.066 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 12:50:20.090 [main] GameManager - 4
+[INFO ] 2023-11-30 12:50:20.090 [main] GameManager - PAUSE
+[INFO ] 2023-11-30 12:50:20.090 [main] GameManager - ===================
+[INFO ] 2023-11-30 12:50:20.091 [main] Questionnaire - PAUSE
+[INFO ] 2023-11-30 12:50:20.091 [main] Questionnaire - ===================
+[INFO ] 2023-11-30 12:50:20.091 [main] Questionnaire - 1: Save Game
+[INFO ] 2023-11-30 12:50:20.091 [main] Questionnaire - 2: Load Game
+[INFO ] 2023-11-30 12:50:20.092 [main] Questionnaire - 3: Continue
+[INFO ] 2023-11-30 12:50:20.092 [main] Questionnaire - 4: Return to main menu
+[TRACE] 2023-11-30 12:50:21.658 [main] GameManager - 3
+[INFO ] 2023-11-30 12:50:21.659 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 12:50:21.659 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 12:50:21.660 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 12:50:21.660 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 12:50:21.660 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 12:50:21.662 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 12:50:21.662 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 12:50:22.439 [main] GameManager - 4
+[INFO ] 2023-11-30 12:50:22.440 [main] GameManager - PAUSE
+[INFO ] 2023-11-30 12:50:22.440 [main] GameManager - ===================
+[INFO ] 2023-11-30 12:50:22.440 [main] Questionnaire - PAUSE
+[INFO ] 2023-11-30 12:50:22.441 [main] Questionnaire - ===================
+[INFO ] 2023-11-30 12:50:22.441 [main] Questionnaire - 1: Save Game
+[INFO ] 2023-11-30 12:50:22.441 [main] Questionnaire - 2: Load Game
+[INFO ] 2023-11-30 12:50:22.443 [main] Questionnaire - 3: Continue
+[INFO ] 2023-11-30 12:50:22.443 [main] Questionnaire - 4: Return to main menu
+[TRACE] 2023-11-30 12:50:23.476 [main] GameManager - 4
+[INFO ] 2023-11-30 12:50:23.476 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 12:50:23.477 [main] GameManager - ======================
+[INFO ] 2023-11-30 12:50:23.477 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 12:50:23.477 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 12:50:23.477 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 12:50:26.274 [main] GameManager - 3
+[TRACE] 2023-11-30 12:55:46.889 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 12:55:46.896 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 12:55:46.897 [main] GameManager - ======================
+[INFO ] 2023-11-30 12:55:46.898 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-30 12:55:46.899 [main] GameManager - 2: Load
+[INFO ] 2023-11-30 12:55:46.901 [main] GameManager - 3: Quit
+[TRACE] 2023-11-30 12:55:53.752 [main] GameManager - 1
+[INFO ] 2023-11-30 12:55:53.771 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 12:55:53.775 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 12:55:53.776 [main] GameManager - What we shall to do?
+[INFO ] 2023-11-30 12:55:53.776 [main] GameManager - 1: Go to the market
+[INFO ] 2023-11-30 12:55:53.777 [main] GameManager - 2: Check our Farm
+[INFO ] 2023-11-30 12:55:53.777 [main] GameManager - 3: Scip this day
+[INFO ] 2023-11-30 12:55:53.777 [main] GameManager - 4: Pause menu
+[TRACE] 2023-11-30 12:57:56.428 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 12:57:56.434 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 12:57:56.435 [main] GameManager - ======================
+[INFO ] 2023-11-30 12:57:56.436 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 12:57:56.436 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 12:57:56.436 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 12:58:05.262 [main] GameManager - 1
+[INFO ] 2023-11-30 12:58:05.285 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 12:58:05.289 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 12:58:05.290 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 12:58:05.290 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 12:58:05.290 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 12:58:05.291 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 12:58:05.291 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 12:58:09.123 [main] GameManager - 2
+[INFO ] 2023-11-30 12:58:09.124 [main] GameManager - There is our Farm
+[INFO ] 2023-11-30 12:58:09.124 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 12:58:09.125 [main] Questionnaire - 1. Check resources
+[INFO ] 2023-11-30 12:58:09.125 [main] Questionnaire - 2. Check Cattle
+[INFO ] 2023-11-30 12:58:09.125 [main] Questionnaire - 3. Check Raw
+[INFO ] 2023-11-30 12:58:09.126 [main] Questionnaire - 4. Fall back
+[TRACE] 2023-11-30 12:58:10.429 [main] GameManager - 2
+[INFO ] 2023-11-30 12:58:10.430 [main] GameManager - Right now we have 8 castles
+[INFO ] 2023-11-30 12:58:10.441 [main] GameManager - Cattle{name='Pig', age='3', weight =90.0', cost='0.0}
+[INFO ] 2023-11-30 12:58:10.441 [main] GameManager - Cattle{name='Pig', age='3', weight =40.0', cost='0.0}
+[INFO ] 2023-11-30 12:58:10.442 [main] GameManager - Cattle{name='Pig', age='3', weight =34.0', cost='0.0}
+[INFO ] 2023-11-30 12:58:10.442 [main] GameManager - Cattle{name='Pig', age='2', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 12:58:10.442 [main] GameManager - Cattle{name='Pig', age='2', weight =51.0', cost='0.0}
+[INFO ] 2023-11-30 12:58:10.443 [main] GameManager - Cattle{name='Pig', age='1', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 12:58:10.443 [main] GameManager - Cattle{name='Sheep', age='6', weight =91.0', cost='0.0}
+[INFO ] 2023-11-30 12:58:10.443 [main] GameManager - Cattle{name='Sheep', age='5', weight =120.0', cost='0.0}
+[INFO ] 2023-11-30 12:58:10.443 [main] GameManager - groups: 
+[INFO ] 2023-11-30 12:58:32.790 [main] Questionnaire - Do you want to kill someone?
+[INFO ] 2023-11-30 12:58:32.790 [main] Questionnaire - ============================
+[INFO ] 2023-11-30 12:58:32.791 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 12:58:32.791 [main] Questionnaire - 2: No, leave
+[TRACE] 2023-11-30 12:59:00.462 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 12:59:00.467 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 12:59:00.468 [main] GameManager - ======================
+[INFO ] 2023-11-30 12:59:00.469 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 12:59:00.469 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 12:59:00.470 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 12:59:03.301 [main] GameManager - 1
+[INFO ] 2023-11-30 12:59:03.324 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 12:59:03.328 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 12:59:03.329 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 12:59:03.329 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 12:59:03.329 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 12:59:03.330 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 12:59:03.330 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 12:59:04.371 [main] GameManager - 2
+[INFO ] 2023-11-30 12:59:04.372 [main] GameManager - There is our Farm
+[INFO ] 2023-11-30 12:59:04.373 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 12:59:04.373 [main] Questionnaire - 1. Check resources
+[INFO ] 2023-11-30 12:59:04.373 [main] Questionnaire - 2. Check Cattle
+[INFO ] 2023-11-30 12:59:04.373 [main] Questionnaire - 3. Check Raw
+[INFO ] 2023-11-30 12:59:04.374 [main] Questionnaire - 4. Fall back
+[TRACE] 2023-11-30 12:59:05.488 [main] GameManager - 2
+[INFO ] 2023-11-30 12:59:05.489 [main] GameManager - Right now we have 8 castles
+[INFO ] 2023-11-30 12:59:05.499 [main] GameManager - Cattle{name='Pig', age='3', weight =90.0', cost='0.0}
+[INFO ] 2023-11-30 12:59:05.500 [main] GameManager - Cattle{name='Pig', age='3', weight =40.0', cost='0.0}
+[INFO ] 2023-11-30 12:59:05.500 [main] GameManager - Cattle{name='Pig', age='3', weight =34.0', cost='0.0}
+[INFO ] 2023-11-30 12:59:05.500 [main] GameManager - Cattle{name='Pig', age='2', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 12:59:05.501 [main] GameManager - Cattle{name='Pig', age='2', weight =51.0', cost='0.0}
+[INFO ] 2023-11-30 12:59:05.501 [main] GameManager - Cattle{name='Pig', age='1', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 12:59:05.501 [main] GameManager - Cattle{name='Sheep', age='6', weight =91.0', cost='0.0}
+[INFO ] 2023-11-30 12:59:05.502 [main] GameManager - Cattle{name='Sheep', age='5', weight =120.0', cost='0.0}
+[INFO ] 2023-11-30 12:59:05.502 [main] GameManager - groups: 
+[INFO ] 2023-11-30 12:59:13.456 [main] Questionnaire - Do you want to kill someone?
+[INFO ] 2023-11-30 12:59:13.456 [main] Questionnaire - ============================
+[INFO ] 2023-11-30 12:59:13.457 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 12:59:13.457 [main] Questionnaire - 2: No, leave
+[TRACE] 2023-11-30 13:01:29.222 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:01:29.231 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:01:29.231 [main] GameManager - ======================
+[INFO ] 2023-11-30 13:01:29.232 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:01:29.233 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:01:29.234 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:01:31.061 [main] GameManager - 1
+[INFO ] 2023-11-30 13:01:31.078 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 13:01:31.081 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 13:01:31.082 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 13:01:31.082 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 13:01:31.082 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 13:01:31.083 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 13:01:31.083 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 13:01:31.685 [main] GameManager - 2
+[INFO ] 2023-11-30 13:01:31.686 [main] GameManager - There is our Farm
+[INFO ] 2023-11-30 13:01:31.686 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 13:01:31.687 [main] Questionnaire - 1. Check resources
+[INFO ] 2023-11-30 13:01:31.687 [main] Questionnaire - 2. Check Cattle
+[INFO ] 2023-11-30 13:01:31.688 [main] Questionnaire - 3. Check Raw
+[INFO ] 2023-11-30 13:01:31.688 [main] Questionnaire - 4. Fall back
+[TRACE] 2023-11-30 13:01:32.582 [main] GameManager - 2
+[INFO ] 2023-11-30 13:01:32.584 [main] GameManager - Right now we have 8 castles
+[INFO ] 2023-11-30 13:01:32.592 [main] GameManager - Cattle{name='Pig', age='3', weight =90.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:32.592 [main] GameManager - Cattle{name='Pig', age='3', weight =40.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:32.593 [main] GameManager - Cattle{name='Pig', age='3', weight =34.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:32.593 [main] GameManager - Cattle{name='Pig', age='2', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:32.593 [main] GameManager - Cattle{name='Pig', age='2', weight =51.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:32.594 [main] GameManager - Cattle{name='Pig', age='1', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:32.594 [main] GameManager - Cattle{name='Sheep', age='6', weight =91.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:32.594 [main] GameManager - Cattle{name='Sheep', age='5', weight =120.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:32.594 [main] GameManager - groups: 
+[INFO ] 2023-11-30 13:01:32.614 [main] Questionnaire - Do you want to kill someone?
+[INFO ] 2023-11-30 13:01:32.614 [main] Questionnaire - ============================
+[INFO ] 2023-11-30 13:01:32.614 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 13:01:32.615 [main] Questionnaire - 2: No, leave
+[TRACE] 2023-11-30 13:01:38.988 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:01:38.996 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:01:38.996 [main] GameManager - ======================
+[INFO ] 2023-11-30 13:01:38.998 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:01:38.999 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:01:39.000 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:01:40.442 [main] GameManager - 1
+[INFO ] 2023-11-30 13:01:40.461 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 13:01:40.466 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 13:01:40.467 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 13:01:40.467 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 13:01:40.467 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 13:01:40.468 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 13:01:40.468 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 13:01:41.031 [main] GameManager - 2
+[INFO ] 2023-11-30 13:01:41.032 [main] GameManager - There is our Farm
+[INFO ] 2023-11-30 13:01:41.032 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 13:01:41.033 [main] Questionnaire - 1. Check resources
+[INFO ] 2023-11-30 13:01:41.033 [main] Questionnaire - 2. Check Cattle
+[INFO ] 2023-11-30 13:01:41.033 [main] Questionnaire - 3. Check Raw
+[INFO ] 2023-11-30 13:01:41.034 [main] Questionnaire - 4. Fall back
+[TRACE] 2023-11-30 13:01:41.557 [main] GameManager - 2
+[INFO ] 2023-11-30 13:01:41.558 [main] GameManager - Right now we have 8 castles
+[INFO ] 2023-11-30 13:01:41.569 [main] GameManager - Cattle{name='Pig', age='3', weight =90.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:41.570 [main] GameManager - Cattle{name='Pig', age='3', weight =40.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:41.570 [main] GameManager - Cattle{name='Pig', age='3', weight =34.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:41.571 [main] GameManager - Cattle{name='Pig', age='2', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:41.571 [main] GameManager - Cattle{name='Pig', age='2', weight =51.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:41.571 [main] GameManager - Cattle{name='Pig', age='1', weight =52.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:41.571 [main] GameManager - Cattle{name='Sheep', age='6', weight =91.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:41.572 [main] GameManager - Cattle{name='Sheep', age='5', weight =120.0', cost='0.0}
+[INFO ] 2023-11-30 13:01:41.572 [main] GameManager - groups: 
+[INFO ] 2023-11-30 13:01:51.355 [main] Questionnaire - Do you want to kill someone?
+[INFO ] 2023-11-30 13:01:51.355 [main] Questionnaire - ============================
+[INFO ] 2023-11-30 13:01:51.355 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 13:01:51.355 [main] Questionnaire - 2: No, leave
+[TRACE] 2023-11-30 13:11:54.108 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:11:54.115 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:11:54.115 [main] GameManager - ======================
+[DEBUG] 2023-11-30 13:11:54.116 [main] GameManager - mainMenu
+[INFO ] 2023-11-30 13:11:54.118 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:11:54.119 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:11:54.119 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:14:32.923 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:14:32.929 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:14:32.929 [main] GameManager - ======================
+[DEBUG] 2023-11-30 13:14:32.930 [main] GameManager - mainMenu
+[INFO ] 2023-11-30 13:14:32.931 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:14:32.931 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:14:32.932 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:15:54.803 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:15:54.810 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:15:54.811 [main] GameManager - ======================
+[DEBUG] 2023-11-30 13:15:54.812 [main] GameManager - mainMenu
+[INFO ] 2023-11-30 13:15:54.814 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:15:54.815 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:15:54.815 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:23:03.418 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:23:03.426 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:23:03.426 [main] GameManager - ======================
+[DEBUG] 2023-11-30 13:23:03.427 [main] GameManager - mainMenu
+[TRACE] 2023-11-30 13:24:07.825 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:24:07.832 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:24:07.833 [main] GameManager - ======================
+[DEBUG] 2023-11-30 13:24:07.834 [main] GameManager - mainMenu
+[ERROR] 2023-11-30 13:24:07.846 [main] Questionnaire - Invoke method isn't founded
+[TRACE] 2023-11-30 13:24:39.953 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:24:39.958 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:24:39.959 [main] GameManager - ======================
+[DEBUG] 2023-11-30 13:24:39.960 [main] GameManager - mainMenu
+[ERROR] 2023-11-30 13:24:39.970 [main] Questionnaire - Invoke method isn't founded. Provide method is Info
+[TRACE] 2023-11-30 13:25:46.076 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:25:46.082 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:25:46.083 [main] GameManager - ======================
+[DEBUG] 2023-11-30 13:25:46.084 [main] GameManager - mainMenu
+[INFO ] 2023-11-30 13:25:46.093 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:25:46.094 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:25:46.094 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:26:57.762 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:26:57.767 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:26:57.768 [main] GameManager - ======================
+[DEBUG] 2023-11-30 13:26:57.769 [main] GameManager - mainMenu
+[TRACE] 2023-11-30 13:28:08.098 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:28:08.103 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:28:08.104 [main] GameManager - ======================
+[DEBUG] 2023-11-30 13:28:08.105 [main] GameManager - mainMenu
+[INFO ] 2023-11-30 13:28:08.118 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:28:08.119 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:28:08.119 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:30:45.031 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:30:45.036 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:30:45.036 [main] GameManager - ======================
+[INFO ] 2023-11-30 13:30:45.044 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:30:45.044 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:30:45.044 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:31:57.602 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:31:57.607 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:31:57.608 [main] GameManager - ======================
+[INFO ] 2023-11-30 13:31:57.623 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:31:57.624 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:31:57.624 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:36:38.471 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:36:38.477 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:36:38.478 [main] GameManager - ======================
+[ERROR] 2023-11-30 13:36:52.267 [main] Questionnaire - Invoke method isn't founded. Provide method is <init>
+[TRACE] 2023-11-30 13:37:14.272 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:37:14.277 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:37:14.277 [main] GameManager - ======================
+[ERROR] 2023-11-30 13:37:23.650 [main] Questionnaire - Invoke method isn't founded. Provide method is <init>
+[TRACE] 2023-11-30 13:38:03.258 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:38:03.262 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:38:03.263 [main] GameManager - ======================
+[ERROR] 2023-11-30 13:38:03.272 [main] Questionnaire - Invoke method isn't founded. Provide method is Main
+[TRACE] 2023-11-30 13:40:49.614 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:40:49.619 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:40:49.620 [main] GameManager - ======================
+[ERROR] 2023-11-30 13:40:49.632 [main] Questionnaire - Invoke method isn't founded. Provide method is Main
+[TRACE] 2023-11-30 13:41:35.108 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:41:35.112 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:41:35.112 [main] GameManager - ======================
+[ERROR] 2023-11-30 13:41:35.124 [main] Questionnaire - Invoke method isn't founded. Provide method is <init>
+[TRACE] 2023-11-30 13:41:45.924 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:41:45.928 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:41:45.929 [main] GameManager - ======================
+[TRACE] 2023-11-30 13:41:55.465 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:41:55.470 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:41:55.471 [main] GameManager - ======================
+[ERROR] 2023-11-30 13:41:55.482 [main] Questionnaire - Invoke method isn't founded. Provide method is Main
+[TRACE] 2023-11-30 13:42:20.376 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:42:20.382 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:42:20.383 [main] GameManager - ======================
+[ERROR] 2023-11-30 13:42:20.396 [main] Questionnaire - Invoke method isn't founded. Provide method is <init>
+[TRACE] 2023-11-30 13:42:38.505 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:42:38.508 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:42:38.509 [main] GameManager - ======================
+[ERROR] 2023-11-30 13:42:48.949 [main] Questionnaire - Invoke method isn't founded. Provide method is <init>
+[TRACE] 2023-11-30 13:42:59.920 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:42:59.925 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:42:59.926 [main] GameManager - ======================
+[INFO ] 2023-11-30 13:43:28.399 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:43:28.399 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:43:28.399 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:43:32.819 [main] GameManager - 1
+[INFO ] 2023-11-30 13:43:32.842 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 13:43:32.847 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 13:43:37.486 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:43:37.486 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:43:37.487 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 13:57:35.332 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 13:57:35.338 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 13:57:35.339 [main] GameManager - ======================
+[ERROR] 2023-11-30 13:57:35.357 [main] Questionnaire - Invoke method isn't founded. Provide method is MainMenu from class com.solvd.mavenFarm.enums.Questionnaire
+[INFO ] 2023-11-30 13:57:35.365 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 13:57:35.366 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 13:57:35.366 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 14:08:59.326 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:08:59.338 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:08:59.339 [main] GameManager - ======================
+[DEBUG] 2023-11-30 14:08:59.355 [main] Questionnaire - MainMenu
+[INFO ] 2023-11-30 14:08:59.355 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 14:08:59.356 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 14:08:59.356 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 14:09:17.265 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:09:17.270 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:09:17.271 [main] GameManager - ======================
+[DEBUG] 2023-11-30 14:09:17.281 [main] Questionnaire - MainMenu df
+[INFO ] 2023-11-30 14:09:17.281 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 14:09:17.282 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 14:09:17.282 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 14:11:18.080 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:11:18.085 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:11:18.085 [main] GameManager - ======================
+[INFO ] 2023-11-30 14:11:18.097 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 14:11:18.098 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 14:11:18.099 [main] Questionnaire - 3: Quit
+[INFO ] 2023-11-30 14:11:18.107 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 14:11:18.108 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 14:11:18.108 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 14:19:38.461 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:19:38.466 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:19:38.467 [main] GameManager - ======================
+[TRACE] 2023-11-30 14:20:07.776 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:20:07.782 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:20:07.783 [main] GameManager - ======================
+[TRACE] 2023-11-30 14:20:18.196 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:20:18.202 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:20:18.203 [main] GameManager - ======================
+[INFO ] 2023-11-30 14:20:18.217 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 14:20:18.218 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 14:20:18.228 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 14:21:35.270 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:21:35.274 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:21:35.275 [main] GameManager - ======================
+[INFO ] 2023-11-30 14:21:41.902 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 14:21:41.903 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 14:21:41.903 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 14:21:56.187 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:21:56.192 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:21:56.192 [main] GameManager - ======================
+[TRACE] 2023-11-30 14:22:03.199 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:22:03.205 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:22:03.205 [main] GameManager - ======================
+[TRACE] 2023-11-30 14:23:58.379 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:23:58.385 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:23:58.385 [main] GameManager - ======================
+[ERROR] 2023-11-30 14:23:58.398 [main] Questionnaire - No enum constant com.solvd.mavenFarm.enums.Questionnaire.<init>
+[ERROR] 2023-11-30 14:23:58.400 [main] Questionnaire - Invoke method isn't founded. Provide method is <init> from 
+[TRACE] 2023-11-30 14:24:42.023 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:24:42.027 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:24:42.028 [main] GameManager - ======================
+[ERROR] 2023-11-30 14:24:42.041 [main] Questionnaire - No enum constant com.solvd.mavenFarm.enums.Questionnaire.<init>No enum constant com.solvd.mavenFarm.enums.Questionnaire.<init>
+[ERROR] 2023-11-30 14:24:42.052 [main] Questionnaire - Invoke method isn't founded. Provide method is <init> from 
+[TRACE] 2023-11-30 14:24:58.874 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:24:58.878 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:24:58.879 [main] GameManager - ======================
+[ERROR] 2023-11-30 14:24:58.890 [main] Questionnaire - No enum constant com.solvd.mavenFarm.enums.Questionnaire.<init>[Ljava.lang.StackTraceElement;@4f80542f
+[ERROR] 2023-11-30 14:24:58.900 [main] Questionnaire - Invoke method isn't founded. Provide method is <init> from 
+[TRACE] 2023-11-30 14:25:20.121 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:25:20.127 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:25:20.128 [main] GameManager - ======================
+[ERROR] 2023-11-30 14:25:20.144 [main] Questionnaire - No enum constant com.solvd.mavenFarm.enums.Questionnaire.<init>[Ljava.lang.StackTraceElement;@4f80542f
+[ERROR] 2023-11-30 14:25:20.155 [main] Questionnaire - Invoke method isn't founded. Provide method is <init> from 
+[TRACE] 2023-11-30 14:28:07.958 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:28:07.963 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:28:07.964 [main] GameManager - ======================
+[ERROR] 2023-11-30 14:28:07.972 [main] Questionnaire - No enum constant com.solvd.mavenFarm.enums.Questionnaire.<init>invoke method <init> wasn't founded
+[ERROR] 2023-11-30 14:28:07.983 [main] Questionnaire - Invoke method isn't founded. Provide method is <init> from 
+[TRACE] 2023-11-30 14:28:44.875 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:28:44.881 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:28:44.881 [main] GameManager - ======================
+[INFO ] 2023-11-30 14:28:44.896 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 14:28:44.897 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 14:28:44.897 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 14:29:26.558 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 14:29:26.562 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 14:29:26.563 [main] GameManager - ======================
+[INFO ] 2023-11-30 14:29:26.573 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 14:29:26.573 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 14:29:26.573 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 17:30:40.321 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 17:30:40.326 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 17:30:40.327 [main] GameManager - ======================
+[INFO ] 2023-11-30 17:30:40.338 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 17:30:40.339 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 17:30:40.339 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 17:45:48.931 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 17:45:48.937 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 17:45:48.938 [main] GameManager - ======================
+[INFO ] 2023-11-30 17:45:48.949 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 17:45:48.949 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 17:45:48.959 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:02:48.337 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 18:02:48.342 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 18:02:48.343 [main] GameManager - ======================
+[INFO ] 2023-11-30 18:02:48.355 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:02:48.356 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:02:48.357 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:49:04.283 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 18:49:04.289 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 18:49:04.290 [main] GameManager - ======================
+[INFO ] 2023-11-30 18:49:04.305 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:49:04.305 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:49:04.314 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:49:08.804 [main] GameManager - 1
+[INFO ] 2023-11-30 18:49:08.828 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 18:49:08.831 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 18:49:08.831 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:49:08.831 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:49:08.832 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:49:11.687 [main] GameManager - 1
+[INFO ] 2023-11-30 18:49:11.688 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:49:11.689 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:49:11.690 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:49:11.690 [main] GameManager - 1
+[INFO ] 2023-11-30 18:49:11.690 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 18:49:11.700 [main] GameManager - Cattle{name='Sheep', age='6', weight =2.0', cost='2058.144}
+[INFO ] 2023-11-30 18:49:11.700 [main] GameManager - Cattle{name='Sheep', age='6', weight =2.0', cost='2058.144}
+[INFO ] 2023-11-30 18:49:11.700 [main] GameManager - Cattle{name='Sheep', age='6', weight =2.0', cost='2058.144}
+[INFO ] 2023-11-30 18:49:11.701 [main] GameManager - Cattle{name='Sheep', age='6', weight =2.0', cost='2058.144}
+[INFO ] 2023-11-30 18:49:11.701 [main] GameManager - Cattle{name='Sheep', age='6', weight =2.0', cost='2058.144}
+[INFO ] 2023-11-30 18:49:11.701 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:49:11.702 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:49:11.702 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:49:19.214 [main] GameManager - 1
+[INFO ] 2023-11-30 18:49:19.215 [main] GameManager - Enter number of your choosing
+[TRACE] 2023-11-30 18:55:29.105 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 18:55:29.112 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 18:55:29.112 [main] GameManager - ======================
+[INFO ] 2023-11-30 18:55:29.125 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:55:29.126 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:55:29.127 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:55:48.993 [main] GameManager - 2
+[ERROR] 2023-11-30 18:55:49.031 [main] JsonFileConverter - com.solvd.mavenFarm.farm.Farm; local class incompatible: stream classdesc serialVersionUID = 9119672843191900846, local class serialVersionUID = 8448524491574272807
+[INFO ] 2023-11-30 18:55:49.032 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 18:55:49.036 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 18:55:49.037 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:55:49.037 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:55:49.038 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:56:13.082 [main] GameManager - 3
+[INFO ] 2023-11-30 18:56:13.088 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 18:56:13.089 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 18:56:13.090 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:56:13.090 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:56:13.091 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:56:17.552 [main] GameManager - 3
+[INFO ] 2023-11-30 18:56:17.553 [main] GameManager - Day: 3
+[INFO ] 2023-11-30 18:56:17.554 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 18:56:17.556 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:56:17.556 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:56:17.556 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:56:18.734 [main] GameManager - 3
+[INFO ] 2023-11-30 18:56:18.735 [main] GameManager - Day: 4
+[INFO ] 2023-11-30 18:56:18.736 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 18:56:18.736 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:56:18.737 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:56:18.737 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 18:56:21.388 [main] GameManager - 3
+[INFO ] 2023-11-30 18:56:21.388 [main] GameManager - Day: 5
+[INFO ] 2023-11-30 18:56:21.389 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 18:56:21.389 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 18:56:21.390 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 18:56:21.390 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:01:16.593 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:01:16.599 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:01:16.600 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:01:22.136 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:01:22.136 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:01:22.137 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:01:24.415 [main] GameManager - 1
+[INFO ] 2023-11-30 19:01:24.432 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:01:24.436 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:01:28.749 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:01:28.751 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:01:28.753 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:01:50.056 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:01:50.063 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:01:50.064 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:01:53.773 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:01:53.774 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:01:53.774 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:02:19.976 [main] GameManager - 1
+[INFO ] 2023-11-30 19:02:19.995 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:02:19.999 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:03:00.551 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:03:00.552 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:03:00.553 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:03:26.950 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:03:26.961 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:03:26.961 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:03:55.843 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:03:55.844 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:03:55.844 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:04:33.832 [main] GameManager - 1
+[INFO ] 2023-11-30 19:04:33.884 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:04:33.896 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:08:23.484 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:08:23.485 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:08:23.486 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:08:27.395 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:08:27.407 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:08:27.408 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:08:37.694 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:08:37.694 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:08:37.695 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:08:55.682 [main] GameManager - 1
+[INFO ] 2023-11-30 19:08:55.737 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:08:55.748 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:10:25.040 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:10:25.041 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:10:25.042 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:10:27.500 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:10:27.510 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:10:27.511 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:11:07.133 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:11:07.134 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:11:07.135 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:11:11.270 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:11:11.280 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:11:11.281 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:13:29.235 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:13:29.236 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:13:29.236 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:13:40.791 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:13:40.799 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:13:40.800 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:14:06.741 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:14:06.743 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:14:06.743 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:14:10.865 [main] GameManager - 1
+[INFO ] 2023-11-30 19:14:10.914 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:14:10.924 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:15:18.555 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:15:18.555 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:15:18.555 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:16:03.123 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:16:03.129 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:16:03.130 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:16:03.144 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:16:03.144 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:16:03.145 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:16:07.918 [main] GameManager - 1
+[INFO ] 2023-11-30 19:16:07.932 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:16:07.935 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:16:07.935 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:16:07.935 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:16:07.936 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:16:07.936 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:16:07.936 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:16:09.761 [main] GameManager - 1
+[INFO ] 2023-11-30 19:16:09.762 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:16:09.762 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:16:09.763 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:16:09.763 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:16:09.764 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:16:09.764 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:16:09.764 [main] GameManager - 1
+[INFO ] 2023-11-30 19:16:09.765 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:16:09.772 [main] GameManager - Cattle{name='Pig', age='1', weight =9.0', cost='2215.721}
+[INFO ] 2023-11-30 19:16:09.773 [main] GameManager - Cattle{name='Pig', age='1', weight =9.0', cost='2215.721}
+[INFO ] 2023-11-30 19:16:09.773 [main] GameManager - Cattle{name='Pig', age='1', weight =9.0', cost='2215.721}
+[INFO ] 2023-11-30 19:16:09.773 [main] GameManager - Cattle{name='Pig', age='1', weight =9.0', cost='2215.721}
+[INFO ] 2023-11-30 19:16:09.773 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:16:09.774 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:16:09.774 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 19:16:11.516 [main] GameManager - 2
+[INFO ] 2023-11-30 19:16:11.516 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:16:11.517 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:16:11.518 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:16:11.518 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:16:11.519 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:16:11.519 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:16:11.520 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:16:13.294 [main] GameManager - 2
+[INFO ] 2023-11-30 19:16:13.295 [main] GameManager - There is our Farm
+[INFO ] 2023-11-30 19:16:13.295 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:16:13.295 [main] Questionnaire - 1. Check resources
+[INFO ] 2023-11-30 19:16:13.296 [main] Questionnaire - 2. Check Cattle
+[INFO ] 2023-11-30 19:16:13.296 [main] Questionnaire - 3. Check Raw
+[INFO ] 2023-11-30 19:16:13.296 [main] Questionnaire - 4. Fall back
+[TRACE] 2023-11-30 19:18:07.043 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:18:07.048 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:18:07.048 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:18:07.056 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:18:07.056 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:18:07.057 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:18:11.233 [main] GameManager - 1
+[INFO ] 2023-11-30 19:18:11.248 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:18:11.250 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:18:11.251 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:18:11.251 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:18:11.252 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:18:11.252 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:18:11.252 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:18:13.527 [main] GameManager - 1
+[INFO ] 2023-11-30 19:18:13.528 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:18:13.528 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:18:13.528 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:18:13.529 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:18:13.530 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:18:13.530 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:18:13.530 [main] GameManager - 1
+[INFO ] 2023-11-30 19:18:13.531 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:18:13.541 [main] GameManager - Cattle{name='Sheep', age='9', weight =6.0', cost='2130.8198}
+[INFO ] 2023-11-30 19:18:13.543 [main] GameManager - Cattle{name='Sheep', age='9', weight =6.0', cost='2130.8198}
+[INFO ] 2023-11-30 19:18:13.543 [main] GameManager - Cattle{name='Sheep', age='9', weight =6.0', cost='2130.8198}
+[INFO ] 2023-11-30 19:18:13.543 [main] GameManager - Cattle{name='Sheep', age='9', weight =6.0', cost='2130.8198}
+[INFO ] 2023-11-30 19:18:13.544 [main] GameManager - Cattle{name='Sheep', age='9', weight =6.0', cost='2130.8198}
+[INFO ] 2023-11-30 19:18:13.544 [main] GameManager - Cattle{name='Sheep', age='9', weight =6.0', cost='2130.8198}
+[INFO ] 2023-11-30 19:18:13.545 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:18:13.545 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:18:13.546 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 19:18:15.194 [main] GameManager - 2
+[INFO ] 2023-11-30 19:18:15.195 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:18:15.195 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:18:15.196 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:18:15.196 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:18:15.196 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:18:15.197 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:18:15.197 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:18:16.773 [main] GameManager - 3
+[INFO ] 2023-11-30 19:18:16.781 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 19:18:16.781 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:18:16.782 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:18:16.782 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:18:16.782 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:18:16.782 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:18:16.783 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:20:22.438 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:20:22.450 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:20:22.451 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:21:07.240 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:21:07.241 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:21:07.241 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:21:10.996 [main] GameManager - 1
+[INFO ] 2023-11-30 19:21:11.037 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:21:11.051 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:21:57.896 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:21:57.897 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:21:57.898 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:21:57.898 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:21:57.898 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:28:03.857 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:28:03.862 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:28:03.863 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:28:03.874 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:28:03.874 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:28:03.875 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:30:58.669 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:30:58.674 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:30:58.675 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:30:58.690 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:30:58.691 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:30:58.691 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:31:02.946 [main] GameManager - 1
+[INFO ] 2023-11-30 19:31:02.963 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:31:02.965 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:31:02.966 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:31:02.966 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:31:02.966 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:31:02.967 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:31:02.967 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:31:03.927 [main] GameManager - 1
+[INFO ] 2023-11-30 19:31:03.928 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:31:03.928 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:31:03.929 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:31:03.929 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:31:03.929 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:31:03.930 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:31:03.930 [main] GameManager - 1
+[INFO ] 2023-11-30 19:31:03.930 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:31:03.941 [main] GameManager - Cattle{name='Sheep', age='9', weight =4.0', cost='1994.5977}
+[INFO ] 2023-11-30 19:31:03.942 [main] GameManager - Cattle{name='Sheep', age='9', weight =4.0', cost='1994.5977}
+[INFO ] 2023-11-30 19:31:03.942 [main] GameManager - Cattle{name='Sheep', age='9', weight =4.0', cost='1994.5977}
+[INFO ] 2023-11-30 19:31:03.943 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:31:03.943 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:31:03.944 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 19:31:06.344 [main] GameManager - 2
+[INFO ] 2023-11-30 19:31:06.345 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:31:06.345 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:31:06.346 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:31:06.346 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:31:06.347 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:31:06.347 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:31:06.347 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:31:07.255 [main] GameManager - 3
+[INFO ] 2023-11-30 19:31:07.258 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 19:31:07.259 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:31:07.260 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:31:07.260 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:31:07.261 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:31:07.261 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:31:07.262 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:31:07.832 [main] GameManager - 1
+[INFO ] 2023-11-30 19:31:07.832 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:31:07.833 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:31:07.833 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:31:07.833 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:31:07.834 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:31:07.834 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:31:07.834 [main] GameManager - 1
+[INFO ] 2023-11-30 19:31:07.835 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:31:07.835 [main] GameManager - Cattle{name='Sheep', age='4', weight =8.0', cost='2185.4514}
+[INFO ] 2023-11-30 19:31:07.835 [main] GameManager - Cattle{name='Sheep', age='4', weight =8.0', cost='2185.4514}
+[INFO ] 2023-11-30 19:31:07.836 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:31:07.836 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:31:07.836 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 19:31:09.474 [main] GameManager - 2
+[INFO ] 2023-11-30 19:31:09.475 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 19:31:09.475 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:31:09.475 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:31:09.476 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:31:09.476 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:31:09.476 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:31:09.477 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:31:10.151 [main] GameManager - 1
+[INFO ] 2023-11-30 19:31:10.151 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:31:10.152 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:31:10.152 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:31:10.152 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:31:10.153 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:31:10.153 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:31:10.153 [main] GameManager - 1
+[INFO ] 2023-11-30 19:31:10.154 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:31:10.154 [main] GameManager - Cattle{name='Sheep', age='4', weight =8.0', cost='2185.4514}
+[INFO ] 2023-11-30 19:31:10.155 [main] GameManager - Cattle{name='Sheep', age='4', weight =8.0', cost='2185.4514}
+[INFO ] 2023-11-30 19:31:10.156 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:31:10.156 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:31:10.156 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 19:31:12.291 [main] GameManager - 2
+[INFO ] 2023-11-30 19:31:12.292 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 19:31:12.292 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:31:12.292 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:31:12.293 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:31:12.293 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:31:12.293 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:31:12.294 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:31:12.908 [main] GameManager - 3
+[INFO ] 2023-11-30 19:31:12.910 [main] GameManager - Day: 3
+[INFO ] 2023-11-30 19:31:12.910 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:31:12.911 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:31:12.911 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:31:12.912 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:31:12.912 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:31:12.912 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:31:13.831 [main] GameManager - 1
+[INFO ] 2023-11-30 19:31:13.831 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:31:13.832 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:31:13.832 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:31:13.832 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:31:13.833 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:31:13.833 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:31:13.833 [main] GameManager - 1
+[INFO ] 2023-11-30 19:31:13.833 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:31:13.834 [main] GameManager - Cattle{name='Chicken', age='8', weight =9.0', cost='1846.5675}
+[INFO ] 2023-11-30 19:31:13.834 [main] GameManager - Cattle{name='Chicken', age='8', weight =9.0', cost='1846.5675}
+[INFO ] 2023-11-30 19:31:13.834 [main] GameManager - Cattle{name='Chicken', age='8', weight =9.0', cost='1846.5675}
+[INFO ] 2023-11-30 19:31:13.835 [main] GameManager - Cattle{name='Chicken', age='8', weight =9.0', cost='1846.5675}
+[INFO ] 2023-11-30 19:31:13.835 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:31:13.836 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:31:13.836 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 19:32:07.432 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 19:32:07.440 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 19:32:07.440 [main] GameManager - ======================
+[INFO ] 2023-11-30 19:32:07.455 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 19:32:07.455 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 19:32:07.456 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 19:32:10.044 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:10.061 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:32:10.064 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:32:10.064 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:32:10.065 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:32:10.065 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:32:10.065 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:32:10.065 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:32:11.383 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:11.384 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:32:11.384 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:32:11.385 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:32:11.385 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:32:11.386 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:32:11.386 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:32:11.386 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:11.387 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:32:11.395 [main] GameManager - Cattle{name='Cow', age='7', weight =9.0', cost='1922.8777}
+[INFO ] 2023-11-30 19:32:11.395 [main] GameManager - Cattle{name='Cow', age='7', weight =9.0', cost='1922.8777}
+[INFO ] 2023-11-30 19:32:11.396 [main] GameManager - Cattle{name='Cow', age='7', weight =9.0', cost='1922.8777}
+[INFO ] 2023-11-30 19:32:11.396 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:32:11.396 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:32:11.396 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 19:32:13.380 [main] GameManager - 2
+[INFO ] 2023-11-30 19:32:13.380 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 19:32:13.381 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:32:13.381 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:32:13.382 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:32:13.382 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:32:13.383 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:32:13.383 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:32:14.082 [main] GameManager - 3
+[INFO ] 2023-11-30 19:32:14.086 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 19:32:14.086 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:32:14.087 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:32:14.087 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:32:14.088 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:32:14.088 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:32:14.088 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:32:14.624 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:14.625 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:32:14.625 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:32:14.626 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:32:14.626 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:32:14.626 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:32:14.627 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:32:14.627 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:14.627 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:32:14.627 [main] GameManager - Cattle{name='Sheep', age='3', weight =3.0', cost='2186.8354}
+[INFO ] 2023-11-30 19:32:14.628 [main] GameManager - Cattle{name='Sheep', age='3', weight =3.0', cost='2186.8354}
+[INFO ] 2023-11-30 19:32:14.628 [main] GameManager - Cattle{name='Sheep', age='3', weight =3.0', cost='2186.8354}
+[INFO ] 2023-11-30 19:32:14.629 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:32:14.629 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:32:14.630 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 19:32:16.485 [main] GameManager - 2
+[INFO ] 2023-11-30 19:32:16.485 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 19:32:16.486 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:32:16.486 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:32:16.487 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:32:16.487 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:32:16.488 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:32:16.488 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:32:17.196 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:17.196 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:32:17.197 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:32:17.197 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:32:17.197 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:32:17.198 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:32:17.198 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:32:17.198 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:17.198 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:32:17.199 [main] GameManager - Cattle{name='Sheep', age='3', weight =3.0', cost='2186.8354}
+[INFO ] 2023-11-30 19:32:17.199 [main] GameManager - Cattle{name='Sheep', age='3', weight =3.0', cost='2186.8354}
+[INFO ] 2023-11-30 19:32:17.199 [main] GameManager - Cattle{name='Sheep', age='3', weight =3.0', cost='2186.8354}
+[INFO ] 2023-11-30 19:32:17.200 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:32:17.200 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:32:17.200 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 19:32:18.588 [main] GameManager - 2
+[INFO ] 2023-11-30 19:32:18.589 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 19:32:18.589 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:32:18.590 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:32:18.590 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:32:18.590 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:32:18.591 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:32:18.591 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:32:19.244 [main] GameManager - 3
+[INFO ] 2023-11-30 19:32:19.244 [main] GameManager - Day: 3
+[INFO ] 2023-11-30 19:32:19.245 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:32:19.245 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:32:19.246 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:32:19.246 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:32:19.246 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:32:19.246 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:32:20.207 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:20.207 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:32:20.208 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:32:20.208 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:32:20.208 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:32:20.208 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:32:20.209 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:32:20.209 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:20.209 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:32:20.210 [main] GameManager - Cattle{name='Sheep', age='4', weight =2.0', cost='2328.0115}
+[INFO ] 2023-11-30 19:32:20.210 [main] GameManager - Cattle{name='Sheep', age='4', weight =2.0', cost='2328.0115}
+[INFO ] 2023-11-30 19:32:20.210 [main] GameManager - Cattle{name='Sheep', age='4', weight =2.0', cost='2328.0115}
+[INFO ] 2023-11-30 19:32:20.211 [main] GameManager - Cattle{name='Sheep', age='4', weight =2.0', cost='2328.0115}
+[INFO ] 2023-11-30 19:32:20.211 [main] GameManager - Cattle{name='Sheep', age='4', weight =2.0', cost='2328.0115}
+[INFO ] 2023-11-30 19:32:20.211 [main] GameManager - Cattle{name='Sheep', age='4', weight =2.0', cost='2328.0115}
+[INFO ] 2023-11-30 19:32:20.211 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:32:20.212 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:32:20.212 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 19:32:22.010 [main] GameManager - 2
+[INFO ] 2023-11-30 19:32:22.010 [main] GameManager - Day: 3
+[INFO ] 2023-11-30 19:32:22.011 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:32:22.011 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:32:22.012 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:32:22.012 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:32:22.012 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:32:22.013 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:32:22.649 [main] GameManager - 3
+[INFO ] 2023-11-30 19:32:22.650 [main] GameManager - Day: 4
+[INFO ] 2023-11-30 19:32:22.650 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 19:32:22.651 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 19:32:22.651 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 19:32:22.651 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 19:32:22.651 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 19:32:22.652 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 19:32:23.495 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:23.496 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 19:32:23.496 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 19:32:23.497 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 19:32:23.497 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 19:32:23.497 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 19:32:23.497 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 19:32:23.497 [main] GameManager - 1
+[INFO ] 2023-11-30 19:32:23.498 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 19:32:23.498 [main] GameManager - Cattle{name='Chicken', age='9', weight =9.0', cost='2283.4644}
+[INFO ] 2023-11-30 19:32:23.498 [main] GameManager - Cattle{name='Chicken', age='9', weight =9.0', cost='2283.4644}
+[INFO ] 2023-11-30 19:32:23.498 [main] GameManager - Cattle{name='Chicken', age='9', weight =9.0', cost='2283.4644}
+[INFO ] 2023-11-30 19:32:23.499 [main] GameManager - Cattle{name='Chicken', age='9', weight =9.0', cost='2283.4644}
+[INFO ] 2023-11-30 19:32:23.499 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 19:32:23.500 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 19:32:23.500 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 20:15:58.785 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 20:15:58.790 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 20:15:58.791 [main] GameManager - ======================
+[INFO ] 2023-11-30 20:15:58.808 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 20:15:58.808 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 20:15:58.809 [main] Questionnaire - 3: Quit
+[TRACE] 2023-11-30 20:16:09.340 [main] GameManager - 1
+[INFO ] 2023-11-30 20:16:09.358 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 20:16:09.362 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 20:16:09.363 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 20:16:09.363 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 20:16:09.363 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 20:16:09.364 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 20:16:09.364 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 20:16:13.294 [main] GameManager - 1
+[INFO ] 2023-11-30 20:16:13.294 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 20:16:13.295 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 20:16:13.295 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 20:16:13.295 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 20:16:13.296 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 20:16:13.296 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 20:16:13.297 [main] GameManager - 1
+[INFO ] 2023-11-30 20:16:13.297 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 20:16:13.304 [main] GameManager - Cattle{name='Pig', age='6', weight =5.0', cost='1906.9686}
+[INFO ] 2023-11-30 20:16:13.305 [main] GameManager - Cattle{name='Pig', age='6', weight =5.0', cost='1906.9686}
+[INFO ] 2023-11-30 20:16:13.305 [main] GameManager - Cattle{name='Pig', age='6', weight =5.0', cost='1906.9686}
+[INFO ] 2023-11-30 20:16:13.305 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 20:16:13.306 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 20:16:13.306 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 20:16:15.318 [main] GameManager - 2
+[INFO ] 2023-11-30 20:16:15.318 [main] GameManager - Day: 1
+[INFO ] 2023-11-30 20:16:15.319 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 20:16:15.319 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 20:16:15.320 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 20:16:15.320 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 20:16:15.320 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 20:16:15.321 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 20:16:16.701 [main] GameManager - 3
+[INFO ] 2023-11-30 20:16:16.704 [main] GameManager - Day: 2
+[INFO ] 2023-11-30 20:16:16.705 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-30 20:16:16.705 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-11-30 20:16:16.706 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-11-30 20:16:16.706 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-11-30 20:16:16.706 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-11-30 20:16:16.706 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-11-30 20:16:17.311 [main] GameManager - 1
+[INFO ] 2023-11-30 20:16:17.312 [main] Questionnaire - Here is our market
+[INFO ] 2023-11-30 20:16:17.312 [main] Questionnaire - What shall we do?
+[INFO ] 2023-11-30 20:16:17.312 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-11-30 20:16:17.313 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-11-30 20:16:17.313 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-11-30 20:16:17.314 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-11-30 20:16:17.314 [main] GameManager - 1
+[INFO ] 2023-11-30 20:16:17.315 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-11-30 20:16:17.315 [main] GameManager - Cattle{name='Sheep', age='7', weight =2.0', cost='1803.4719}
+[INFO ] 2023-11-30 20:16:17.315 [main] GameManager - Cattle{name='Sheep', age='7', weight =2.0', cost='1803.4719}
+[INFO ] 2023-11-30 20:16:17.316 [main] GameManager - Cattle{name='Sheep', age='7', weight =2.0', cost='1803.4719}
+[INFO ] 2023-11-30 20:16:17.316 [main] GameManager - Cattle{name='Sheep', age='7', weight =2.0', cost='1803.4719}
+[INFO ] 2023-11-30 20:16:17.316 [main] GameManager - Cattle{name='Sheep', age='7', weight =2.0', cost='1803.4719}
+[INFO ] 2023-11-30 20:16:17.316 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-11-30 20:16:17.317 [main] Questionnaire - 1: Yes
+[INFO ] 2023-11-30 20:16:17.317 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-11-30 21:08:49.982 [main] GameManager - Application successfully started
+[INFO ] 2023-11-30 21:08:49.986 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-30 21:08:49.987 [main] GameManager - ======================
+[INFO ] 2023-11-30 21:08:49.997 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-11-30 21:08:49.998 [main] Questionnaire - 2: Load
+[INFO ] 2023-11-30 21:08:49.998 [main] Questionnaire - 3: Quit
