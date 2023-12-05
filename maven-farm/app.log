@@ -6515,3 +6515,68 @@
 [ERROR] 2023-12-05 14:25:50.648 [main] GameManager - public int age
 [ERROR] 2023-12-05 14:25:50.649 [main] GameManager - private int tmp
 [FATAL] 2023-12-05 14:25:50.652 [main] GameManager - I am Custome. My family is Consructor and I'm Code of my age is 19 years old
+[INFO ] 2023-12-05 16:14:31.936 [main] GameManager - Class access level is public
+[DEBUG] 2023-12-05 16:14:31.943 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String)
+[DEBUG] 2023-12-05 16:14:31.944 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String,int)
+[DEBUG] 2023-12-05 16:14:31.945 [main] GameManager - public outPackage.ReflectionTemplate()
+[WARN ] 2023-12-05 16:14:31.955 [main] GameManager - public String toString()
+[WARN ] 2023-12-05 16:14:31.956 [main] GameManager - private void getAgeCode()
+[WARN ] 2023-12-05 16:14:31.957 [main] GameManager - public String ageCode()
+[WARN ] 2023-12-05 16:14:31.958 [main] GameManager - protected void calculateAgeCode(int arg0)
+[ERROR] 2023-12-05 16:14:31.959 [main] GameManager - private String name
+[ERROR] 2023-12-05 16:14:31.960 [main] GameManager - protected String surname
+[ERROR] 2023-12-05 16:14:31.961 [main] GameManager - public int age
+[ERROR] 2023-12-05 16:14:31.972 [main] GameManager - private int tmp
+[FATAL] 2023-12-05 16:14:31.975 [main] GameManager - I am Custome. My family is Consructor and I'm Code of my age is 19 years old
+[INFO ] 2023-12-05 16:16:09.212 [main] GameManager - Class access level is public
+[DEBUG] 2023-12-05 16:16:09.220 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String)
+[DEBUG] 2023-12-05 16:16:09.221 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String,int)
+[DEBUG] 2023-12-05 16:16:09.222 [main] GameManager - public outPackage.ReflectionTemplate()
+[WARN ] 2023-12-05 16:16:09.233 [main] GameManager - public String toString()
+[WARN ] 2023-12-05 16:16:09.234 [main] GameManager - private void getAgeCode()
+[WARN ] 2023-12-05 16:16:09.234 [main] GameManager - public String ageCode()
+[WARN ] 2023-12-05 16:16:09.235 [main] GameManager - protected void calculateAgeCode(int arg0)
+[ERROR] 2023-12-05 16:16:09.237 [main] GameManager - private String name
+[ERROR] 2023-12-05 16:16:09.238 [main] GameManager - protected String surname
+[ERROR] 2023-12-05 16:16:09.238 [main] GameManager - public int age
+[ERROR] 2023-12-05 16:16:09.249 [main] GameManager - private int tmp
+[FATAL] 2023-12-05 16:16:09.254 [main] GameManager - I am Custome. My family is Consructor and I'm Code of my age is 19 years old
+[INFO ] 2023-12-05 16:16:44.263 [main] GameManager - Class access level is public
+[DEBUG] 2023-12-05 16:16:44.270 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String)
+[DEBUG] 2023-12-05 16:16:44.272 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String,int)
+[DEBUG] 2023-12-05 16:16:44.272 [main] GameManager - public outPackage.ReflectionTemplate()
+[WARN ] 2023-12-05 16:16:44.292 [main] GameManager - public String toString()
+[WARN ] 2023-12-05 16:16:44.292 [main] GameManager - public String ageCode()
+[WARN ] 2023-12-05 16:16:44.292 [main] GameManager - private void getAgeCode()
+[WARN ] 2023-12-05 16:16:44.293 [main] GameManager - protected void calculateAgeCode(int arg0)
+[ERROR] 2023-12-05 16:16:44.295 [main] GameManager - private String name
+[ERROR] 2023-12-05 16:16:44.295 [main] GameManager - protected String surname
+[ERROR] 2023-12-05 16:16:44.296 [main] GameManager - public int age
+[ERROR] 2023-12-05 16:16:44.297 [main] GameManager - private int tmp
+[FATAL] 2023-12-05 16:16:44.299 [main] GameManager - I am Custome. My family is Consructor and I'm Code of my age is 19 years old
+[INFO ] 2023-12-05 16:17:02.215 [main] GameManager - Class access level is public
+[DEBUG] 2023-12-05 16:17:02.227 [main] GameManager - public outPackage.ReflectionTemplate()
+[DEBUG] 2023-12-05 16:17:02.227 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String,int)
+[DEBUG] 2023-12-05 16:17:02.228 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String)
+[WARN ] 2023-12-05 16:17:02.236 [main] GameManager - public String ageCode()
+[WARN ] 2023-12-05 16:17:02.237 [main] GameManager - private void getAgeCode()
+[WARN ] 2023-12-05 16:17:02.237 [main] GameManager - public String toString()
+[WARN ] 2023-12-05 16:17:02.238 [main] GameManager - protected void calculateAgeCode(int arg0)
+[ERROR] 2023-12-05 16:17:02.239 [main] GameManager - private String name
+[ERROR] 2023-12-05 16:17:02.240 [main] GameManager - protected String surname
+[ERROR] 2023-12-05 16:17:02.240 [main] GameManager - public int age
+[ERROR] 2023-12-05 16:17:02.241 [main] GameManager - private int tmp
+[FATAL] 2023-12-05 16:17:20.978 [main] GameManager - I am Custome. My family is Consructor and I'm Code of my age is 19 years old
+[INFO ] 2023-12-05 16:18:00.599 [main] GameManager - Class access level is public
+[DEBUG] 2023-12-05 16:18:00.607 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String)
+[DEBUG] 2023-12-05 16:18:00.608 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String,int)
+[DEBUG] 2023-12-05 16:18:00.608 [main] GameManager - public outPackage.ReflectionTemplate()
+[WARN ] 2023-12-05 16:18:00.617 [main] GameManager - public String toString()
+[WARN ] 2023-12-05 16:18:00.618 [main] GameManager - public String ageCode()
+[WARN ] 2023-12-05 16:18:00.618 [main] GameManager - private void getAgeCode()
+[WARN ] 2023-12-05 16:18:00.619 [main] GameManager - protected void calculateAgeCode(int arg0)
+[ERROR] 2023-12-05 16:18:00.621 [main] GameManager - private String name
+[ERROR] 2023-12-05 16:18:00.622 [main] GameManager - protected String surname
+[ERROR] 2023-12-05 16:18:00.622 [main] GameManager - public int age
+[ERROR] 2023-12-05 16:18:00.623 [main] GameManager - private int tmp
+[FATAL] 2023-12-05 16:18:00.626 [main] GameManager - I am Custome. My family is Consructor and I'm Code of my age is 19 years old

@@ -15,8 +15,10 @@ import com.solvd.mavenFarm.interfaces.functional.INamesakeAddable;
 import com.solvd.mavenFarm.listick.MyList;
 import com.solvd.mavenFarm.managers.Comparators.RawRottenComparator;
 import com.solvd.mavenFarm.raw.AbstractRaw;
+import com.solvd.mavenFarm.raw.Apple;
 import com.solvd.mavenFarm.resourses.AbstractResource;
 import com.solvd.mavenFarm.resourses.Corn;
+import com.solvd.mavenFarm.resourses.ResourcesContainer;
 import com.solvd.mavenFarm.resourses.Water;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
@@ -47,7 +49,7 @@ public class GameManager implements Serializable
     public GameManager()
         {
             LOGGER.trace("Application successfully started");
-            mainMenu();
+           // mainMenu();
         }
 
     private  void mainMenu()
@@ -599,16 +601,20 @@ public class GameManager implements Serializable
 
         Method method = templateClass.getDeclaredMethod("getAgeCode");
         method.setAccessible(true);
-        System.out.println(method.invoke(myObject));
+        method.invoke(myObject);
+        Field field = tmp.getClass().getDeclaredField("tmp");
+        field.setAccessible(true);
+        Integer code = (Integer) field.get(tmp);
+        System.out.println(code);
     }
 
     private static String getParameters(Method x)
     {
         var a = x.getParameters();
-        String result= "";
-        for (var element:a) {
-            result += (element.getParameterizedType() + " " + element.getName());
-        }
-        return result;
+        StringBuilder result= new StringBuilder();
+        for (var element:a)
+            result.append(element.getParameterizedType()).append(" ").append(element.getName());
+
+        return result.toString();
     }
 }
