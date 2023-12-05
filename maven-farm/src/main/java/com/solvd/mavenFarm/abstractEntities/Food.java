@@ -6,7 +6,7 @@ import java.util.Objects;
 public abstract class Food extends Farming implements Serializable
 {
     public double seedingArea;
-    public double SeedingArea()
+    public double seedingArea()
     {
         return this.seedingArea;
     }
@@ -23,14 +23,14 @@ public abstract class Food extends Farming implements Serializable
         if (object == null || getClass() != object.getClass()) return false;
 
         if(this.sort().equals(((Food) object).sort()))
-            if (this.defaultCost() == ((Food) object).defaultCost() && this.SeedingArea() == ((Food) object).SeedingArea())
+            if (this.defaultCost() == ((Food) object).defaultCost() && this.seedingArea() == ((Food) object).seedingArea())
                 return this.name.equals(((Food) object).name);
 
         return false;
     }
     @Override
     public String toString() {
-        return "Spawner{" + "name='" + name() + '\'' + ", sort='" + sort() + '\'' + ", SeedingArea=" + SeedingArea() +'}';
+        return "Spawner{" + "name='" + name() + '\'' + ", sort='" + sort() + '\'' + ", SeedingArea=" + seedingArea() +'}';
     }
     protected String sort;
     public Food()

@@ -7,4 +7,5 @@ import java.util.List;
 public interface INamesakeAddable<T>
 {
     void add(String condition, ArrayList<T> list);
+
 }

@@ -13,13 +13,13 @@ public class Appletree extends FruitSpawn implements Serializable {
         this.helthStatus = false;
         this.name("Apple tree");
         this.defaultCost(17);
-        this.CropYield(50);
+        this.cropYield(50);
     }
-    public Boolean GetHealthStatus()
+    public Boolean getHealthStatus()
     {
         return helthStatus;
     }
-    public void ChangeHealthStatus(){ this.helthStatus = !helthStatus;}
+    public void changeHealthStatus(){ this.helthStatus = !helthStatus;}
     @Override
     public void eat()
     {

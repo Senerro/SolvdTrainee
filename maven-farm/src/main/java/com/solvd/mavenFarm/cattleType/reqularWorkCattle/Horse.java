@@ -47,7 +47,7 @@ public class Horse extends WorkCattle implements Serializable {
     }
 
     @Override
-    public void DoSomeWork() {
+    public void doSomeWork() {
         System.out.println("I am able to relocate some things");
     }
 }

@@ -16,15 +16,15 @@ public class Egg extends AbstractRaw implements Serializable
     public Egg()
     {
         try{
-            this.ShelfLife(25);
+            this.shelfLife(25);
         }
         catch (ShelfLifeException ex)
         {
             LOGGER.error(ex.getMessage() +" entered shelflife was "+ ex.enteredShelfLife());
         }
 
-        this.DefaultCost(0.1f);
-        this.Name("Egg");
+        this.defaultCost(0.1f);
+        this.name("Egg");
         ID =2;
     }
 }

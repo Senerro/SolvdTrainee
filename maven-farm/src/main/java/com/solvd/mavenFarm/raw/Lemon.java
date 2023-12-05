@@ -16,14 +16,14 @@ public class Lemon extends AbstractRaw implements Serializable
     public Lemon()
     {
         try{
-            this.ShelfLife(25);
+            this.shelfLife(25);
         }
         catch (ShelfLifeException ex)
         {
             LOGGER.error(ex.getMessage() +" entered shelflife was "+ ex.enteredShelfLife());
         }
-        this.DefaultCost(0.2f);
-        this.Name("Lemon");
+        this.defaultCost(0.2f);
+        this.name("Lemon");
         ID =3;
     }
 }

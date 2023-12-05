@@ -2,23 +2,31 @@ package com.solvd.mavenFarm.managers;
 
 import com.solvd.mavenFarm.abstractEntities.Farming;
 import com.solvd.mavenFarm.cattleType.RawCattle;
+import com.solvd.mavenFarm.cattleType.reqularRawCattle.Cow;
 import com.solvd.mavenFarm.cattleType.reqularRawCattle.Pig;
 import com.solvd.mavenFarm.cattleType.reqularRawCattle.Sheep;
 import com.solvd.mavenFarm.enums.Questionnaire;
 import com.solvd.mavenFarm.farm.Farm;
 import com.solvd.mavenFarm.file.JsonFileConverter;
+import com.solvd.mavenFarm.global.GlobalEvent;
+import com.solvd.mavenFarm.global.GlobalStateEnum;
 import com.solvd.mavenFarm.interfaces.functional.IClassGettable;
 import com.solvd.mavenFarm.interfaces.functional.INamesakeAddable;
 import com.solvd.mavenFarm.listick.MyList;
+import com.solvd.mavenFarm.managers.Comparators.RawRottenComparator;
+import com.solvd.mavenFarm.raw.AbstractRaw;
 import com.solvd.mavenFarm.resourses.AbstractResource;
 import com.solvd.mavenFarm.resourses.Corn;
 import com.solvd.mavenFarm.resourses.Water;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import outPackage.ReflectionTemplate;
 
 import java.io.Serializable;
+import java.lang.reflect.*;
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 public class GameManager implements Serializable
@@ -49,7 +57,11 @@ public class GameManager implements Serializable
         LOGGER.info("======================");
         do {
             question.currentSceneQuestionary();
-            this.answer = input.nextInt();
+            if(GlobalEvent.state == GlobalStateEnum.REALIZE) {
+                this.answer = input.nextInt();
+
+            }
+            else this.answer = 1;
             LOGGER.trace(this.answer);
             switch (this.answer) {
                 case 1:
@@ -168,22 +180,35 @@ public class GameManager implements Serializable
             this.farmScene(farm);
         }
         LOGGER.info("There is our resource tank. There we have ");
-        LOGGER.info("1: Corn volume " + farm.container.CornVolume() );
+        LOGGER.info("1: Corn volume " +  farm.container.CornVolume() );
         LOGGER.info("2: Water volume " + farm.container.WaterVolume() );
         this.farmScene(farm);
     }
 
     private void farmRawScene(final Farm farm)
     {
-        if(!farm.checkRaw()) {
+        if(farm.checkRaw()) {
             question.currentSceneQuestionary();
             this.farmScene(farm);
         }
-
         LOGGER.info("There is our raw container. There we have: ");
+
         for (int i = 0; i < farm.farmingList.rawFarm().size(); i++)
         {
             LOGGER.info(farm.farmingList.rawFarm().get(i).toString());
+        }
+
+        var readyToRot = farm.farmingList.rawFarm().stream()
+                .filter(x -> ((x.spawnDay() + x.shelfLife()) - farm.currentDay() > 0))
+                .filter(x -> ((x.spawnDay() + x.shelfLife()) - farm.currentDay() < 3))
+                .peek(x -> LOGGER.debug(x.toString() + " current day is "+farm.currentDay()))
+                .collect(Collectors.toList());
+
+        if(!readyToRot.isEmpty())
+        {
+            Comparator<AbstractRaw> ARcomp = new RawRottenComparator();
+            LOGGER.info("READY TO ROT " + readyToRot.stream().count() + " resources");
+            LOGGER.info("the most 'rotten' raw is " + readyToRot.stream().max(ARcomp));
         }
         LOGGER.info("[redirecting to farm scene]");
         this.farmScene(farm);
@@ -199,8 +224,7 @@ public class GameManager implements Serializable
                 var packagePath = wordsOfPath[1];
                 var packageNodes = StringUtils.split(packagePath, ".");
                 var name = packageNodes[packageNodes.length - 1];
-                cattleTypeSet.put(name, farm.farmingList.rawCattle().get(1));
-
+                cattleTypeSet.put(name, farm.farmingList.rawCattle().get(0));
             }
         };
 
@@ -213,13 +237,13 @@ public class GameManager implements Serializable
 
         LOGGER.info("Right now we have " + farm.farmingList.rawCattle().size() + " castles");
         farm.farmingList.animal();
-        for (RawCattle element :farm.farmingList.animal(1))
+        for (RawCattle element :farm.farmingList.rawCattle())
         {
             LOGGER.info(element.toString());
         }
+        LOGGER.info("Here also presences  " + farm.farmingList.rawCattle().stream().filter(cattle -> cattle.age()<2).filter(cattle -> cattle.cattleWeight() > 40).count() + " tough cubs");
 
-        LOGGER.info("groups: ");
-
+        LOGGER.info("groups of cattle: ");
         className.name(cattleTypeSet);
 
         int iterator = 0;
@@ -288,6 +312,7 @@ public class GameManager implements Serializable
 
         nameSake.add(types.get(this.answer-1), farm.farmingList.rawCattle());
 
+
         for (RawCattle cattle : tmp) {
             LOGGER.info(cattle.toStringInFarm());
         }
@@ -322,13 +347,12 @@ public class GameManager implements Serializable
             question.currentSceneQuestionary();
             this.answer = input.nextInt();
             LOGGER.trace(this.answer);
-
             switch (this.answer)
             {
                 case 1:
                     LOGGER.info("You gained " + farm.getAllRawCost() + " money\n");
                     farm.changeBalance(farm.getAllRawCost());
-                    farm.farmingList.PurgeRawFarmList();
+                    farm.farmingList.purgeRawFarmList();
                     marketScene(farm);
                     break;
                 case 2: this.marketScene(farm);
@@ -366,12 +390,12 @@ public class GameManager implements Serializable
                 }
             } while (!isCorrect);
 
-            resource.Volume(input.nextInt());
+            resource.volume(input.nextInt());
 
-            if (farm.balance() > resource.Volume() * resource.DefaultCost())
+            if (farm.balance() > resource.volume() * resource.defaultCost())
             {
-                float price = resource.Volume() * resource.DefaultCost();
-                farm.container.ChangeResourceVolume(resource, resource.Volume());
+                float price = resource.volume() * resource.defaultCost();
+                farm.container.ChangeResourceVolume(resource, resource.volume());
                 farm.changeBalance(-price);
                 LOGGER.info("you lost " + price + " money");
                 LOGGER.info("[redirecting to the market scene]\n");
@@ -423,7 +447,7 @@ public class GameManager implements Serializable
     private void start()
     {
         Farm save = new Farm();
-        TradeGenerator.GenerateMarketRawCattle(save);
+        TradeGenerator.generateMarketRawCattle(save);
 
         RawCattle animal1 = new Pig();
         RawCattle animal2 = new Pig();
@@ -433,6 +457,7 @@ public class GameManager implements Serializable
         RawCattle animal6 = new Pig();
         RawCattle animal7 = new Sheep();
         RawCattle animal8 = new Sheep();
+        RawCattle animal9 = new Cow();
 
         animal1.age(1);
         animal1.cattleWeight(52);
@@ -450,15 +475,18 @@ public class GameManager implements Serializable
         animal7.cattleWeight(120);
         animal8.age(6);
         animal8.cattleWeight(91);
+        animal9.age(2);
+        animal9.cattleWeight(550);
 
-        save.farmingList.rawCattle(animal1);
+      /*  save.farmingList.rawCattle(animal1);
         save.farmingList.rawCattle(animal2);
         save.farmingList.rawCattle(animal3);
         save.farmingList.rawCattle(animal4);
         save.farmingList.rawCattle(animal5);
         save.farmingList.rawCattle(animal6);
         save.farmingList.rawCattle(animal7);
-        save.farmingList.rawCattle(animal8);
+        save.farmingList.rawCattle(animal8);*/
+        save.farmingList.rawCattle(animal9);
         mainScene(save);
     }
     private void start(final Farm save)
@@ -514,25 +542,73 @@ public class GameManager implements Serializable
         while (!this.isCorrect);
     }
 
-    public static void main(String[] args)
+
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException, ClassNotFoundException, InstantiationException, InvocationTargetException, NoSuchMethodException {
+
+
+        /*Field field = tmp.getClass().getDeclaredField("name");
+        field.setAccessible(true);
+        String name = (String) field.get(tmp);
+
+        System.out.println(name);*/
+
+        //GameManager game = new GameManager();
+
+        Class templateClass = ReflectionTemplate.class;
+        LOGGER.info("Class access level is " + Modifier.toString(templateClass.getModifiers()));
+
+        var constructors = new ArrayList<>(Arrays.asList(templateClass.getDeclaredConstructors()));
+        constructors.stream().forEach(x -> LOGGER.debug(x.toString()));
+
+        System.out.println();
+
+        var methods = new ArrayList<>(Arrays.asList(templateClass.getDeclaredMethods()));
+        methods.stream().forEach(x -> LOGGER.warn(Modifier.toString(x.getModifiers())
+                + " " + x.getReturnType().getSimpleName()
+                + " " +x.getName() + "("+ getParameters(x) +")"));
+
+        System.out.println();
+
+        var fields = new ArrayList<>(Arrays.asList(templateClass.getDeclaredFields()));
+        fields.stream().forEach(x -> LOGGER.error(Modifier.toString(x.getModifiers())
+                                + " " + x.getType().getSimpleName()
+                                + " " + x.getName()));
+
+
+        System.out.println();
+
+        ReflectionTemplate tmp = new ReflectionTemplate("MyPrivateName","", 789);
+        Class template = Class.forName(tmp.getClass().getName());
+        ReflectionTemplate defaultTemplate = (ReflectionTemplate)template.newInstance();
+        System.out.println(defaultTemplate);
+
+        Constructor<?> constructor = null;
+        for (var element:template.getDeclaredConstructors())
+        {
+            if(element.toString().equals("public outPackage.ReflectionTemplate(java.lang.String,java.lang.String,int)"))
+                constructor = element;
+        }
+        ReflectionTemplate customeTemplate = (ReflectionTemplate)constructor.newInstance("Custome", "Consructor", 56);
+        customeTemplate.ageCode();
+        LOGGER.fatal(customeTemplate);
+
+        Constructor<?> newConstructor = ReflectionTemplate.class.getConstructor(String.class, String.class, int.class);
+        ReflectionTemplate myObject = (ReflectionTemplate)newConstructor.newInstance("Custome2", "Consructor2", 45);
+        System.out.println(myObject);
+
+
+        Method method = templateClass.getDeclaredMethod("getAgeCode");
+        method.setAccessible(true);
+        System.out.println(method.invoke(myObject));
+    }
+
+    private static String getParameters(Method x)
     {
-        MyList<String> listic = new MyList<>();
-        listic.add("1");
-        listic.add("2");
-        listic.add("3");
-        listic.add("4");
-        listic.add("5");
-        listic.add("6");
-        listic.add("7");
-        listic.add("8");
-        listic.add("9");
-        listic.add(0, "0");
-        listic.add(9, "99");
-        listic.set(4, "987");
-        listic.remove(5);
-        listic.remove("8");
-
-
-        GameManager game = new GameManager();
+        var a = x.getParameters();
+        String result= "";
+        for (var element:a) {
+            result += (element.getParameterizedType() + " " + element.getName());
+        }
+        return result;
     }
 }

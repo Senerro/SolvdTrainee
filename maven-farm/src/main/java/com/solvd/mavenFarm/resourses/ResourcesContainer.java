@@ -16,7 +16,7 @@ public class ResourcesContainer implements Serializable
 
     public ResourcesContainer()
     {
-        for (var element: Resources.values()) {
+        for (var element:Resources.values()) {
 
             res.accept(element.get());
         }
@@ -26,16 +26,16 @@ public class ResourcesContainer implements Serializable
 
         for (var element: Resources.values())
             if(element.getClass().getSimpleName().equals(Resources.Corn.get().getClass().getSimpleName()))
-                return element.get().Volume();
+                return element.get().volume();
 
-        return new Corn().Volume();
+        return new Corn().volume();
     }
     public float WaterVolume()
     {
         for (var element: Resources.values())
             if(element.getClass().getSimpleName().equals(Resources.Water.get().getClass().getSimpleName()))
-                return element.get().Volume();
-        return new Water().Volume();
+                return element.get().volume();
+        return new Water().volume();
     }
     public final void ChangeResourceVolume(AbstractResource resource, float volume)
     {
@@ -45,7 +45,7 @@ public class ResourcesContainer implements Serializable
                     for (int i = 0; i < container.size(); i++)
                         if(container.get(i).getClass() == (resource.getClass()))
                         {
-                            container.get(i).ChangeVolume(volume);
+                            container.get(i).changeVolume(volume);
                             isSpotted = true;
                         }
                 }
@@ -55,11 +55,11 @@ public class ResourcesContainer implements Serializable
 
     public boolean CheckWaterAvailability()
     {
-        return (container.get(0).Volume() > 0);
+        return (container.get(0).volume() > 0);
     }
     public boolean CheckCornAvailability()
     {
-        return (container.get(1).Volume() > 0);
+        return (container.get(1).volume() > 0);
     }
     public final void ReduceResource(Farming farming)
     {

@@ -12,7 +12,6 @@ import org.apache.logging.log4j.Logger;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.function.BiFunction;
-import java.util.function.Function;
 
 public final class TradeGenerator implements Serializable {
     static final Logger LOGGER = LogManager.getLogger(TradeGenerator.class);
@@ -28,10 +27,10 @@ public final class TradeGenerator implements Serializable {
             int iterator = (int)Math.round(random);
             for(int i =  0; i < iterator; i++)
             {
-                GenerateMarketRawCattle(farming);
+                generateMarketRawCattle(farming);
             }
         }
-        public static void GenerateMarketRawCattle(final Farm save)
+        public static void generateMarketRawCattle(final Farm save)
         {
             IGeneratable<RawCattle> generator = (cattle, count, list) ->
         {
@@ -47,24 +46,24 @@ public final class TradeGenerator implements Serializable {
             int iterator = (int)Math.round(random);
             switch (iterator)
             {
-                case 1:  GenerateRawCattleProperties(RawCattleEnum.Chicken.get(), save, generator);break;
-                case 2:  GenerateRawCattleProperties(RawCattleEnum.Cow.get(),     save, generator);break;
-                case 3:  GenerateRawCattleProperties(RawCattleEnum.Sheep.get(),   save, generator);break;
-                case 4:  GenerateRawCattleProperties(RawCattleEnum.Pig.get(),     save, generator);break;
-                default: GenerateMarketRawCattle(save);
+                case 1:  generateRawCattleProperties(RawCattleEnum.Chicken.get(), save, generator);break;
+                case 2:  generateRawCattleProperties(RawCattleEnum.Cow.get(),     save, generator);break;
+                case 3:  generateRawCattleProperties(RawCattleEnum.Sheep.get(),   save, generator);break;
+                case 4:  generateRawCattleProperties(RawCattleEnum.Pig.get(),     save, generator);break;
+                default: generateMarketRawCattle(save);
             }
         }
-        public static void GenerateRawCattleProperties(final RawCattle cattle, final Farm save, IGeneratable<RawCattle> generator)
+        public static void generateRawCattleProperties(final RawCattle cattle, final Farm save, IGeneratable<RawCattle> generator)
         {
             save.farmingList.marketRawCattleSellList().clear();
             MyList<RawCattle> rawCattleMySellList = new MyList<>();
 
             int iterator = (int) (Math.random()*5)+2;
             generator.fill(cattle, iterator, rawCattleMySellList);
-            BiFunction<MyList<RawCattle>, ArrayList<RawCattle>, ArrayList<RawCattle>> convert = (x, y) ->
+            BiFunction<MyList<RawCattle>, ArrayList<RawCattle>, Boolean> convert = (x, y) ->
             {
                 y.addAll(x.toArrayList());
-                return y;
+                return true;
             };
             convert.apply(rawCattleMySellList,  save.farmingList.marketRawCattleSellList());
 

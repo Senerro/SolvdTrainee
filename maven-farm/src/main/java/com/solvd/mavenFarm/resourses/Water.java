@@ -6,8 +6,8 @@ public class Water extends AbstractResource implements Serializable
 {
     public Water()
     {
-        this.DefaultCost(1);
-        this.Name("Water");
+        this.defaultCost(1);
+        this.name("Water");
         ID = 2;
     }
 }

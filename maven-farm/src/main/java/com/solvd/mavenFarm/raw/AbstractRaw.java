@@ -1,6 +1,7 @@
 package com.solvd.mavenFarm.raw;
 
 import com.solvd.mavenFarm.exception.ShelfLifeException;
+import com.solvd.mavenFarm.farm.Farm;
 import com.solvd.mavenFarm.interfaces.IRotting;
 import com.solvd.mavenFarm.resourses.AbstractResource;
 
@@ -13,29 +14,29 @@ public class AbstractRaw extends AbstractResource implements Serializable, IRott
 {
     AbstractRaw()
     {
-        spawnDay = currentDayStatic();
+        spawnDay = Farm.currentDayStatic();
     }
     private final int spawnDay;
     private float shelfLife;
-    public float ShelfLife() {
+    public float shelfLife() {
         return shelfLife;
     }
-    public void ShelfLife(final float shelfLife) throws ShelfLifeException {
+    public void shelfLife(final float shelfLife) throws ShelfLifeException {
         if(shelfLife<=0)
             throw new ShelfLifeException("Resource must have period of lide", shelfLife);
         this.shelfLife = shelfLife;
     }
-    public int SpawnDay()
+    public int spawnDay()
     {
         return this.spawnDay;
     }
 
     public String toString() {
-        return "Cattle{" + "name='" + this.Name() + ", collected in day ='" + this.SpawnDay() + ", shelfLife is ='" + this.ShelfLife()+'}';
+        return "Cattle{" + "name='" + this.name() + ", collected in day ='" + this.spawnDay() + ", shelfLife is ='" + this.shelfLife()+'}';
     }
     @Override
-    public boolean IsRot() {
-           return (SpawnDay() + ShelfLife() < currentDayStatic());
+    public boolean isRot() {
+           return (spawnDay() + shelfLife() < currentDayStatic());
         }
 
 }

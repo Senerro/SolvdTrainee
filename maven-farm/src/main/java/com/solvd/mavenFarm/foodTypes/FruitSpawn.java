@@ -10,15 +10,15 @@ public abstract class FruitSpawn extends Food implements Serializable
 {
     private int cropYield;
 
-    public int CropYield() {
+    public int cropYield() {
         return cropYield;
     }
-    public void CropYield(final int cropYield)
+    public void cropYield(final int cropYield)
     {
         this.cropYield = cropYield;
     }
 
-    public void GetNewFruit()
+    public void getNewFruit()
     {
         System.out.println("I give fruit of myself because I am a fruit");
     }
@@ -42,7 +42,7 @@ public abstract class FruitSpawn extends Food implements Serializable
     }
     @Override
     public String toString() {
-        return "Cattle{" + "name='" + name()  + '\'' + ", cropYield  is" + CropYield() + '}';
+        return "Cattle{" + "name='" + name()  + '\'' + ", cropYield  is" + cropYield() + '}';
     }
 
 }

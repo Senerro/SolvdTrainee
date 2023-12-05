@@ -16,14 +16,14 @@ public class Meat extends AbstractRaw implements Serializable
     public Meat()
     {
         try{
-            this.ShelfLife(25);
+            this.shelfLife(25);
         }
         catch (ShelfLifeException ex)
         {
             LOGGER.error(ex.getMessage() +" entered shelflife was "+ ex.enteredShelfLife());
         }
-        this.DefaultCost(5);
-        this.Name("Meat");
+        this.defaultCost(5);
+        this.name("Meat");
         ID =4;
     }
 }

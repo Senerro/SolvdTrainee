@@ -15,13 +15,20 @@ import com.solvd.mavenFarm.foodTypes.reqularFruitsSpawn.Appletree;
 import com.solvd.mavenFarm.foodTypes.reqularFruitsSpawn.LemonTree;
 import com.solvd.mavenFarm.foodTypes.reqularVegetablesSpawn.Cabbage;
 import com.solvd.mavenFarm.foodTypes.reqularVegetablesSpawn.Potato;
+import com.solvd.mavenFarm.managers.Comparators.RawCattleAgeComparator;
+import com.solvd.mavenFarm.managers.Comparators.RawCattleNameComparator;
+import com.solvd.mavenFarm.managers.Comparators.RawCattleWeighComparator;
 import com.solvd.mavenFarm.resourses.ResourcesContainer;
 import com.solvd.mavenFarm.interfaces.IFarmingExistable;
 import com.solvd.mavenFarm.interfaces.IGameSessionGain;
 import com.solvd.mavenFarm.interfaces.IResourcesExistable;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.function.Predicate;
+import java.util.stream.Stream;
 
 public class Farm implements Serializable, IFarmingExistable, IResourcesExistable, IGameSessionGain {
 
@@ -30,13 +37,17 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
     transient  private static int currentDayStatic;
     transient private static float sessionGain;
     private  float globalGain;
-
+    static
+    {
+        System.setProperty("log4j.configurationFile","log4j.xml");
+    }
+    private static final Logger LOGGER = LogManager.getLogger(Farm.class);
     private float balance = 500000;
     public ResourcesContainer container = new ResourcesContainer();
 
     static
     {
-        currentDayStatic = currentDayStatic();
+        currentDayStatic = 1;
         sessionGain = 0;
     }
 
@@ -75,14 +86,14 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
 
     public FarmingList farmingList = new FarmingList();
 
-    public void PlantAppleTree(int count, String sort)
+    public void plantAppleTree(int count, String sort)
     {
         purchase++;
         for (int i = 0; i < count; i++)
         {
             Appletree acquisition = new Appletree();
             acquisition.name("Apple tree number " + i + " from procurement " + purchase);
-            acquisition.CropYield(50);
+            acquisition.cropYield(50);
             acquisition.sort(sort);
             farmingList.FruitSpawn(acquisition);
         }
@@ -183,7 +194,7 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
         {
             LemonTree acquisition = new LemonTree();
             acquisition.name("Lemon tree number " + i + " from procurement " + purchase);
-            acquisition.CropYield(50);
+            acquisition.cropYield(50);
             acquisition.SetAcidLevel(4);//very acid
             farmingList.FruitSpawn(acquisition);
         }
@@ -207,7 +218,7 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
             acquisition.sort(sort);
             acquisition.name("Potato number " + i + " from procurement" + purchase);
             acquisition.sort(sort);
-            acquisition.SetSize(2);// little
+            acquisition.setSize(2);// little
             farmingList.vegetableSpawn(acquisition);
         }
     }
@@ -233,7 +244,7 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
         float totalPrice = 0f;
         for (int i = 0; i < this.farmingList.rawFarm().size(); i++)
         {
-            totalPrice +=  this.farmingList.rawFarm().get(i).DefaultCost();
+            totalPrice +=  this.farmingList.rawFarm().get(i).defaultCost();
         }
         return totalPrice;
     }
@@ -242,6 +253,7 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
     {
         for (int i = 0; i < this.farmingList.rawCattle().size(); i++)
         {
+            var a = this.farmingList.rawCattle().get(i).harvest();
             this.farmingList.rawFarm().addAll(this.farmingList.rawCattle().get(i).harvest());
         }
     }
@@ -276,9 +288,9 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
     {
         for(int i = 0; i < this.farmingList.rawFarm().size(); i++)
         {
-            if(this.farmingList.rawFarm().get(i).IsRot())
+            if(this.farmingList.rawFarm().get(i).isRot())
             {
-                this.farmingList.PurgeRawFarm(this.farmingList.rawFarm().get(i));
+                this.farmingList.purgeRawFarm(this.farmingList.rawFarm().get(i));
             }
         }
     }
@@ -300,7 +312,12 @@ public class Farm implements Serializable, IFarmingExistable, IResourcesExistabl
 
     public void purgeCorpse()
     {
-        Predicate<RawCattle> isDead = animal -> animal.isDead;
+        Predicate<RawCattle> isDead = animal -> animal.isDead();
+        Comparator<RawCattle> RCcomp = new RawCattleNameComparator().thenComparing(new RawCattleAgeComparator()).thenComparing(new RawCattleWeighComparator());
+
+        Stream<RawCattle> stream = farmingList.rawCattle().stream();
+        stream.filter(isDead).sorted(RCcomp).forEach(x -> LOGGER.debug(x.toString() + " should be purge"));
+
         farmingList.rawCattle().removeIf(isDead);
     }
 }

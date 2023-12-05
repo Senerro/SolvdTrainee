@@ -16,14 +16,14 @@ public class Milk extends AbstractRaw implements Serializable
     public Milk()
     {
         try{
-            this.ShelfLife(25);
+            this.shelfLife(25);
         }
         catch (ShelfLifeException ex)
         {
             LOGGER.error(ex.getMessage() +" entered shelflife was "+ ex.enteredShelfLife());
         }
-        this.DefaultCost(1.1f);
-        this.Name("Milk");
+        this.defaultCost(1.1f);
+        this.name("Milk");
         ID = 5;
     }
 }

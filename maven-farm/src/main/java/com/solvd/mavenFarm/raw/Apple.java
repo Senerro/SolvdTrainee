@@ -15,14 +15,14 @@ public class Apple extends AbstractRaw implements Serializable
     public Apple()
     {
         try{
-            this.ShelfLife(45);
+            this.shelfLife(45);
         }
         catch (ShelfLifeException ex)
         {
             LOGGER.error(ex.getMessage() +" entered shelflife was "+ ex.enteredShelfLife());
         }
-        this.DefaultCost(0.9f/6);
-        this.Name("Apple");
+        this.defaultCost(0.9f/6);
+        this.name("Apple");
         ID = 1;
     }
 }

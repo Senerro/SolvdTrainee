@@ -22,7 +22,7 @@ public class LemonTree extends FruitSpawn implements Serializable
     {
         name("Lemon tree");
         this.defaultCost(17);
-        this.CropYield(50);
+        this.cropYield(50);
     }
     @Override
     public void eat()

@@ -3,7 +3,6 @@ package com.solvd.mavenFarm.cattleType.reqularRawCattle;
 import com.solvd.mavenFarm.cattleType.RawCattle;
 import com.solvd.mavenFarm.enums.Raws;
 import com.solvd.mavenFarm.raw.AbstractRaw;
-import com.solvd.mavenFarm.raw.Meat;
 import com.solvd.mavenFarm.resourses.Corn;
 import com.solvd.mavenFarm.resourses.Water;
 
@@ -55,7 +54,6 @@ public class Pig extends RawCattle implements Serializable {
 
         if (isDead())
         {
-
             rawArrayList.add(Raws.Meat.get());
         }
         return rawArrayList;

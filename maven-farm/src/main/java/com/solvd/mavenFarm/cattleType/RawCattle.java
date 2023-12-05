@@ -5,6 +5,8 @@ import com.solvd.mavenFarm.abstractEntities.Farming;
 import com.solvd.mavenFarm.enums.Raws;
 import com.solvd.mavenFarm.exception.CattleWeightException;
 import com.solvd.mavenFarm.farm.Farm;
+import com.solvd.mavenFarm.global.GlobalEvent;
+import com.solvd.mavenFarm.global.GlobalStateEnum;
 import com.solvd.mavenFarm.raw.AbstractRaw;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,7 +24,7 @@ public abstract class RawCattle extends Cattle implements Serializable
         System.setProperty("log4j.configurationFile","log4j.xml");
     }
     private Raws raw;
-    public boolean isDead = false;
+    private boolean isDead = (GlobalEvent.state == GlobalStateEnum.DEBUG);
     private float weight = 0.1f;
     public Raws raw()
     {
@@ -49,7 +51,6 @@ public abstract class RawCattle extends Cattle implements Serializable
                 LOGGER.error(e.getInfo());
             }
         }
-
         this.weight =  weight;
     }
     public float cattleWeight()
@@ -60,15 +61,16 @@ public abstract class RawCattle extends Cattle implements Serializable
     public boolean isDead() {
         return isDead;
     }
-    public void death(final Farm farm, final Farming cattle)
+    /*public void death(final Farm farm, final Farming cattle)
     {
         this.harvest();
 
         farm.farmingList.rawCattle().remove((RawCattle)cattle);
-    }
+    }*/
     public void death(final Farm farm)
     {
-        this.harvest();
+        this.isDead(true);
+        farm.farmingList.rawFarm().addAll(this.harvest());
         farm.farmingList.rawCattle().remove(this);
     }
     @Override
@@ -96,5 +98,10 @@ public abstract class RawCattle extends Cattle implements Serializable
         return "Cattle{" + "name='" + name() + '\'' + ", age='" + age() + '\'' + ", weight =" + cattleWeight() + '\'' + '}';
     }
 
+    public void isDead(boolean b)
+    {
+        this.isDead = b;
+
+    }
 }
 

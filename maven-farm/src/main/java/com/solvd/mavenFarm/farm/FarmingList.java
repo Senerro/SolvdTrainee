@@ -65,11 +65,11 @@ public final class FarmingList implements Serializable, IChunkable {
 
 
 
-    public void PurgeRawFarmList()
+    public void purgeRawFarmList()
     {
         this.rawFarmArrayList.clear();
     }
-    public void PurgeRawFarm(AbstractRaw raw)
+    public void purgeRawFarm(AbstractRaw raw)
     {
         this.rawFarmArrayList.remove(raw);
     }

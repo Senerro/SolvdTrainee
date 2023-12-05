@@ -17,7 +17,7 @@ public class Potato extends VegetableSpawn implements Serializable {
     public int getSize() {
         return size;
     }
-    public void SetSize(int size)
+    public void setSize(int size)
     {
         this.size = size;
     }

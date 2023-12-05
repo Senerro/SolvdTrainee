@@ -90,10 +90,6 @@ public abstract class Farming implements Serializable
         return currentCost;
     }
     public void currentCost(final float currentCost) /*throws CostException */{
-        /*if(currentCost<=0) {
-            throw new CostException("We aren't charity organization", currentCost);
-        }*/
-
         this.currentCost = currentCost;
     }
 

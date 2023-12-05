@@ -120,24 +120,16 @@ public enum Questionnaire
 
     private void detectInvokeMethod()
     {
-        //StackTraceElement ste = Thread.currentThread().getStackTrace()[Thread.currentThread().getStackTrace().length-3];
-        //this.invokeMethod = ste.getMethodName();
         StackTraceElement[] tracer;
         tracer = new Throwable().getStackTrace();
         this.invokeMethod = tracer[3].getMethodName();
-        for (var element:tracer) {
-            var a = element.getMethodName();
-            var b = a;
-        }
-
     }
     private Questionnaire transformToEnum()
     {
         this.invokeMethod = StringUtils.capitalize(this.invokeMethod);
         try
         {
-            var a = Questionnaire.valueOf(invokeMethod);
-            return a;
+            return Questionnaire.valueOf(invokeMethod);
         }
         catch (RuntimeException exception)
         {

@@ -11,28 +11,28 @@ public class AbstractResource implements Serializable
     private int chunk;
     private float defaultCost;
     private float currentCost;
-    public int Chunk()
+    public int chunk()
     {
         return this.chunk;
     }
-    public void IncreaseChunk(int chunk)
+    public void increaseChunk(int chunk)
     {
         this.chunk+=chunk;
     }
 
 
-    public float DefaultCost() {
+    public float defaultCost() {
         return defaultCost;
     }
-    public void DefaultCost(float defaultCost)
+    public void defaultCost(float defaultCost)
     {
         this.defaultCost = defaultCost;
     }
-    public void CurrentCost(float currentCost)
+    public void currentCost(float currentCost)
     {
         this.currentCost = currentCost;
     }
-    public void ChangeCurrentCost(float currentCost)
+    public void changeCurrentCost(float currentCost)
     {
      this.currentCost += currentCost;
      if(this.currentCost<0)
@@ -40,22 +40,22 @@ public class AbstractResource implements Serializable
     }
 
 
-    public float Volume() {
+    public float volume() {
         return this.volume;
     }
-    public void Volume(float volume)
+    public void volume(float volume)
     {
         this.volume = volume;
     }
-    public void ChangeVolume(float volume)
+    public void changeVolume(float volume)
     {
         this.volume+= volume;
     }
 
-    public void Name(String name) {
+    public void name(String name) {
         this.name = name;
     }
-    public String Name()
+    public String name()
     {
         return this.name;
     }

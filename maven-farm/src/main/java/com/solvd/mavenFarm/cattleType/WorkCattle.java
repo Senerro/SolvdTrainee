@@ -8,15 +8,15 @@ import java.util.Objects;
 public abstract class WorkCattle extends Cattle implements Serializable {
     private boolean isWorking = false;
 
-    public boolean GetWorkStatus() {
+    public boolean getWorkStatus() {
         return isWorking;
     }
 
-    public void ChangeWorkStatus() {
+    public void changeWorkStatus() {
         this.isWorking = !this.isWorking;
     }
 
-    public abstract void DoSomeWork();
+    public abstract void doSomeWork();
 
     @Override
     public int hashCode() {

@@ -16,14 +16,14 @@ public class Wool extends AbstractRaw implements Serializable
     public Wool()
     {
         try{
-            this.ShelfLife(7*365);
+            this.shelfLife(7*365);
         }
         catch (ShelfLifeException ex)
         {
             LOGGER.error(ex.getMessage() +" entered shelflife was "+ ex.enteredShelfLife());
         }
-        this.DefaultCost(74.56f);
-        this.Name("Wool");
+        this.defaultCost(74.56f);
+        this.name("Wool");
         ID = 6;
     }
 }

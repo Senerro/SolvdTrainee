@@ -9,6 +9,7 @@ import java.io.Serializable;
 public abstract class Cattle extends Farming implements Serializable
 {
     private static final Logger LOGGER = LogManager.getLogger(Cattle.class);
+
     static
     {
         System.setProperty("log4j.configurationFile","log4j.xml");
