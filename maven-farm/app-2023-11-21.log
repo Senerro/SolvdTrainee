@@ -1,0 +1,62 @@
+[TRACE] 2023-11-20 15:34:10.190 [main] GameManager - Application successfully started
+[INFO ] 2023-11-20 15:34:10.197 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-20 15:34:10.198 [main] GameManager - ======================
+[INFO ] 2023-11-20 15:34:10.198 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-20 15:34:10.198 [main] GameManager - 2: Load
+[INFO ] 2023-11-20 15:34:10.198 [main] GameManager - 3: Quit
+[TRACE] 2023-11-20 15:42:20.259 [main] GameManager - Application successfully started
+[INFO ] 2023-11-20 15:42:20.265 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-20 15:42:20.266 [main] GameManager - ======================
+[INFO ] 2023-11-20 15:42:20.266 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-20 15:42:20.267 [main] GameManager - 2: Load
+[INFO ] 2023-11-20 15:42:20.267 [main] GameManager - 3: Quit
+[TRACE] 2023-11-20 15:54:42.967 [main] GameManager - Application successfully started
+[INFO ] 2023-11-20 15:54:42.974 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-20 15:54:42.974 [main] GameManager - ======================
+[INFO ] 2023-11-20 15:54:42.975 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-20 15:54:42.975 [main] GameManager - 2: Load
+[INFO ] 2023-11-20 15:54:42.977 [main] GameManager - 3: Quit
+[TRACE] 2023-11-20 15:54:49.768 [main] GameManager - Application successfully started
+[INFO ] 2023-11-20 15:54:49.772 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-20 15:54:49.772 [main] GameManager - ======================
+[INFO ] 2023-11-20 15:54:49.772 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-20 15:54:49.772 [main] GameManager - 2: Load
+[INFO ] 2023-11-20 15:54:49.773 [main] GameManager - 3: Quit
+[TRACE] 2023-11-20 15:56:22.548 [main] GameManager - Application successfully started
+[INFO ] 2023-11-20 15:56:22.550 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-20 15:56:22.551 [main] GameManager - ======================
+[INFO ] 2023-11-20 15:56:22.551 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-20 15:56:22.551 [main] GameManager - 2: Load
+[INFO ] 2023-11-20 15:56:22.551 [main] GameManager - 3: Quit
+[TRACE] 2023-11-20 15:56:25.829 [main] GameManager - 1
+[INFO ] 2023-11-20 15:56:25.837 [main] GameManager - Day: 1
+[INFO ] 2023-11-20 15:56:25.841 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-20 15:56:25.841 [main] GameManager - What we shall to do?
+[INFO ] 2023-11-20 15:56:25.842 [main] GameManager - 1: Go to the market
+[INFO ] 2023-11-20 15:56:25.843 [main] GameManager - 2: Check our Farm
+[INFO ] 2023-11-20 15:56:25.843 [main] GameManager - 3: Scip this day
+[INFO ] 2023-11-20 15:56:25.844 [main] GameManager - 4: Pause menu
+[TRACE] 2023-11-20 16:06:40.250 [main] GameManager - Application successfully started
+[INFO ] 2023-11-20 16:06:40.252 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-20 16:06:40.252 [main] GameManager - ======================
+[INFO ] 2023-11-20 16:06:40.253 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-20 16:06:40.253 [main] GameManager - 2: Load
+[INFO ] 2023-11-20 16:06:40.253 [main] GameManager - 3: Quit
+[TRACE] 2023-11-20 16:43:25.181 [main] GameManager - Application successfully started
+[INFO ] 2023-11-20 16:43:25.183 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-20 16:43:25.183 [main] GameManager - ======================
+[INFO ] 2023-11-20 16:43:25.184 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-20 16:43:25.184 [main] GameManager - 2: Load
+[INFO ] 2023-11-20 16:43:25.184 [main] GameManager - 3: Quit
+[TRACE] 2023-11-20 16:48:11.513 [main] GameManager - Application successfully started
+[INFO ] 2023-11-20 16:48:11.518 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-20 16:48:11.519 [main] GameManager - ======================
+[INFO ] 2023-11-20 16:48:11.519 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-20 16:48:11.519 [main] GameManager - 2: Load
+[INFO ] 2023-11-20 16:48:11.520 [main] GameManager - 3: Quit
+[TRACE] 2023-11-20 16:48:21.740 [main] GameManager - Application successfully started
+[INFO ] 2023-11-20 16:48:21.743 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-20 16:48:21.743 [main] GameManager - ======================
+[INFO ] 2023-11-20 16:48:21.744 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-20 16:48:21.744 [main] GameManager - 2: Load
+[INFO ] 2023-11-20 16:48:21.744 [main] GameManager - 3: Quit
