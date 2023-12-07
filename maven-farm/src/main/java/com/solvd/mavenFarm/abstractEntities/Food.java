@@ -22,7 +22,7 @@ public abstract class Food extends Farming implements Serializable
         if (this == object) return true;
         if (object == null || getClass() != object.getClass()) return false;
 
-        if(this.sort().equals(((Food) object).sort()))
+        if(this.sort().equals( ((Food) object).sort()) )
             if (this.defaultCost() == ((Food) object).defaultCost() && this.seedingArea() == ((Food) object).seedingArea())
                 return this.name.equals(((Food) object).name);
 
