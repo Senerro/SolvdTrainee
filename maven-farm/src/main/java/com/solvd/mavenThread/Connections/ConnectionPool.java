@@ -4,14 +4,24 @@ import java.util.concurrent.ConcurrentLinkedDeque;
 
 public class ConnectionPool
 {
+    private static ConnectionPool connectionPool;
     private String name = "DBname";
     private String password = "DBpassword";
     public int maxSize;
     private int currentSize;
-    private ConcurrentLinkedDeque<Connection> freeConnections = new ConcurrentLinkedDeque<>();
-    private ConcurrentLinkedDeque<Connection> occupiedConnections = new ConcurrentLinkedDeque<>();
+    private volatile ConcurrentLinkedDeque<Connection> freeConnections = new ConcurrentLinkedDeque<>();
+    private volatile ConcurrentLinkedDeque<Connection> occupiedConnections = new ConcurrentLinkedDeque<>();
 
-    public ConnectionPool(int size)
+    public static synchronized ConnectionPool getConnectionPool(int size)
+    {
+        if(connectionPool == null)
+        {
+            connectionPool = new ConnectionPool(size);
+        }
+        return connectionPool;
+    }
+
+    private ConnectionPool(int size)
     {
         this.maxSize = size;
         if(size <= 1)
@@ -21,18 +31,16 @@ public class ConnectionPool
     public synchronized Connection getConnection()
     {
         Connection connection = null;
-        if (isFull())
-            throw new RuntimeException("The connectionPool is fool");
+        /*if (isFull())
+            throw new RuntimeException("The connectionPool is fool");*/
 
         connection = getPoolConnection();
 
-        if (connection == null)
+        if (connection == null && occupiedConnections.size()<5)
             connection = createPoolConnection();
 
         return connection;
     }
-
-
 
     private Connection createPoolConnection()
     {
@@ -44,28 +52,28 @@ public class ConnectionPool
 
     private Connection createConnection()
     {
-         return new Connection(name, password);
+         return new Connection(name, password, this);
     }
 
     private Connection getPoolConnection()
     {
         Connection connection = null;
         if (!freeConnections.isEmpty())
-            occupiedConnections.add(freeConnections.pop());
-
+        {
+            connection = freeConnections.pop();
+            occupiedConnections.add(connection);
+        }
         return connection;
     }
 
-    public synchronized boolean freeConnectionsAvailable()
-    {
-        return !freeConnections.isEmpty();
-    }
-    private boolean isFull()
+
+    public synchronized boolean isFull()
     {
         return freeConnections.isEmpty() && this.currentSize >= this.maxSize;
     }
-    public synchronized void returnConnection(Connection connection)
+    public  synchronized void returnConnection(Connection connection)
     {
+        occupiedConnections.remove(connection);
         freeConnections.push(connection);
     }
 }

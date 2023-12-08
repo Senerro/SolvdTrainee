@@ -12,16 +12,17 @@ public class MyRunnable implements Runnable
     public void run()
     {
         Long starTime = System.currentTimeMillis();
-        System.out.printf("thread name is %s, url is [%s] ", Thread.currentThread().getName(), connection.url);
+        System.out.printf("thread name is %s, id is [%s]\n ", Thread.currentThread().getName(), connection.id);
         try {
             Thread.sleep(1000 * 3);
-        } catch (InterruptedException e)
+        }
+        catch (InterruptedException e)
         {
 
         }
         Long endTime = System.currentTimeMillis();
         Long resultTime = endTime-starTime;
-        System.out.printf("%d ms", resultTime);
-
+        System.out.printf("[%d ms] ", resultTime);
+        connection.connectionPool.returnConnection(connection);
     }
 }
