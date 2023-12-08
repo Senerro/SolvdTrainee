@@ -8,7 +8,6 @@ public class ConnectionPool
     private String name = "DBname";
     private String password = "DBpassword";
     public int maxSize;
-    private int currentSize;
     private volatile ConcurrentLinkedDeque<Connection> freeConnections = new ConcurrentLinkedDeque<>();
     private volatile ConcurrentLinkedDeque<Connection> occupiedConnections = new ConcurrentLinkedDeque<>();
 
@@ -28,8 +27,7 @@ public class ConnectionPool
             this.maxSize = 5;
 
     }
-    public synchronized Connection getConnection()
-    {
+    public synchronized Connection getConnection() throws InterruptedException {
         Connection connection = null;
 
 
@@ -38,15 +36,17 @@ public class ConnectionPool
         if (connection == null && occupiedConnections.size() < this.maxSize)
             connection = createPoolConnection();
 
-
-
+        if(connection == null)
+        {
+            wait();
+            connection = getPoolConnection();
+        }
         return connection;
     }
 
     private Connection createPoolConnection()
     {
         Connection connection = createConnection();
-        this.currentSize++;
         occupiedConnections.add(connection);
         return connection;
     }
@@ -67,14 +67,10 @@ public class ConnectionPool
         return connection;
     }
 
-
-    public synchronized boolean isFull()
-    {
-        return freeConnections.isEmpty() && this.currentSize >= this.maxSize;
-    }
     public  synchronized void returnConnection(Connection connection)
     {
         occupiedConnections.remove(connection);
         freeConnections.push(connection);
+        notify();
     }
 }

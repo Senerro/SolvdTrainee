@@ -24,5 +24,6 @@ public class MyRunnable implements Runnable
         Long resultTime = endTime-starTime;
         System.out.printf("[%d ms] ", resultTime);
         connection.connectionPool.returnConnection(connection);
+
     }
 }
