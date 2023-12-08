@@ -4,11 +4,14 @@ import com.solvd.mavenThread.Connections.Connection;
 import com.solvd.mavenThread.Connections.ConnectionPool;
 import com.solvd.mavenThread.Connections.MyRunnable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
 
 public class Main
 {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
+
 
        /* CompletableFuture cf1 = CompletableFuture.runAsync(new MyRunnable());
         CompletableFuture cf2 = CompletableFuture.runAsync(new MyRunnable());
@@ -18,7 +21,7 @@ public class Main
 
       //  thread.start();
         //////////////////////////////////////
-        ConnectionPool connectionPool = ConnectionPool.getConnectionPool(5);
+
 
 
         /*Callable<Connection> task = () ->
@@ -31,15 +34,24 @@ public class Main
             System.out.printf("Thread is %s, url is %s\n", Thread.currentThread().getName(), connection.id());
             new MyRunnable(connection);
             return connection;
-        };
-        ExecutorService service = Executors.newFixedThreadPool(5);
-        for (int i = 0; i < 8; i++) {
-            Future<Connection> result = service.submit(task);
-           // connectionPool.returnConnection(result.get());
-        }
-        service.shutdown();*/
+        };*/
+        ConnectionPool connectionPool = ConnectionPool.getConnectionPool(5);
 
-        for (int i = 0; i < 7; i++)
+        ExecutorService service = Executors.newFixedThreadPool(5);
+        ArrayList<CompletableFuture<Void>> completableFutureList = new ArrayList<>();
+
+        for (int i = 0; i < 8; i++)
+        {
+            Connection connection = null;
+            while (connection == null)
+            {
+                connection = connectionPool.getConnection();
+            }
+            completableFutureList.add(CompletableFuture.runAsync(new MyRunnable(connection)));
+        }
+        service.shutdown();
+
+       /* for (int i = 0; i < 7; i++)
         {
            Connection connection = null;
            while (connection == null)
@@ -48,7 +60,8 @@ public class Main
            }
             Thread thread = new Thread(new MyRunnable(connection));
             thread.start();
-        }
+        }*/
+
 
         System.out.print("Something is working\n");
     }

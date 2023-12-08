@@ -243,7 +243,10 @@ public class GameManager implements Serializable
         {
             LOGGER.info(element.toString());
         }
-        LOGGER.info("Here also presences  " + farm.farmingList.rawCattle().stream().filter(cattle -> cattle.age()<2).filter(cattle -> cattle.cattleWeight() > 40).count() + " tough cubs");
+        LOGGER.info("Here also presences  " + farm.farmingList.rawCattle().stream()
+                .filter(cattle -> cattle.age()<2)
+                .filter(cattle -> cattle.cattleWeight() > 40)
+                .count() + " tough cubs");
 
         LOGGER.info("groups of cattle: ");
         className.name(cattleTypeSet);

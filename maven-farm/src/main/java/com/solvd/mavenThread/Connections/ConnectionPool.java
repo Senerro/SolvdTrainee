@@ -31,13 +31,14 @@ public class ConnectionPool
     public synchronized Connection getConnection()
     {
         Connection connection = null;
-        /*if (isFull())
-            throw new RuntimeException("The connectionPool is fool");*/
+
 
         connection = getPoolConnection();
 
-        if (connection == null && occupiedConnections.size()<5)
+        if (connection == null && occupiedConnections.size() < this.maxSize)
             connection = createPoolConnection();
+
+
 
         return connection;
     }
