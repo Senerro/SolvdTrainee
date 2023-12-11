@@ -1,0 +1,13 @@
+[INFO ] 2023-12-08 17:12:01.889 [main] GameManager - Class access level is public
+[DEBUG] 2023-12-08 17:12:01.905 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String)
+[DEBUG] 2023-12-08 17:12:01.905 [main] GameManager - public outPackage.ReflectionTemplate(java.lang.String,java.lang.String,int)
+[DEBUG] 2023-12-08 17:12:01.906 [main] GameManager - public outPackage.ReflectionTemplate()
+[WARN ] 2023-12-08 17:12:01.916 [main] GameManager - public String toString()
+[WARN ] 2023-12-08 17:12:01.917 [main] GameManager - public String ageCode()
+[WARN ] 2023-12-08 17:12:01.918 [main] GameManager - private void getAgeCode()
+[WARN ] 2023-12-08 17:12:01.919 [main] GameManager - protected void calculateAgeCode(int arg0)
+[ERROR] 2023-12-08 17:12:01.921 [main] GameManager - private String name
+[ERROR] 2023-12-08 17:12:01.922 [main] GameManager - protected String surname
+[ERROR] 2023-12-08 17:12:01.922 [main] GameManager - public int age
+[ERROR] 2023-12-08 17:12:01.923 [main] GameManager - private int tmp
+[FATAL] 2023-12-08 17:12:01.926 [main] GameManager - I am Custome. My family is Consructor and I'm Code of my age is 19 years old

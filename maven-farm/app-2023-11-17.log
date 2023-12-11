@@ -1,0 +1,32 @@
+[TRACE] 2023-11-17 14:27:00.592 [main] GameManager - Application successfully started
+[INFO ] 2023-11-17 14:27:00.595 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-17 14:27:00.596 [main] GameManager - ======================
+[INFO ] 2023-11-17 14:27:00.596 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-17 14:27:00.596 [main] GameManager - 2: Load
+[INFO ] 2023-11-17 14:27:00.596 [main] GameManager - 3: Quit
+[TRACE] 2023-11-17 14:27:12.047 [main] GameManager - Application successfully started
+[INFO ] 2023-11-17 14:27:12.054 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-17 14:27:12.055 [main] GameManager - ======================
+[INFO ] 2023-11-17 14:27:12.055 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-17 14:27:12.056 [main] GameManager - 2: Load
+[INFO ] 2023-11-17 14:27:12.056 [main] GameManager - 3: Quit
+[TRACE] 2023-11-17 14:27:17.896 [main] GameManager - 1
+[INFO ] 2023-11-17 14:27:17.920 [main] GameManager - Day: 1
+[INFO ] 2023-11-17 14:27:17.922 [main] GameManager - Money: 500000.0
+[INFO ] 2023-11-17 14:27:17.922 [main] GameManager - What we shall to do?
+[INFO ] 2023-11-17 14:27:17.922 [main] GameManager - 1: Go to the market
+[INFO ] 2023-11-17 14:27:17.922 [main] GameManager - 2: Check our Farm
+[INFO ] 2023-11-17 14:27:17.923 [main] GameManager - 3: Scip this day
+[INFO ] 2023-11-17 14:27:17.923 [main] GameManager - 4: Pause menu
+[TRACE] 2023-11-17 14:28:54.707 [main] GameManager - Application successfully started
+[INFO ] 2023-11-17 14:28:54.711 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-17 14:28:54.711 [main] GameManager - ======================
+[INFO ] 2023-11-17 14:28:54.711 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-17 14:28:54.711 [main] GameManager - 2: Load
+[INFO ] 2023-11-17 14:28:54.712 [main] GameManager - 3: Quit
+[TRACE] 2023-11-17 14:45:33.163 [main] GameManager - Application successfully started
+[INFO ] 2023-11-17 14:45:33.167 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-11-17 14:45:33.167 [main] GameManager - ======================
+[INFO ] 2023-11-17 14:45:33.168 [main] GameManager - 1: Start new game
+[INFO ] 2023-11-17 14:45:33.168 [main] GameManager - 2: Load
+[INFO ] 2023-11-17 14:45:33.168 [main] GameManager - 3: Quit
