@@ -1,6 +1,5 @@
 package com.solvd.mavenFarm.interfaces;
 
-public interface IRotting
-{
+public interface IRotting {
     boolean isRot();
 }

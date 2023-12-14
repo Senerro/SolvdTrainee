@@ -8,18 +8,12 @@ import com.solvd.mavenFarm.resourses.Water;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Pig extends RawCattle implements Serializable {
-    private float mass;
-    public float GetMass()
-    {return this.mass;}
-    public void SetMass(float mass)
-    {
-        this.mass = mass;
-    }
-    public Pig()
-    {
+    public Pig() {
         name("Pig");
+
         Corn corn = new Corn();
         Water water = new Water();
 
@@ -32,31 +26,9 @@ public class Pig extends RawCattle implements Serializable {
         this.solidResourceVolumeRequirement(50);
     }
     @Override
-    public void eat()
-    {
-        System.out.println("I need seed");
-    }
-
-    @Override
-    public void drink() {
-        System.out.println("I need water in 4 times more than seed");
-
-    }
-    @Override
-    public void growUp() {
-        System.out.println("I will grow up till I'm 3");
-    }
-
-    @Override
     public ArrayList<AbstractRaw> harvest() {
-
-        ArrayList<AbstractRaw> rawArrayList = new ArrayList<>();
-
-        if (isDead())
-        {
-            rawArrayList.add(Raws.Meat.get());
-        }
-        return rawArrayList;
+        return isDead() ? new ArrayList<>(Arrays.asList(Raws.Meat.get()))
+                        : new ArrayList<>();
     }
 }
 

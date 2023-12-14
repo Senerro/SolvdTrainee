@@ -1,5 +1,4 @@
 package com.solvd.mavenFarm.raw;
-import com.solvd.mavenFarm.exception.ShelfLifeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,16 +14,8 @@ public class Egg extends AbstractRaw implements Serializable
     }
     public Egg()
     {
-        try{
-            this.shelfLife(25);
-        }
-        catch (ShelfLifeException ex)
-        {
-            LOGGER.error(ex.getMessage() +" entered shelflife was "+ ex.enteredShelfLife());
-        }
-
+        this.shelfLife(25);
         this.defaultCost(0.1f);
         this.name("Egg");
-        ID =2;
     }
 }

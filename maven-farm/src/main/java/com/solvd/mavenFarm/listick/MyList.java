@@ -1,7 +1,6 @@
 package com.solvd.mavenFarm.listick;
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class MyList<T> implements Serializable {
 
@@ -12,48 +11,45 @@ public class MyList<T> implements Serializable {
     private int size;
     private int iterator;
 
-    private static class Node<T>
-    {
+    private static class Node<T> {
         private T value;
         private Node<T> previous;
         private Node<T> next;
-        private Node()
-        {
+
+        private Node() {
             previous = null;
             next=null;
             this.value = null;
         }
-        private Node(T object)
-        {
+
+        private Node(T object) {
             super();
             this.value = object;
         }
-        private Node(Node<T> currentNode, T object)
-        {
+
+        private Node(Node<T> currentNode, T object) {
             previous = currentNode;
             currentNode.next=this;
             this.value = object;
         }
     }
-    public MyList()
-    {
+    public MyList() {
         this.firstNode = new Node<>();
     }
-    public void add(T object)
-    {
+
+    public void add(T object) {
         if(firstNode.value == null) {
             firstNode.value = object;
             lastNode=firstNode;
         }
-        else {
+        else
             lastNode = new Node<T>(lastNode, object);
-        }
         size++;
     }
+
     public boolean add(int index, T object)
     {
-        if(index==0)
-        {
+        if(index==0) {
             Node<T> node = new Node<T>(object);
             Node<T> tmpNodeF = new Node<T>(firstNode.value);
             tmpNodeF.next = firstNode.next;
@@ -61,10 +57,9 @@ public class MyList<T> implements Serializable {
             firstNode.next = tmpNodeF;
             size++;
             return true;
-
         }
-        if(index == size-1)
-        {
+
+        if(index == size-1) {
             Node<T> node = new Node<T>(object);
             lastNode.next = node;
             node.previous=lastNode;
@@ -73,8 +68,7 @@ public class MyList<T> implements Serializable {
             return true;
         }
 
-        if(indexInList(index))
-        {
+        if(indexInList(index)) {
             Node<T> node = new Node<>(object);
             Node<T> indexedNode = findNodeByIndex(index).previous;
             node.next = indexedNode.next;
@@ -111,12 +105,11 @@ public class MyList<T> implements Serializable {
         }
         return false;
     }
-    public boolean empty()
-    {
+    public boolean empty() {
         return firstNode.value != null;
     }
-    public boolean clear()
-    {
+
+    public boolean clear() {
         if (lastNode.previous == null)
         {
             firstNode.value = null;
@@ -130,23 +123,7 @@ public class MyList<T> implements Serializable {
     }
 
     private void clearNode(Node<T> currentNode) {
-        /*if(currentNode.next != null)
-        {
-            currentNode.next = null;
-            size--;
-
-            if(currentNode.previous != null)
-            {
-                clearNode(currentNode.previous);
-            }
-
-            currentNode = null;
-            size--;
-
-
-        }*/
-        if(currentNode.previous!= null)
-        {
+        if(currentNode.previous!= null) {
             Node<T> a = currentNode.previous;
             currentNode.next = null;
             currentNode.previous = null;
@@ -154,11 +131,10 @@ public class MyList<T> implements Serializable {
             clearNode(a);
         }
     }
-    private Node<T> findNodeByIndex(int index)
-    {
+
+    private Node<T> findNodeByIndex(int index) {
         Node<T> returnNode = iteratingNode(firstNode);
-        while (iterator!=index)
-        {
+        while (iterator!=index) {
             iterator++;
             returnNode = iteratingNode(returnNode.next);
         }
@@ -166,19 +142,15 @@ public class MyList<T> implements Serializable {
         return returnNode;
     }
 
-    private Node<T> iteratingNode(Node<T> currentNode)
-    {
-
+    private Node<T> iteratingNode(Node<T> currentNode) {
         return currentNode;
     }
-    private boolean indexInList(int index)
-    {
 
+    private boolean indexInList(int index) {
         return index < size - 1 && index > 0;
     }
 
-    private boolean checkFirstValue(T object)
-    {
+    private boolean checkFirstValue(T object) {
         if(firstNode.value == null) {
             firstNode.value = object;
             lastNode=firstNode;
@@ -186,8 +158,8 @@ public class MyList<T> implements Serializable {
         }
         return true;
     }
-    private void addInArrayList(Node<T> currentNode)
-    {
+
+    private void addInArrayList(Node<T> currentNode) {
 
         returnList.add(currentNode.value);
         if(currentNode.next !=null)
@@ -195,43 +167,38 @@ public class MyList<T> implements Serializable {
             addInArrayList(currentNode.next);
         }
     }
-    public ArrayList<T> toArrayList()
-    {
+    public ArrayList<T> toArrayList() {
         addInArrayList(firstNode);
         return returnList;
     }
-    public int size()
-    {
+
+    public int size() {
         if(firstNode.value == null) {
             size(0);
             return size;
         }
         return size;
     }
-    private void size(int size)
-    {
+
+    private void size(int size) {
         this.size = size;
     }
-    public boolean remove(int index)
-    {
-        if(index==0)
-        {
+    public boolean remove(int index) {
+        if(index==0) {
             firstNode = firstNode.next;
             firstNode.previous = null;
             size--;
             return true;
-
         }
-        if(index == size-1)
-        {
+
+        if(index == size-1) {
             lastNode = lastNode.previous;
             lastNode.next = null;
             size--;
             return true;
         }
 
-        if(indexInList(index))
-        {
+        if(indexInList(index)) {
             Node<T> indexedNode = findNodeByIndex(index);
             indexedNode.previous.next = indexedNode.next;
             indexedNode.next.previous = indexedNode.previous;
@@ -244,17 +211,17 @@ public class MyList<T> implements Serializable {
         }
         return false;
     }
-    private Node<T> findNodeByValue(T object)
-    {
+
+    private Node<T> findNodeByValue(T object) {
         Node<T> returnNode = iteratingNode(firstNode);
+
         while (!returnNode.value.equals( object))
-        {
             returnNode = iteratingNode(returnNode.next);
-        }
+
         return returnNode;
     }
-    public void remove(T object)
-    {
+
+    public void remove(T object) {
        var findableNode = findNodeByValue(object);
         Node<T> prev = findableNode.previous;
         Node<T> next = findableNode.next;
@@ -264,7 +231,5 @@ public class MyList<T> implements Serializable {
         findableNode.previous = null;
         findableNode.next = null;
         findableNode.value = null;
-
     }
-
 }

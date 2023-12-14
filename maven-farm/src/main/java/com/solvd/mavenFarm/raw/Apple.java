@@ -1,8 +1,6 @@
 package com.solvd.mavenFarm.raw;
-import com.solvd.mavenFarm.exception.ShelfLifeException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.io.Serializable;
 
 public class Apple extends AbstractRaw implements Serializable
@@ -14,15 +12,9 @@ public class Apple extends AbstractRaw implements Serializable
     }
     public Apple()
     {
-        try{
-            this.shelfLife(45);
-        }
-        catch (ShelfLifeException ex)
-        {
-            LOGGER.error(ex.getMessage() +" entered shelflife was "+ ex.enteredShelfLife());
-        }
+
+        this.shelfLife(45);
         this.defaultCost(0.9f/6);
         this.name("Apple");
-        ID = 1;
     }
 }

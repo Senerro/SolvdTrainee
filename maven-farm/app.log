@@ -11,3 +11,55 @@
 [ERROR] 2023-12-08 17:12:01.922 [main] GameManager - public int age
 [ERROR] 2023-12-08 17:12:01.923 [main] GameManager - private int tmp
 [FATAL] 2023-12-08 17:12:01.926 [main] GameManager - I am Custome. My family is Consructor and I'm Code of my age is 19 years old
+[TRACE] 2023-12-14 16:13:15.564 [main] GameManager - Application successfully started
+[INFO ] 2023-12-14 16:13:15.569 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-12-14 16:13:15.569 [main] GameManager - ======================
+[INFO ] 2023-12-14 16:13:15.580 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-12-14 16:13:15.580 [main] Questionnaire - 2: Load
+[INFO ] 2023-12-14 16:13:15.580 [main] Questionnaire - 3: Quit
+[TRACE] 2023-12-14 16:41:48.521 [main] GameManager - Application successfully started
+[INFO ] 2023-12-14 16:41:48.527 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-12-14 16:41:48.528 [main] GameManager - ======================
+[INFO ] 2023-12-14 16:41:48.549 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-12-14 16:41:48.549 [main] Questionnaire - 2: Load
+[INFO ] 2023-12-14 16:41:48.550 [main] Questionnaire - 3: Quit
+[TRACE] 2023-12-14 16:42:04.908 [main] GameManager - 1
+[INFO ] 2023-12-14 16:42:04.945 [main] GameManager - Day: 1
+[INFO ] 2023-12-14 16:42:04.949 [main] GameManager - Money: 500000.0
+[INFO ] 2023-12-14 16:42:04.950 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-12-14 16:42:04.950 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-12-14 16:42:04.950 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-12-14 16:42:04.951 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-12-14 16:42:04.951 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-12-14 16:42:06.954 [main] GameManager - 3
+[INFO ] 2023-12-14 16:42:06.968 [main] GameManager - Day: 2
+[INFO ] 2023-12-14 16:42:06.968 [main] GameManager - Money: 500000.0
+[INFO ] 2023-12-14 16:42:06.969 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-12-14 16:42:06.969 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-12-14 16:42:06.969 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-12-14 16:42:06.970 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-12-14 16:42:06.970 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-12-14 16:42:08.226 [main] GameManager - 1
+[INFO ] 2023-12-14 16:42:08.226 [main] Questionnaire - Here is our market
+[INFO ] 2023-12-14 16:42:08.227 [main] Questionnaire - What shall we do?
+[INFO ] 2023-12-14 16:42:08.227 [main] Questionnaire - 1: Buy a cattle
+[INFO ] 2023-12-14 16:42:08.227 [main] Questionnaire - 2: Buy a resources
+[INFO ] 2023-12-14 16:42:08.228 [main] Questionnaire - 3: Sell a raw
+[INFO ] 2023-12-14 16:42:08.228 [main] Questionnaire - 4: Fall back
+[TRACE] 2023-12-14 16:42:08.228 [main] GameManager - 1
+[INFO ] 2023-12-14 16:42:08.229 [main] GameManager - Here is our market place. Look at these trades:
+[INFO ] 2023-12-14 16:42:08.237 [main] GameManager - Cattle{name='Chicken', age='6', weight =4.0', cost='2092.3625}
+[INFO ] 2023-12-14 16:42:08.237 [main] GameManager - Cattle{name='Chicken', age='6', weight =4.0', cost='2092.3625}
+[INFO ] 2023-12-14 16:42:08.237 [main] GameManager - Cattle{name='Chicken', age='6', weight =4.0', cost='2092.3625}
+[INFO ] 2023-12-14 16:42:08.238 [main] GameManager - Cattle{name='Chicken', age='6', weight =4.0', cost='2092.3625}
+[INFO ] 2023-12-14 16:42:08.238 [main] Questionnaire - Do you want to by someone?
+[INFO ] 2023-12-14 16:42:08.238 [main] Questionnaire - 1: Yes
+[INFO ] 2023-12-14 16:42:08.239 [main] Questionnaire - 2: No, go back
+[TRACE] 2023-12-14 16:42:09.763 [main] GameManager - 2
+[INFO ] 2023-12-14 16:42:09.764 [main] GameManager - Day: 2
+[INFO ] 2023-12-14 16:42:09.765 [main] GameManager - Money: 500000.0
+[INFO ] 2023-12-14 16:42:09.765 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-12-14 16:42:09.766 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-12-14 16:42:09.766 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-12-14 16:42:09.766 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-12-14 16:42:09.767 [main] Questionnaire - 4: Pause menu

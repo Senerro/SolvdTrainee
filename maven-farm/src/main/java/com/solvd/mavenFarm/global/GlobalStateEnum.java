@@ -1,7 +1,6 @@
 package com.solvd.mavenFarm.global;
 
-public enum GlobalStateEnum
-{
+public enum GlobalStateEnum {
     DEBUG,
     REALIZE;
 }

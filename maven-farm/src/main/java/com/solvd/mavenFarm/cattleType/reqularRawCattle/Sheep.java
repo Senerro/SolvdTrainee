@@ -11,10 +11,10 @@ import com.solvd.mavenFarm.resourses.Water;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Sheep extends RawCattle implements Serializable {
-    public Sheep()
-    {
+    public Sheep() {
         name("Sheep");
 
         Corn corn = new Corn();
@@ -27,35 +27,12 @@ public class Sheep extends RawCattle implements Serializable {
         this.liquidResourceVolumeRequirement(50);
         this.solidAbstractResource(corn);
         this.solidResourceVolumeRequirement(50);
-
-    }
-    public void eat()
-    {
-        System.out.println("I need corn");
-    }
-
-    @Override
-    public void drink() {
-        System.out.println("I need 7-8 liters of water");
-
-    }
-    @Override
-    public void growUp() {
-        System.out.println("I will grow up till I'm 3");
     }
 
     @Override
     public ArrayList<AbstractRaw> harvest() {
-
-        ArrayList<AbstractRaw> rawArrayList = new ArrayList<>();
-        rawArrayList.add(Raws.Milk.get());
-
-        if (isDead())
-        {
-            rawArrayList.add(Raws.Meat.get());
-            rawArrayList.add(Raws.Wool.get());
-        }
-        return rawArrayList;
+        return isDead() ? new ArrayList<>(Arrays.asList(Raws.Meat.get(), Raws.Wool.get(), Raws.Milk.get()))
+                        : new ArrayList<>(Arrays.asList(Raws.Milk.get()));
     }
 }
 

@@ -7,6 +7,5 @@ public class Corn extends AbstractResource implements Serializable {
     {
         this.defaultCost(0.5f);
         this.name("Corn");
-        ID = 1;
     }
 }

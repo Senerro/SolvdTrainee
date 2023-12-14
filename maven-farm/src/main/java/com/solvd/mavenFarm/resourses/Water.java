@@ -8,6 +8,5 @@ public class Water extends AbstractResource implements Serializable
     {
         this.defaultCost(1);
         this.name("Water");
-        ID = 2;
     }
 }
