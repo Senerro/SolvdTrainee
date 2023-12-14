@@ -3,9 +3,6 @@ package com.solvd.mavenFarm.cattleType.reqularRawCattle;
 import com.solvd.mavenFarm.cattleType.RawCattle;
 import com.solvd.mavenFarm.enums.Raws;
 import com.solvd.mavenFarm.raw.AbstractRaw;
-import com.solvd.mavenFarm.raw.Meat;
-import com.solvd.mavenFarm.raw.Milk;
-import com.solvd.mavenFarm.raw.Wool;
 import com.solvd.mavenFarm.resourses.Corn;
 import com.solvd.mavenFarm.resourses.Water;
 
@@ -31,8 +28,8 @@ public class Sheep extends RawCattle implements Serializable {
 
     @Override
     public ArrayList<AbstractRaw> harvest() {
-        return isDead() ? new ArrayList<>(Arrays.asList(Raws.Meat.get(), Raws.Wool.get(), Raws.Milk.get()))
-                        : new ArrayList<>(Arrays.asList(Raws.Milk.get()));
+        return isDead() ? new ArrayList<>(Arrays.asList(Raws.MEAT.get(), Raws.WOOL.get(), Raws.MILK.get()))
+                        : new ArrayList<>(Arrays.asList(Raws.MILK.get()));
     }
 }
 

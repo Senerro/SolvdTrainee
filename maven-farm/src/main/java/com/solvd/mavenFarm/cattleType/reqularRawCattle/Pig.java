@@ -27,7 +27,7 @@ public class Pig extends RawCattle implements Serializable {
     }
     @Override
     public ArrayList<AbstractRaw> harvest() {
-        return isDead() ? new ArrayList<>(Arrays.asList(Raws.Meat.get()))
+        return isDead() ? new ArrayList<>(Arrays.asList(Raws.MEAT.get()))
                         : new ArrayList<>();
     }
 }

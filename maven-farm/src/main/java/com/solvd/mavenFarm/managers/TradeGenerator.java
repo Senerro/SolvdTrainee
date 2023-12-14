@@ -43,16 +43,16 @@ public final class TradeGenerator implements Serializable {
         int iterator = (int) Math.round(random);
         switch (iterator) {
             case 1:
-                generateRawCattleProperties(RawCattleEnum.Chicken.get(), save, generator);
+                generateRawCattleProperties(RawCattleEnum.CHICKEN.get(), save, generator);
                 break;
             case 2:
-                generateRawCattleProperties(RawCattleEnum.Cow.get(), save, generator);
+                generateRawCattleProperties(RawCattleEnum.COW.get(), save, generator);
                 break;
             case 3:
-                generateRawCattleProperties(RawCattleEnum.Sheep.get(), save, generator);
+                generateRawCattleProperties(RawCattleEnum.SHEEP.get(), save, generator);
                 break;
             case 4:
-                generateRawCattleProperties(RawCattleEnum.Pig.get(), save, generator);
+                generateRawCattleProperties(RawCattleEnum.PIG.get(), save, generator);
                 break;
             default:
                 generateMarketRawCattle(save);

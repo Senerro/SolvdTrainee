@@ -2,8 +2,6 @@ package com.solvd.mavenFarm.managers;
 
 import com.solvd.mavenFarm.abstractEntities.Farming;
 import com.solvd.mavenFarm.cattleType.RawCattle;
-import com.solvd.mavenFarm.cattleType.reqularRawCattle.Cow;
-import com.solvd.mavenFarm.cattleType.reqularRawCattle.Pig;
 import com.solvd.mavenFarm.cattleType.reqularRawCattle.Sheep;
 import com.solvd.mavenFarm.enums.Questionnaire;
 import com.solvd.mavenFarm.farm.Farm;
@@ -27,7 +25,6 @@ import java.util.HashMap;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-
 public class GameManager implements Serializable {
 
     final Scanner input = new Scanner(System.in);
@@ -40,7 +37,7 @@ public class GameManager implements Serializable {
     }
 
     private static final Logger LOGGER = LogManager.getLogger(GameManager.class);
-    private Questionnaire question = Questionnaire.START;
+    private final Questionnaire question = Questionnaire.START;
 
     public GameManager() {
         LOGGER.trace("Application successfully started");
@@ -193,12 +190,12 @@ public class GameManager implements Serializable {
         var readyToRot = farm.farmingList.rawFarm().stream()
                 .filter(x -> ((x.spawnDay() + x.shelfLife()) - farm.currentDay() > 0))
                 .filter(x -> ((x.spawnDay() + x.shelfLife()) - farm.currentDay() < 3))
-                .peek(x -> LOGGER.debug(x.toString() + " current day is " + farm.currentDay()))
+                .peek(x -> LOGGER.debug(x + " current day is " + farm.currentDay()))
                 .collect(Collectors.toList());
 
         if (!readyToRot.isEmpty()) {
             Comparator<AbstractRaw> ARcomp = new RawRottenComparator();
-            LOGGER.info("READY TO ROT " + readyToRot.stream().count() + " resources");
+            LOGGER.info("READY TO ROT " + readyToRot.size() + " resources");
             LOGGER.info("the most 'rotten' raw is " + readyToRot.stream().max(ARcomp));
         }
         LOGGER.info("[redirecting to farm scene]");
@@ -251,7 +248,7 @@ public class GameManager implements Serializable {
                 case 1:
                     this.isCorrect = true;
                     var typeList = new ArrayList<>(cattleTypeSet.keySet());
-                    preparationToKill(farm, typeList, className);
+                    preparationToKill(farm, typeList);
                     break;
                 case 2:
                     this.isCorrect = true;
@@ -266,7 +263,7 @@ public class GameManager implements Serializable {
         this.mainScene(farm);
     }
 
-    private void preparationToKill(Farm farm, ArrayList<String> types, IClassGettable<String, RawCattle> className) {
+    private void preparationToKill(Farm farm, ArrayList<String> types) {
         ArrayList<RawCattle> tmp = new ArrayList<>();
         question.currentSceneQuestionary();
         do {
@@ -444,7 +441,7 @@ public class GameManager implements Serializable {
         Farm save = new Farm();
         TradeGenerator.generateMarketRawCattle(save);
 
-        RawCattle animal1 = new Pig();
+        /*RawCattle animal1 = new Pig();
         RawCattle animal2 = new Pig();
         RawCattle animal3 = new Pig();
         RawCattle animal4 = new Pig();
@@ -452,9 +449,9 @@ public class GameManager implements Serializable {
         RawCattle animal6 = new Pig();
         RawCattle animal7 = new Sheep();
         RawCattle animal8 = new Sheep();
-        RawCattle animal9 = new Cow();
+        RawCattle animal9 = new Cow();*/
 
-        animal1.age(1);
+        /*animal1.age(1);
         animal1.cattleWeight(52);
         animal2.age(2);
         animal2.cattleWeight(51);
@@ -471,7 +468,7 @@ public class GameManager implements Serializable {
         animal8.age(6);
         animal8.cattleWeight(91);
         animal9.age(2);
-        animal9.cattleWeight(550);
+        animal9.cattleWeight(550);*/
 
       /*  save.farmingList.rawCattle(animal1);
         save.farmingList.rawCattle(animal2);
@@ -480,8 +477,8 @@ public class GameManager implements Serializable {
         save.farmingList.rawCattle(animal5);
         save.farmingList.rawCattle(animal6);
         save.farmingList.rawCattle(animal7);
-        save.farmingList.rawCattle(animal8);*/
-        save.farmingList.rawCattle(animal9);
+        save.farmingList.rawCattle(animal8);
+        save.farmingList.rawCattle(animal9);*/
         mainScene(save);
     }
 
@@ -541,6 +538,41 @@ public class GameManager implements Serializable {
     }
 
     public static void main(String[] args) {
-        var mananger = new GameManager();
+        var charArray = "someMetodThatWasImagenedByMeAndQWERTY".toCharArray();
+        var charList = new ArrayList<Character>();
+        for (var element:charArray) {
+            charList.add(element);
+        }
+
+        for(int i = 1; i < charList.size() - 1; i++)
+        {
+            if (charList.get(i) == Character.toUpperCase(charList.get(i))
+                    && charList.get(i + 1) == Character.toUpperCase(charList.get(i + 1))) //эта и след большие
+            {
+                if(charList.get(i-1) != Character.toUpperCase(charList.get(i-1))) // пред мальнькая
+                {
+                    charList.add(i, '_');
+                }
+                continue;
+            }
+
+            if (charList.get(i) != '_' && charList.get(i) == Character.toUpperCase(charList.get(i)))
+            {
+                charList.add(i, '_');
+                i++;
+            }
+        }
+
+
+
+        StringBuilder sb = new StringBuilder();
+        for (var element:charList)
+        {
+         sb.append(element);
+        }
+        var result =StringUtils.upperCase( sb.toString());
+        System.out.print(result);
+        //var mananger = new GameManager();
+
     }
 }

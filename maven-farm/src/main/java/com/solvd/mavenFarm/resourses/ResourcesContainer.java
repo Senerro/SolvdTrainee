@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.function.Consumer;
 
 public class ResourcesContainer implements Serializable {
-    ArrayList<AbstractResource> container = new ArrayList<AbstractResource>();
+    ArrayList<AbstractResource> container = new ArrayList<>();
     Consumer<AbstractResource> res = x -> container.add(x);
 
     public ResourcesContainer() {
@@ -35,9 +35,9 @@ public class ResourcesContainer implements Serializable {
     public final void ChangeResourceVolume(AbstractResource resource, float volume) {
         boolean isSpotted = false;
         do {
-            for (int i = 0; i < container.size(); i++)
-                if (container.get(i).getClass() == (resource.getClass())) {
-                    container.get(i).changeVolume(volume);
+            for (var abstractResource : container)
+                if (abstractResource.getClass() == (resource.getClass())) {
+                    abstractResource.changeVolume(volume);
                     isSpotted = true;
                 }
         }

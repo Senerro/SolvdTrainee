@@ -63,3 +63,23 @@
 [INFO ] 2023-12-14 16:42:09.766 [main] Questionnaire - 2: Check our Farm
 [INFO ] 2023-12-14 16:42:09.766 [main] Questionnaire - 3: Scip this day
 [INFO ] 2023-12-14 16:42:09.767 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-12-14 17:01:44.521 [main] GameManager - Application successfully started
+[INFO ] 2023-12-14 17:01:44.525 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-12-14 17:01:44.526 [main] GameManager - ======================
+[INFO ] 2023-12-14 17:01:44.535 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-12-14 17:01:44.536 [main] Questionnaire - 2: Load
+[INFO ] 2023-12-14 17:01:44.537 [main] Questionnaire - 3: Quit
+[TRACE] 2023-12-14 17:01:46.680 [main] GameManager - 1
+[INFO ] 2023-12-14 17:01:46.705 [main] GameManager - Day: 1
+[INFO ] 2023-12-14 17:01:46.708 [main] GameManager - Money: 500000.0
+[INFO ] 2023-12-14 17:01:46.708 [main] Questionnaire - What we shall to do?
+[INFO ] 2023-12-14 17:01:46.709 [main] Questionnaire - 1: Go to the market
+[INFO ] 2023-12-14 17:01:46.709 [main] Questionnaire - 2: Check our Farm
+[INFO ] 2023-12-14 17:01:46.709 [main] Questionnaire - 3: Scip this day
+[INFO ] 2023-12-14 17:01:46.710 [main] Questionnaire - 4: Pause menu
+[TRACE] 2023-12-14 18:25:11.093 [main] GameManager - Application successfully started
+[INFO ] 2023-12-14 18:25:11.096 [main] GameManager - Welcome to the FarmIO
+[INFO ] 2023-12-14 18:25:11.097 [main] GameManager - ======================
+[INFO ] 2023-12-14 18:25:11.106 [main] Questionnaire - 1: Start new game
+[INFO ] 2023-12-14 18:25:11.106 [main] Questionnaire - 2: Load
+[INFO ] 2023-12-14 18:25:11.106 [main] Questionnaire - 3: Quit

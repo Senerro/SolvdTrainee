@@ -2,6 +2,10 @@ package com.solvd.mavenThread.Connections;
 
 public class MyRunnable implements Runnable
 {
+    static
+    {
+
+    }
     Connection connection;
     public MyRunnable(Connection connection)
     {

@@ -4,12 +4,10 @@ import com.solvd.mavenFarm.raw.*;
 
 public enum Raws
 {
-    Apple(new Apple()),
-    Egg(new Egg()),
-    Lemon(new Lemon()),
-    Meat(new Meat()),
-    Milk(new Milk()),
-    Wool(new Wool()),
+    EGG(new Egg()),
+    MEAT(new Meat()),
+    MILK(new Milk()),
+    WOOL(new Wool()),
     ;
     private AbstractRaw object;
 

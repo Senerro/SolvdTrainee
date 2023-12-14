@@ -8,10 +8,10 @@ import com.solvd.mavenFarm.cattleType.reqularRawCattle.Sheep;
 
 public enum RawCattleEnum
 {
-    Chicken(new Chicken()),
-    Cow(new Cow()),
-    Pig(new Pig()),
-    Sheep(new Sheep()),
+    CHICKEN(new Chicken()),
+    COW(new Cow()),
+    PIG(new Pig()),
+    SHEEP(new Sheep()),
     ;RawCattle animal;
     RawCattleEnum(RawCattle animal)
     {
